@@ -13,36 +13,39 @@
 - Etape 9 - Pages categories : terminee
 - Etape 10 - Pages jeux avec iframe placeholder : terminee
 - Etape 11 - Recherche et filtres : terminee
+- Etape 12 - Favoris locaux : terminee
+- Etape 13 - Recently played local : terminee
+- Etape 14 - Continue playing local : terminee
+- Etape 15 - Scores personnels locaux / meilleurs temps / essais : terminee
+- Etape 16 - Leaderboards simples placeholder ou anonymes : terminee
+- Etape 17 - Badges legers locaux : terminee
+- Etape 18 - Help Center : terminee
 
 ## Etape actuelle
 
-Etape 12 - Favoris locaux
+Etape 19 - Pages legales
 
 ## Statut
 
 En attente de demarrage
 
-## Objectif De L'etape 12
+## Objectif De L'etape 19
 
-Creer les favoris locaux avec stockage navigateur local, sans compte utilisateur ni synchronisation multi-device.
+Creer les pages legales publiques en espagnol, sans inventer d'informations d'entreprise non validees.
 
-## Autorise A L'etape 12
+## Autorise A L'etape 19
 
 Uniquement apres validation explicite de demarrage :
 
-- proposer la structure des favoris locaux ;
+- proposer la structure des pages legales ;
 - lister les fichiers concernes ;
 - expliquer ce qui sera cree ou modifie ;
-- creer les elements valides pour les favoris locaux ;
+- creer les elements valides pour les pages legales ;
 - utiliser les composants du design system deja valides ;
-- utiliser les donnees placeholder deja validees ;
-- utiliser `localStorage` uniquement pour les favoris locaux.
+- utiliser des contenus sobres, simples et en espagnol.
 
-## Interdit A L'etape 12 Sans Validation Explicite De Demarrage
+## Interdit A L'etape 19 Sans Validation Explicite De Demarrage
 
-- ajouter recently played local ;
-- ajouter continue playing local ;
-- ajouter scores personnels locaux fonctionnels ;
 - creer des leaderboards utilisateurs reels ;
 - configurer Auth.js / NextAuth ;
 - creer un modele `User` ;
@@ -62,10 +65,10 @@ Uniquement apres validation explicite de demarrage :
 
 ## Prochaine Etape Apres Validation Explicite
 
-Etape 13 - Recently played local
+Etape 20 - Cookie consent
 
 ## Regle De Passage
 
-Ne pas commencer l'etape 12 tant que son demarrage n'est pas valide explicitement.
+Ne pas commencer l'etape 19 tant que son demarrage n'est pas valide explicitement.
 
-Ne pas passer a l'etape 13 sans validation explicite de fin de l'etape 12.
+Ne pas passer a l'etape 20 sans validation explicite de fin de l'etape 19.

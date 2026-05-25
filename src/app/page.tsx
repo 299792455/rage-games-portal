@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { ContinuePlayingGrid } from "@/components/features";
 import { Footer, Header } from "@/components/layout";
 import {
   AdSlot,
@@ -243,6 +244,23 @@ export default function Home() {
           <AdSlot label="AdSlot placeholder - home banner" />
         </section>
 
+        <section className="container-page space-y-6 py-10">
+          <div className="max-w-2xl space-y-2">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet-200">
+              Seguir jugando
+            </p>
+            <h2 className="text-3xl font-black text-white">
+              Retoma tus retos guardados
+            </h2>
+            <p className="text-sm leading-6 text-slate-400">
+              Lista local creada al pulsar Play. Funciona sin cuenta y se queda
+              en este navegador.
+            </p>
+          </div>
+
+          <ContinuePlayingGrid games={games} />
+        </section>
+
         {gameSections.map((section) => (
           <section className="container-page space-y-6 py-10" key={section.title}>
             <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
@@ -333,23 +351,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="container-page grid gap-6 py-10 lg:grid-cols-3">
-          <Card className="p-6" variant="glass">
-            <div className="space-y-3">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet-200">
-                Seguir jugando
-              </p>
-              <h2 className="text-2xl font-black text-white">
-                Tus partidas recientes apareceran aqui
-              </h2>
-              <p className="text-sm leading-6 text-slate-400">
-                Esta zona esta preparada para mostrar progreso local en una fase
-                posterior. Por ahora no lee datos del navegador.
-              </p>
-            </div>
-          </Card>
-
-          <Card className="p-6 lg:col-span-2" variant="panel">
+        <section className="container-page py-10">
+          <Card className="p-6" variant="panel">
             <div className="mb-5 flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
@@ -359,12 +362,12 @@ export default function Home() {
                   Leaderboard anonimo
                 </h2>
               </div>
-              <a
+              <Link
                 className="text-sm font-bold text-cyan-100 hover:text-cyan-200 focus-ring"
                 href="/clasificaciones"
               >
                 Ver rankings
-              </a>
+              </Link>
             </div>
 
             <div className="divide-y divide-white/10">

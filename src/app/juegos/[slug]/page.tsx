@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import {
+  ContinuePlayingButton,
+  FavoriteButton,
+  LocalScorePanel,
+  RecentlyPlayedTracker,
+} from "@/components/features";
 import { Footer, Header } from "@/components/layout";
 import {
   AdSlot,
@@ -94,6 +100,7 @@ export default async function GamePage({ params }: GamePageProps) {
 
   return (
     <>
+      <RecentlyPlayedTracker gameSlug={game.slug} />
       <Header />
 
       <main className="rage-grid-bg">
@@ -194,13 +201,10 @@ export default async function GamePage({ params }: GamePageProps) {
               </div>
 
               <div className="flex flex-col gap-3 border-t border-white/10 p-4 sm:flex-row">
-                <span
-                  aria-disabled="true"
-                  className="inline-flex min-h-12 flex-1 items-center justify-center rounded-[var(--radius-md)] border border-cyan-300/40 bg-cyan-300 px-5 text-sm font-black text-slate-950 shadow-[var(--glow-cyan)]"
-                  role="button"
-                >
-                  Play
-                </span>
+                <ContinuePlayingButton
+                  className="flex-1"
+                  gameSlug={game.slug}
+                />
                 <span
                   aria-disabled="true"
                   className="inline-flex min-h-12 flex-1 items-center justify-center rounded-[var(--radius-md)] border border-white/10 bg-white/5 px-5 text-sm font-bold text-slate-100"
@@ -208,13 +212,7 @@ export default async function GamePage({ params }: GamePageProps) {
                 >
                   Fullscreen
                 </span>
-                <span
-                  aria-disabled="true"
-                  className="inline-flex min-h-12 flex-1 items-center justify-center rounded-[var(--radius-md)] border border-violet-300/35 bg-violet-400/10 px-5 text-sm font-bold text-violet-100"
-                  role="button"
-                >
-                  Favorito local
-                </span>
+                <FavoriteButton className="flex-1" gameSlug={game.slug} />
               </div>
             </Card>
 
@@ -283,21 +281,7 @@ export default async function GamePage({ params }: GamePageProps) {
         </section>
 
         <section className="container-page grid gap-6 py-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <Card className="p-6" variant="glass">
-            <div className="space-y-3">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet-200">
-                Progreso local
-              </p>
-              <h2 className="text-3xl font-black text-white">
-                Scores y reintentos llegaran despues
-              </h2>
-              <p className="text-sm leading-6 text-slate-400">
-                Los scores personales, mejores tiempos, intentos y progreso
-                local se activaran en etapas posteriores. Esta pagina no lee ni
-                escribe datos del navegador.
-              </p>
-            </div>
-          </Card>
+          <LocalScorePanel gameSlug={game.slug} />
 
           <Card className="p-6" variant="panel">
             <div className="mb-5 flex items-center justify-between gap-4">

@@ -23,52 +23,53 @@
 
 ## Etape actuelle
 
-Etape 19 - Pages legales
+Etape 18B - Integration manuelle de liens embed reels valides
 
 ## Statut
 
 En attente de demarrage
 
-## Objectif De L'etape 19
+## Objectif De L'etape 18B
 
-Creer les pages legales publiques en espagnol, sans inventer d'informations d'entreprise non validees.
+Integrer manuellement des liens embed reels uniquement s'ils sont explicitement fournis et valides par le porteur du projet, avant de reprendre la roadmap normale avec l'etape 19 - Pages legales.
 
-## Autorise A L'etape 19
+## Autorise A L'etape 18B
 
 Uniquement apres validation explicite de demarrage :
 
-- proposer la structure des pages legales ;
-- lister les fichiers concernes ;
-- expliquer ce qui sera cree ou modifie ;
-- creer les elements valides pour les pages legales ;
-- utiliser les composants du design system deja valides ;
-- utiliser des contenus sobres, simples et en espagnol.
+- recevoir une liste de jeux et de liens embed fournis par le porteur du projet ;
+- verifier que chaque lien embed a ete explicitement fourni ;
+- proposer les modifications exactes avant toute integration ;
+- modifier `src/data/games.ts` uniquement apres validation explicite ;
+- verifier si `/juegos/[slug]` gere correctement les iframes avec `embedUrl` renseigne ;
+- proposer une modification de `/juegos/[slug]` uniquement si necessaire et apres validation explicite.
 
-## Interdit A L'etape 19 Sans Validation Explicite De Demarrage
+## Interdit A L'etape 18B Sans Validation Explicite
 
-- creer des leaderboards utilisateurs reels ;
-- configurer Auth.js / NextAuth ;
-- creer un modele `User` ;
-- creer des pages login/register/profil ;
-- configurer MongoDB ;
-- integrer Umami ;
-- configurer Cloudinary ;
-- integrer un provider ;
-- scraper Minijuegos, Friv, Plays.org ou tout autre site tiers ;
-- ajouter de l'analytics reel ;
+- scraper des sites tiers ;
+- chercher ou recuperer des embeds soi-meme ;
+- brancher une API provider ;
+- brancher un feed JSON/XML ;
 - ajouter de la publicite reelle ;
-- ajouter une implementation SEO technique reelle ;
-- creer `sitemap.xml` ;
-- creer `robots.txt` ;
-- creer `llms.txt` ;
-- ajouter de nouvelles dependances npm sans validation explicite.
+- ajouter de l'analytics ;
+- ajouter des images externes non autorisees ;
+- modifier le modele economique ;
+- modifier des pages existantes sans validation explicite ;
+- modifier `/juegos/[slug]` sans besoin identifie et validation explicite ;
+- creer une logique provider automatisee ;
+- commencer l'etape 19.
+
+## Point RGPD A Garder En Memoire
+
+Les iframes providers peuvent impliquer des cookies ou contenus tiers.
+Le traitement cookies/RGPD devra etre gere plus tard a l'etape 20 - Cookie consent.
 
 ## Prochaine Etape Apres Validation Explicite
 
-Etape 20 - Cookie consent
+Etape 19 - Pages legales
 
 ## Regle De Passage
 
-Ne pas commencer l'etape 19 tant que son demarrage n'est pas valide explicitement.
+Ne pas commencer l'etape 18B tant que son demarrage n'est pas valide explicitement.
 
-Ne pas passer a l'etape 20 sans validation explicite de fin de l'etape 19.
+Ne pas passer a l'etape 19 sans validation explicite de fin de l'etape 18B.

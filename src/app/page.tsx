@@ -51,6 +51,9 @@ const newGames = [...games]
   .slice(0, 4);
 const leaderboardPreview = leaderboardPlaceholders.slice(0, 5);
 const badgePreview = badges.slice(0, 6);
+const featuredGame =
+  games.find((game) => game.slug === "rage-maze-troll-hardest-platformer") ??
+  games[0];
 
 const gameSections = [
   {
@@ -168,29 +171,39 @@ export default function Home() {
                     Reto destacado
                   </p>
                   <h2 className="mt-2 text-2xl font-black text-white">
-                    {games[0].title}
+                    {featuredGame.title}
                   </h2>
                 </div>
-                <DifficultyBadge level={games[0].difficultyLevel} />
+                <DifficultyBadge level={featuredGame.difficultyLevel} />
               </div>
 
               <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] border border-white/10 bg-[linear-gradient(135deg,rgba(14,165,233,0.18),rgba(168,85,247,0.18),rgba(244,63,94,0.18))]">
-                <div className="absolute left-6 top-6 h-16 w-24 rounded border border-cyan-300/40 bg-cyan-300/15" />
-                <div className="absolute bottom-10 left-10 h-4 w-36 rounded-full bg-rose-400/70 shadow-[0_0_24px_rgba(251,113,133,0.45)]" />
-                <div className="absolute bottom-20 right-8 h-28 w-4 rounded-full bg-violet-300/70 shadow-[0_0_24px_rgba(168,85,247,0.45)]" />
-                <div className="absolute inset-x-6 bottom-6 flex items-end justify-between">
-                  <span className="h-10 w-10 rounded border border-white/20 bg-white/10" />
-                  <span className="h-16 w-16 rounded border border-cyan-300/30 bg-cyan-300/10" />
-                  <span className="h-8 w-24 rounded border border-rose-300/30 bg-rose-400/10" />
-                </div>
+                {featuredGame.thumbnail.kind === "provider-image" ? (
+                  <img
+                    alt={featuredGame.thumbnail.alt}
+                    className="h-full w-full object-cover"
+                    src={featuredGame.thumbnail.src}
+                  />
+                ) : (
+                  <>
+                    <div className="absolute left-6 top-6 h-16 w-24 rounded border border-cyan-300/40 bg-cyan-300/15" />
+                    <div className="absolute bottom-10 left-10 h-4 w-36 rounded-full bg-rose-400/70 shadow-[0_0_24px_rgba(251,113,133,0.45)]" />
+                    <div className="absolute bottom-20 right-8 h-28 w-4 rounded-full bg-violet-300/70 shadow-[0_0_24px_rgba(168,85,247,0.45)]" />
+                    <div className="absolute inset-x-6 bottom-6 flex items-end justify-between">
+                      <span className="h-10 w-10 rounded border border-white/20 bg-white/10" />
+                      <span className="h-16 w-16 rounded border border-cyan-300/30 bg-cyan-300/10" />
+                      <span className="h-8 w-24 rounded border border-rose-300/30 bg-rose-400/10" />
+                    </div>
+                  </>
+                )}
               </div>
 
               <p className="text-sm leading-6 text-slate-300">
-                {games[0].description}
+                {featuredGame.description}
               </p>
 
               <div className="flex flex-wrap gap-2">
-                {games[0].tags.slice(0, 4).map((tag) => (
+                {featuredGame.tags.slice(0, 4).map((tag) => (
                   <span
                     className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-slate-300"
                     key={tag}
@@ -201,9 +214,9 @@ export default function Home() {
               </div>
 
               <div className="flex items-center justify-between border-t border-white/10 pt-4">
-                <RageLevel level={games[0].rageLevel} />
+                <RageLevel level={featuredGame.rageLevel} />
                 <span className="text-sm font-bold text-slate-300">
-                  {games[0].playCount.toLocaleString("es-ES")} jugadas demo
+                  {featuredGame.playCount.toLocaleString("es-ES")} jugadas demo
                 </span>
               </div>
             </div>
@@ -492,12 +505,12 @@ export default function Home() {
                 sean validadas.
               </p>
             </div>
-            <a
+            <Link
               className="inline-flex min-h-12 items-center justify-center rounded-[var(--radius-md)] border border-white/10 bg-white/5 px-5 text-sm font-bold text-slate-100 transition hover:border-cyan-300/40 hover:bg-cyan-300/10 focus-ring"
               href="/ayuda"
             >
               Centro de ayuda
-            </a>
+            </Link>
           </Card>
         </section>
       </main>

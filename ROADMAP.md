@@ -31,6 +31,7 @@ Regles :
 16. Leaderboards simples placeholder ou anonymes
 17. Badges legers locaux
 18. Help Center
+18B. Integration manuelle de liens embed reels valides
 19. Pages legales
 20. Cookie consent
 21. Analytics events propres avec preparation Umami self-hosted
@@ -68,3 +69,8 @@ Elles ne font pas partie de la V1 et ne doivent pas etre anticipees.
 - Aucun provider de jeux reel ne doit etre integre avant l'etape 28 et avant obtention des acces.
 - Aucune publicite reelle ne doit etre activee avant l'etape 29 et sans validation explicite.
 - Les elements SEO avances, sitemap, robots.txt, llms.txt et preparation IA / LLM SEO / GEO ne doivent pas etre implementes avant les etapes prevues.
+- L'etape 18B est une pause controlee exceptionnelle avant les pages legales.
+- Elle ne remplace pas l'etape 28 d'integration vraie API/feed provider.
+- Elle autorise seulement l'integration manuelle de liens embed explicitement fournis et valides par le porteur du projet.
+- Elle autorise aussi les images provider distantes validees uniquement si leurs URLs sont explicitement fournies par le porteur du projet depuis une page partenaire/provider validee, sans telechargement, rehost, modification ou transfert vers Cloudinary, et avec fallback placeholder conserve.
+- Aucun scraping, aucune API provider et aucune integration automatisee ne sont autorises a cette etape.

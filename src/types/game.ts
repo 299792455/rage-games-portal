@@ -23,7 +23,7 @@ export type GameRageLevel = RageLevel;
 export interface GameThumbnail {
   src: string;
   alt: string;
-  kind: "local-svg" | "css-gradient";
+  kind: "local-svg" | "css-gradient" | "provider-image";
 }
 
 export interface Game {

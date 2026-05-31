@@ -66,6 +66,44 @@ Le dernier grand bloc du projet sera seulement :
 
 La niche rage games / jeux impossibles ne doit pas dependre d'une categorie brute fournie par un provider. Elle doit etre construite par curation editoriale interne avec categories, tags, niveaux de difficulte et criteres de selection propres au site.
 
+## Etape Exceptionnelle 18B - Integration Manuelle De Liens Embed Reels Valides
+
+Une pause controlee de la roadmap est autorisee entre l'etape 18 - Help Center et l'etape 19 - Pages legales.
+
+Objectif :
+
+- integrer manuellement des liens embed reels uniquement s'ils sont explicitement fournis et valides par le porteur du projet ;
+- tester progressivement le comportement des pages jeux avec des `embedUrl` renseignes ;
+- conserver le catalogue placeholder comme base tant que l'integration provider officielle n'est pas encore branchee.
+
+Contraintes :
+
+- seuls les liens embed explicitement fournis par le porteur du projet peuvent etre integres ;
+- l'etape 18B peut autoriser l'utilisation d'images provider distantes uniquement si leurs URLs sont explicitement fournies par le porteur du projet depuis une page partenaire/provider validee ;
+- ces images ne doivent pas etre telechargees, rehostees, modifiees ou transferees vers Cloudinary ;
+- le site doit conserver un fallback placeholder pour les jeux sans image provider ;
+- aucun scraping n'est autorise ;
+- aucune API provider, feed JSON/XML ou integration automatisee ne doit etre branchee a cette etape ;
+- aucune image externe non autorisee ne doit etre utilisee ;
+- aucune publicite reelle ne doit etre activee ;
+- aucun analytics ne doit etre ajoute ;
+- aucun changement de modele economique ne doit etre fait ;
+- aucune modification de page existante ne doit etre effectuee sans validation explicite ;
+- `src/data/games.ts` ne doit etre modifie que plus tard, uniquement apres validation explicite et uniquement pour les jeux/liens fournis ;
+- la page `/juegos/[slug]` ne doit etre modifiee que si necessaire, apres verification et validation explicite.
+
+Verification a prevoir :
+
+- verifier si les pages jeux gerent correctement les iframes quand `embedUrl` est renseigne ;
+- verifier l'affichage du placeholder quand `embedUrl` reste `null` ;
+- verifier que l'integration reste compatible avec le positionnement V1 sans compte utilisateur.
+
+Point RGPD :
+
+- les iframes providers peuvent avoir un impact sur les cookies, traceurs ou contenus tiers ;
+- cet impact devra etre traite plus tard a l'etape 20 - Cookie consent ;
+- aucune gestion cookies supplementaire ne doit etre improvisee pendant l'etape 18B sans validation explicite.
+
 ## 2. Positionnement
 
 Le site est un portail de jeux gratuits difficiles, frustrants, exigeants et memorables, jouables instantanement dans le navigateur.

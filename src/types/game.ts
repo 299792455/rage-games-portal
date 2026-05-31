@@ -12,6 +12,7 @@ export type GameProvider =
   | "gamepix"
   | "gamezop"
   | "gamedistribution"
+  | "onlinegames.io"
   | "other";
 
 export type GameInputType = InputType;

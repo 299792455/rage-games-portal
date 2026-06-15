@@ -14,10 +14,9 @@ type CatalogPageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-type SortKey = "popularidad" | "novedad" | "nota" | "dificultad";
+type SortKey = "novedad" | "nota" | "dificultad";
 
 const sortOptions: { label: string; value: SortKey }[] = [
-  { label: "Popularidad", value: "popularidad" },
   { label: "Novedad", value: "novedad" },
   { label: "Nota", value: "nota" },
   { label: "Dificultad", value: "dificultad" },
@@ -142,14 +141,17 @@ function sortGames(catalogGames: Game[], sort: string | undefined) {
       return secondGame.difficultyLevel - firstGame.difficultyLevel;
     }
 
-    return secondGame.playCount - firstGame.playCount;
+    return (
+      new Date(secondGame.createdAt).getTime() -
+      new Date(firstGame.createdAt).getTime()
+    );
   });
 }
 
 export default async function GamesPage({ searchParams }: CatalogPageProps) {
   const params = await searchParams;
   const query = getParam(params, "q") ?? "";
-  const sort = getParam(params, "orden") ?? "popularidad";
+  const sort = getParam(params, "orden") ?? "novedad";
   const filteredGames = sortGames(filterGames(games, params), sort);
   const activeCategory = getParam(params, "categoria");
   const activeDifficulty = getParam(params, "dificultad");
@@ -172,7 +174,7 @@ export default async function GamesPage({ searchParams }: CatalogPageProps) {
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
                 Busca rage games, juegos imposibles, plataformas hardcore y
-                retos de reflejos usando filtros del catalogo placeholder.
+                retos de reflejos usando los filtros del catalogo actual.
               </p>
             </div>
           </div>
@@ -394,7 +396,7 @@ export default async function GamesPage({ searchParams }: CatalogPageProps) {
                 </h2>
                 <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-slate-400">
                   Prueba otra palabra, baja la dificultad o elimina algun filtro
-                  para ver mas retos del catalogo placeholder.
+                  para ver mas retos del catalogo.
                 </p>
               </Card>
             )}

@@ -17,7 +17,7 @@ const helpArticles = [
   {
     title: "El juego no carga",
     slug: "el-juego-no-carga",
-    description: "Revisa que hacer si un juego placeholder no abre.",
+    description: "Revisa que hacer si un juego integrado no abre.",
   },
   {
     title: "Jugar en movil",
@@ -37,7 +37,7 @@ const helpArticles = [
   {
     title: "Clasificaciones",
     slug: "clasificaciones",
-    description: "Lee como funcionan los rankings placeholder anonimos.",
+    description: "Consulta el estado actual de las clasificaciones globales.",
   },
   {
     title: "Badges",
@@ -125,12 +125,12 @@ export default function HelpPage() {
                 Limites actuales
               </p>
               <h2 className="text-3xl font-black text-white">
-                Integraciones reales pendientes
+                Funciones todavia limitadas
               </h2>
               <p className="text-sm leading-6 text-slate-400">
-                Los juegos, rankings, anuncios y providers reales se activaran
-                solo en sus etapas validadas. El Help Center no envia datos ni
-                incluye formularios funcionales.
+                Los juegos reales ya estan disponibles. Las clasificaciones
+                globales y los anuncios reales siguen desactivados. El Help
+                Center no envia datos ni incluye formularios funcionales.
               </p>
             </div>
           </Card>

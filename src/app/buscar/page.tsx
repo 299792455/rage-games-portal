@@ -9,10 +9,9 @@ type SearchPageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-type SortKey = "popularidad" | "novedad" | "nota" | "dificultad";
+type SortKey = "novedad" | "nota" | "dificultad";
 
 const sortOptions: { label: string; value: SortKey }[] = [
-  { label: "Popularidad", value: "popularidad" },
   { label: "Novedad", value: "novedad" },
   { label: "Nota", value: "nota" },
   { label: "Dificultad", value: "dificultad" },
@@ -137,14 +136,17 @@ function sortGames(catalogGames: Game[], sort: string | undefined) {
       return secondGame.difficultyLevel - firstGame.difficultyLevel;
     }
 
-    return secondGame.playCount - firstGame.playCount;
+    return (
+      new Date(secondGame.createdAt).getTime() -
+      new Date(firstGame.createdAt).getTime()
+    );
   });
 }
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
   const params = await searchParams;
   const query = getParam(params, "q") ?? "";
-  const sort = getParam(params, "orden") ?? "popularidad";
+  const sort = getParam(params, "orden") ?? "novedad";
   const results = sortGames(filterGames(games, params), sort);
   const activeCategory = getParam(params, "categoria");
   const activeDifficulty = getParam(params, "dificultad");
@@ -387,7 +389,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 </h2>
                 <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-slate-400">
                   Cambia el texto de busqueda, elimina algun filtro o vuelve al
-                  catalogo completo para descubrir mas juegos placeholder.
+                  catalogo completo para descubrir mas juegos.
                 </p>
                 <Link
                   className="mt-5 inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] border border-cyan-300/40 bg-cyan-300 px-5 text-sm font-black text-slate-950 shadow-[var(--glow-cyan)] focus-ring"

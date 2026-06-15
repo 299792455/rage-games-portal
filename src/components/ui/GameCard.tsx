@@ -75,7 +75,7 @@ export function GameCard({
           <div className="flex items-center justify-between gap-3 border-t border-white/10 pt-3">
             <RageLevel level={game.rageLevel} />
             <span className="text-xs font-semibold text-slate-500">
-              {game.rating.toFixed(1)}
+              {game.rating > 0 ? game.rating.toFixed(1) : "Sin valoracion"}
             </span>
           </div>
         </div>

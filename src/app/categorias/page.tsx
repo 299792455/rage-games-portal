@@ -19,9 +19,7 @@ const categorySummaries = categories.map((category) => {
     gameCount: categoryGames.length,
     highestDifficulty,
     averageRage,
-    popularGames: [...categoryGames]
-      .sort((firstGame, secondGame) => secondGame.playCount - firstGame.playCount)
-      .slice(0, 2),
+    featuredGames: categoryGames.slice(0, 2),
   };
 });
 
@@ -51,7 +49,7 @@ export default function CategoriesPage() {
 
             <Card className="p-6" variant="glass">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet-200">
-                Catalogo placeholder
+                Catalogo actual
               </p>
               <div className="mt-5 grid grid-cols-2 gap-4">
                 <div>
@@ -67,7 +65,7 @@ export default function CategoriesPage() {
                     {games.length}
                   </p>
                   <p className="mt-1 text-sm text-slate-400">
-                    juegos ficticios
+                    juegos disponibles
                   </p>
                 </div>
               </div>
@@ -92,7 +90,7 @@ export default function CategoriesPage() {
 
         <section className="container-page grid gap-5 py-10 md:grid-cols-2 xl:grid-cols-4">
           {categorySummaries.map(
-            ({ category, gameCount, highestDifficulty, averageRage, popularGames }) => (
+            ({ category, gameCount, highestDifficulty, averageRage, featuredGames }) => (
               <a
                 className="group rounded-[var(--radius-lg)] border border-white/10 bg-slate-950/70 p-5 transition hover:-translate-y-0.5 hover:border-cyan-300/35 hover:shadow-[0_0_28px_rgba(34,211,238,0.16)] focus-ring"
                 href={`/categorias/${category.slug}`}
@@ -128,7 +126,7 @@ export default function CategoriesPage() {
                 </div>
 
                 <div className="mt-5 space-y-2">
-                  {popularGames.map((game) => (
+                  {featuredGames.map((game) => (
                     <p
                       className="line-clamp-1 text-xs font-semibold text-slate-300"
                       key={game.slug}
@@ -170,7 +168,7 @@ export default function CategoriesPage() {
                   {category.description}
                 </p>
                 <p className="mt-3 text-xs font-bold uppercase tracking-[0.14em] text-cyan-200">
-                  {gameCount} juegos placeholder
+                  {gameCount} juegos disponibles
                 </p>
               </a>
             ))}
@@ -189,9 +187,8 @@ export default function CategoriesPage() {
               <p className="text-sm leading-6 text-slate-400">
                 La organizacion del portal prioriza dificultad, rage level,
                 controles, compatibilidad movil y tipo de reto. Las categorias
-                estan preparadas para recibir juegos reales de providers cuando
-                esa fase sea validada, sin perder la curation interna de la
-                niche.
+                mantienen una curation interna independiente de las categorias
+                genericas de cada provider.
               </p>
             </div>
           </Card>

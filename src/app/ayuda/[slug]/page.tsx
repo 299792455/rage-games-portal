@@ -28,11 +28,11 @@ const helpArticles: HelpArticle[] = [
     sections: [
       {
         title: "Jugar gratis",
-        body: "El portal esta pensado para juegos gratis en navegador. En la fase placeholder, algunos juegos muestran que la integracion oficial sigue pendiente.",
+        body: "El portal ofrece juegos reales integrados para jugar gratis directamente desde el navegador.",
       },
       {
         title: "Sin descarga",
-        body: "No necesitas instalar nada. Cuando lleguen los providers oficiales, los juegos se abriran desde su integracion autorizada.",
+        body: "No necesitas instalar nada. Cada juego disponible se abre desde la integracion autorizada de su provider.",
       },
     ],
   },
@@ -54,15 +54,15 @@ const helpArticles: HelpArticle[] = [
   {
     title: "El juego no carga",
     slug: "el-juego-no-carga",
-    summary: "Algunos juegos aun son placeholder y no tienen embed oficial.",
+    summary: "Un juego integrado puede fallar por conexion, navegador o restricciones del provider.",
     sections: [
       {
-        title: "Integracion pendiente",
-        body: "Si ves un mensaje de integracion pendiente, no es un error: el juego espera aprobacion o conexion provider.",
+        title: "Comprobaciones rapidas",
+        body: "Recarga la pagina, comprueba tu conexion y verifica si el juego recomienda usar un ordenador.",
       },
       {
-        title: "Revisiones basicas",
-        body: "Cuando haya embeds reales, prueba recargar la pagina, comprobar la conexion y revisar si el juego recomienda desktop.",
+        title: "Contenido externo",
+        body: "Algunos providers pueden limitar temporalmente un juego o aplicar restricciones de compatibilidad fuera de su sitio.",
       },
     ],
   },
@@ -114,7 +114,7 @@ const helpArticles: HelpArticle[] = [
   {
     title: "Clasificaciones",
     slug: "clasificaciones",
-    summary: "Los rankings actuales son placeholder y anonimos.",
+    summary: "Actualmente no se publica ningun ranking global de jugadores.",
     sections: [
       {
         title: "Sin usuarios reales",
@@ -122,7 +122,7 @@ const helpArticles: HelpArticle[] = [
       },
       {
         title: "Sin scores locales",
-        body: "Tus scores locales no se envian ni se mezclan con los leaderboards placeholder.",
+        body: "Tus scores locales no se envian ni se mezclan con clasificaciones globales.",
       },
     ],
   },
@@ -181,8 +181,8 @@ const helpArticles: HelpArticle[] = [
         body: "Anota el nombre del juego, el navegador, el dispositivo y que estabas intentando hacer.",
       },
       {
-        title: "Fase placeholder",
-        body: "Mientras no haya providers reales, muchos problemas seran solo integraciones pendientes.",
+        title: "Juego y provider",
+        body: "Indica tambien el provider mostrado en la pagina para facilitar la revision de la integracion.",
       },
     ],
   },

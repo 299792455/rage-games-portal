@@ -25,8 +25,8 @@ type GamePageProps = {
   }>;
 };
 
-const providerPendingMessage =
-  "Integración oficial del juego pendiente de aprobación del proveedor.";
+const unavailableGameMessage =
+  "Este juego no esta disponible temporalmente.";
 
 export function generateStaticParams() {
   return games.map((game) => ({
@@ -149,16 +149,20 @@ export default async function GamePage({ params }: GamePageProps) {
               <div className="flex items-center justify-between gap-4">
                 <DifficultyBadge level={game.difficultyLevel} />
                 <span className="text-sm font-black text-white">
-                  {game.rating.toFixed(1)}
+                  {game.rating > 0 ? game.rating.toFixed(1) : "Sin valoracion"}
                 </span>
               </div>
               <RageLevel level={game.rageLevel} />
               <div className="grid grid-cols-2 gap-4 border-t border-white/10 pt-5">
                 <div>
                   <p className="text-2xl font-black text-white">
-                    {game.playCount.toLocaleString("es-ES")}
+                    {game.playCount > 0
+                      ? game.playCount.toLocaleString("es-ES")
+                      : "Sin datos"}
                   </p>
-                  <p className="mt-1 text-sm text-slate-400">jugadas demo</p>
+                  <p className="mt-1 text-sm text-slate-400">
+                    jugadas globales
+                  </p>
                 </div>
                 <div>
                   <p className="text-2xl font-black text-white">
@@ -190,10 +194,10 @@ export default async function GamePage({ params }: GamePageProps) {
                     </div>
                     <div className="max-w-xl space-y-3">
                       <p className="text-2xl font-black text-white">
-                        Juego pendiente de integracion oficial
+                        Juego no disponible temporalmente
                       </p>
                       <p className="text-sm leading-6 text-slate-300">
-                        {providerPendingMessage}
+                        {unavailableGameMessage}
                       </p>
                     </div>
                   </div>
@@ -226,9 +230,8 @@ export default async function GamePage({ params }: GamePageProps) {
                 </h2>
                 <p className="text-sm leading-6 text-slate-400">
                   Este juego forma parte de nuestra seleccion de retos dificiles
-                  y juegos de retry. La pagina usa datos placeholder y deja clara
-                  la integracion pendiente antes de conectar cualquier provider
-                  oficial.
+                  y juegos de retry, con informacion editorial sobre dificultad,
+                  controles y tipo de desafio.
                 </p>
               </div>
             </Card>
@@ -327,8 +330,8 @@ export default async function GamePage({ params }: GamePageProps) {
               </div>
             ) : (
               <p className="rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-4 text-sm leading-6 text-slate-400">
-                Todavia no hay entradas placeholder para este juego. El
-                leaderboard real no esta activo en V1.
+                Todavia no hay un ranking global publicado para este juego. Tus
+                datos locales no se envian a ningun leaderboard.
               </p>
             )}
           </Card>
@@ -344,8 +347,8 @@ export default async function GamePage({ params }: GamePageProps) {
                 Retos locales preparados
               </h2>
               <p className="text-sm leading-6 text-slate-400">
-                Estos badges son de catalogo placeholder. No hay perfil, cuenta
-                ni desbloqueo real en esta etapa.
+                Estos badges forman parte de la demostracion local. No hay
+                perfil, cuenta ni sincronizacion entre dispositivos.
               </p>
             </div>
 
@@ -406,8 +409,7 @@ export default async function GamePage({ params }: GamePageProps) {
               Mas retos para seguir fallando mejor
             </h2>
             <p className="text-sm leading-6 text-slate-400">
-              Seleccion basada en categoria, tags, dificultad, rage level y
-              popularidad placeholder.
+              Seleccion basada en categoria, tags, dificultad y rage level.
             </p>
           </div>
 

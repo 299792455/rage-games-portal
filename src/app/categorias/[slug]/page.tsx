@@ -59,9 +59,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }
 
   const categoryGames = games.filter((game) => game.category === category.slug);
-  const popularGames = [...categoryGames]
-    .sort((firstGame, secondGame) => secondGame.playCount - firstGame.playCount)
-    .slice(0, 4);
+  const featuredGames = categoryGames.slice(0, 4);
   const relatedCategories = categories
     .filter((currentCategory) => currentCategory.slug !== category.slug)
     .slice(0, 4);
@@ -113,7 +111,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     {categoryGames.length}
                   </p>
                   <p className="mt-1 text-sm text-slate-400">
-                    juegos placeholder
+                    juegos disponibles
                   </p>
                 </div>
                 <div>
@@ -240,16 +238,15 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         <section className="container-page space-y-6 py-10">
           <div className="max-w-2xl space-y-2">
             <h2 className="text-3xl font-black text-white">
-              Populares en {category.name}
+              Destacados en {category.name}
             </h2>
             <p className="text-sm leading-6 text-slate-400">
-              Juegos destacados por popularidad placeholder dentro de esta
-              categoria.
+              Una seleccion de juegos disponibles dentro de esta categoria.
             </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {popularGames.map((game) => (
+            {featuredGames.map((game) => (
               <GameCard game={game} key={game.slug} />
             ))}
           </div>
@@ -268,10 +265,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 {editorialNotes[category.slug]}
               </p>
               <p className="text-sm leading-6 text-slate-400">
-                Todos los juegos de esta pagina son placeholder y usan
-                integracion pendiente. La seleccion sirve para mostrar el tipo
-                de experiencia que el portal curara cuando lleguen los providers
-                oficiales.
+                Todos los juegos de esta pagina forman parte del catalogo real
+                integrado. La seleccion mantiene criterios editoriales de
+                dificultad, controles, trampas y ritmo de retry.
               </p>
             </div>
           </Card>

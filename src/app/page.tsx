@@ -64,9 +64,9 @@ const gameSections = [
     href: "/categorias/juegos-imposibles",
   },
   {
-    title: "Rage games populares",
+    title: "Rage games destacados",
     description:
-      "Los juegos placeholder con mas nivel de rage y mas intensidad dentro del catalogo curado.",
+      "Los juegos con mas nivel de rage y mas intensidad dentro del catalogo curado.",
     games: rageGames,
     href: "/populares",
   },
@@ -142,7 +142,7 @@ export default function Home() {
               <Card className="p-4" variant="panel">
                 <p className="text-3xl font-black text-white">{games.length}</p>
                 <p className="mt-1 text-sm text-slate-400">
-                  juegos placeholder curados
+                  juegos reales disponibles
                 </p>
               </Card>
               <Card className="p-4" variant="panel">
@@ -215,9 +215,11 @@ export default function Home() {
 
               <div className="flex items-center justify-between border-t border-white/10 pt-4">
                 <RageLevel level={featuredGame.rageLevel} />
-                <span className="text-sm font-bold text-slate-300">
-                  {featuredGame.playCount.toLocaleString("es-ES")} jugadas demo
-                </span>
+                {featuredGame.playCount > 0 ? (
+                  <span className="text-sm font-bold text-slate-300">
+                    {featuredGame.playCount.toLocaleString("es-ES")} jugadas
+                  </span>
+                ) : null}
               </div>
             </div>
           </Card>
@@ -330,9 +332,11 @@ export default function Home() {
                 </p>
                 <div className="mt-3 flex items-center justify-between gap-3">
                   <DifficultyBadge level={game.difficultyLevel} />
-                  <span className="text-xs font-semibold text-slate-500">
-                    {game.averageRetryTime}s retry
-                  </span>
+                  {game.averageRetryTime !== null ? (
+                    <span className="text-xs font-semibold text-slate-500">
+                      {game.averageRetryTime}s retry
+                    </span>
+                  ) : null}
                 </div>
               </a>
             ))}
@@ -344,9 +348,8 @@ export default function Home() {
             <div className="max-w-2xl space-y-2">
               <h2 className="text-3xl font-black text-white">Nuevos juegos</h2>
               <p className="text-sm leading-6 text-slate-400">
-                La seleccion placeholder mas reciente del portal, preparada para
-                ser reemplazada por integraciones oficiales cuando llegue la fase
-                provider.
+                Las incorporaciones mas recientes del catalogo real, listas
+                para jugar directamente en el navegador.
               </p>
             </div>
             <a
@@ -369,10 +372,10 @@ export default function Home() {
             <div className="mb-5 flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                  Clasificacion demo
+                  Clasificaciones
                 </p>
                 <h2 className="mt-2 text-2xl font-black text-white">
-                  Leaderboard anonimo
+                  Ranking global
                 </h2>
               </div>
               <Link
@@ -383,32 +386,38 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="divide-y divide-white/10">
-              {leaderboardPreview.map((entry) => (
-                <div
-                  className="grid grid-cols-[auto_1fr_auto] items-center gap-4 py-3"
-                  key={`${entry.gameId}-${entry.rank}`}
-                >
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-100">
-                    {entry.rank}
-                  </span>
-                  <div>
-                    <p className="text-sm font-bold text-white">
-                      {entry.usernamePlaceholder}
-                    </p>
-                    <p className="text-xs text-slate-500">{entry.gameId}</p>
+            {leaderboardPreview.length > 0 ? (
+              <div className="divide-y divide-white/10">
+                {leaderboardPreview.map((entry) => (
+                  <div
+                    className="grid grid-cols-[auto_1fr_auto] items-center gap-4 py-3"
+                    key={`${entry.gameId}-${entry.rank}`}
+                  >
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-100">
+                      {entry.rank}
+                    </span>
+                    <div>
+                      <p className="text-sm font-bold text-white">
+                        {entry.usernamePlaceholder}
+                      </p>
+                      <p className="text-xs text-slate-500">{entry.gameId}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-black text-white">
+                        {entry.score.toLocaleString("es-ES")}
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        {entry.attempts} intentos
+                      </p>
+                    </div>
                   </div>
-                  <div className="text-right">
-                    <p className="text-sm font-black text-white">
-                      {entry.score.toLocaleString("es-ES")}
-                    </p>
-                    <p className="text-xs text-slate-500">
-                      {entry.attempts} intentos
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <p className="rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-4 text-sm leading-6 text-slate-400">
+                Todavia no hay un ranking global publicado.
+              </p>
+            )}
           </Card>
         </section>
 
@@ -422,7 +431,7 @@ export default function Home() {
                 Recompensas ligeras, sin cuenta
               </h2>
               <p className="max-w-2xl text-sm leading-6 text-slate-400">
-                Catalogo de badges placeholder pensado para progreso local en
+                Catalogo de badges de demostracion para progreso local en el
                 navegador. No hay perfil, usuario ni sincronizacion.
               </p>
             </div>
@@ -497,12 +506,11 @@ export default function Home() {
                 Comunidad sin cuenta en V1
               </p>
               <h2 className="text-3xl font-black text-white">
-                Favoritos, recientes y progreso llegaran como datos locales
+                Favoritos, recientes y progreso guardados localmente
               </h2>
               <p className="max-w-3xl text-sm leading-6 text-slate-400">
-                La V1 esta pensada para funcionar sin registro. Las futuras
-                funciones de retencion se guardaran localmente cuando sus etapas
-                sean validadas.
+                La V1 funciona sin registro. Las funciones de retencion
+                disponibles se guardan localmente en este navegador.
               </p>
             </div>
             <Link

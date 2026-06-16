@@ -13,6 +13,7 @@ export type GameProvider =
   | "gamezop"
   | "gamedistribution"
   | "onlinegames.io"
+  | "twoplayergames"
   | "other";
 
 export type GameInputType = InputType;

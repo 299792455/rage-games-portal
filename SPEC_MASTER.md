@@ -104,6 +104,41 @@ Point RGPD :
 - cet impact devra etre traite plus tard a l'etape 20 - Cookie consent ;
 - aucune gestion cookies supplementaire ne doit etre improvisee pendant l'etape 18B sans validation explicite.
 
+Etat valide a la cloture de l'etape 18B :
+
+- l'integration manuelle du catalogue est terminee cote donnees ;
+- le catalogue contient 23 jeux reels avec `embedUrl` valide ;
+- les jeux fictifs et placeholders ont ete supprimes de `src/data/games.ts` ;
+- les donnees fictives de leaderboards et de local-stats ont ete videes ;
+- aucune donnee fictive ne doit etre recreee pour remplacer ces donnees.
+
+## Etape Exceptionnelle 18C - Stabilisation Pre-Prod Du Catalogue Reel
+
+Une mini-etape de stabilisation est inseree entre l'etape 18B et l'etape 19 - Pages legales.
+
+Objectif :
+
+- stabiliser les pages publiques apres le passage a un catalogue compose uniquement de jeux reels ;
+- corriger les incoherences visibles sans creer de donnees fictives, de backend ou d'analytics ;
+- preparer le site pour l'etape 19 sans commencer les pages legales.
+
+Travaux autorises :
+
+- creer `/populares` avec un etat vide honnete, sans popularite globale artificielle ;
+- creer `/aleatorio` avec une redirection vers un jeu reel choisi aleatoirement dans le catalogue actuel ;
+- nettoyer les textes publics obsoletes lies aux jeux placeholders, fictifs, integrations pending ou providers a venir ;
+- masquer ou clarifier les statistiques indisponibles : `averageRetryTime` a `null`, `rating` a `0` et `playCount` a `0` ;
+- ajouter un etat vide propre sur `/clasificaciones` lorsque les tableaux de leaderboards sont vides.
+
+Contraintes :
+
+- ne pas modifier `src/data/games.ts` sauf validation explicite d'une correction technique strictement necessaire ;
+- ne creer aucune donnee fictive, aucun score artificiel et aucune popularite globale fictive ;
+- ne pas ajouter de backend, d'analytics ou de nouvelle dependance ;
+- ne pas traiter `/contacto`, `/sobre-nosotros`, `/privacidad`, `/cookies` ou `/terminos`, qui restent reserves a l'etape 19 ;
+- ne pas traiter le consentement des iframes providers ni leur impact RGPD, qui restent reserves a l'etape 20 ;
+- ne pas commencer automatiquement l'etape 19 ou l'etape 20.
+
 ## 2. Positionnement
 
 Le site est un portail de jeux gratuits difficiles, frustrants, exigeants et memorables, jouables instantanement dans le navigateur.

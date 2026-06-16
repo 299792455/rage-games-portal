@@ -20,56 +20,44 @@
 - Etape 16 - Leaderboards simples placeholder ou anonymes : terminee
 - Etape 17 - Badges legers locaux : terminee
 - Etape 18 - Help Center : terminee
+- Etape 18B - Integration manuelle de liens embed reels valides : terminee
+- Etape 18C - Stabilisation pre-prod du catalogue reel : terminee
+- Etape 19 - Pages legales : terminee
 
 ## Etape actuelle
 
-Etape 18B - Integration manuelle de liens embed reels valides
+Etape 20 - Cookie consent / consentement iframe / RGPD
 
 ## Statut
 
 En attente de demarrage
 
-## Objectif De L'etape 18B
-
-Integrer manuellement des liens embed reels uniquement s'ils sont explicitement fournis et valides par le porteur du projet, avant de reprendre la roadmap normale avec l'etape 19 - Pages legales.
-
-## Autorise A L'etape 18B
-
-Uniquement apres validation explicite de demarrage :
-
-- recevoir une liste de jeux et de liens embed fournis par le porteur du projet ;
-- verifier que chaque lien embed a ete explicitement fourni ;
-- proposer les modifications exactes avant toute integration ;
-- modifier `src/data/games.ts` uniquement apres validation explicite ;
-- verifier si `/juegos/[slug]` gere correctement les iframes avec `embedUrl` renseigne ;
-- proposer une modification de `/juegos/[slug]` uniquement si necessaire et apres validation explicite.
-
-## Interdit A L'etape 18B Sans Validation Explicite
-
-- scraper des sites tiers ;
-- chercher ou recuperer des embeds soi-meme ;
-- brancher une API provider ;
-- brancher un feed JSON/XML ;
-- ajouter de la publicite reelle ;
-- ajouter de l'analytics ;
-- ajouter des images externes non autorisees ;
-- modifier le modele economique ;
-- modifier des pages existantes sans validation explicite ;
-- modifier `/juegos/[slug]` sans besoin identifie et validation explicite ;
-- creer une logique provider automatisee ;
-- commencer l'etape 19.
-
-## Point RGPD A Garder En Memoire
-
-Les iframes providers peuvent impliquer des cookies ou contenus tiers.
-Le traitement cookies/RGPD devra etre gere plus tard a l'etape 20 - Cookie consent.
-
 ## Prochaine Etape Apres Validation Explicite
 
-Etape 19 - Pages legales
+Etape 21 - Analytics events propres avec preparation Umami self-hosted
+
+## Objectif
+
+Preparer et implementer une gestion de consentement cookies/RGPD pour la V1, incluant la banniere de consentement, les preferences, le stockage du choix utilisateur et la strategie de consentement pour les iframes providers.
+
+## Autorise A Cette Etape
+
+- Analyser et proposer le plan technique de l'etape 20 apres validation explicite de demarrage.
+- Implementer uniquement les elements de consentement cookies/RGPD valides dans le perimetre de l'etape 20.
+
+## Interdit A Cette Etape
+
+- Commencer l'analytics Umami.
+- Activer de la publicite reelle.
+- Modifier le catalogue ou les donnees jeux.
+- Ajouter une dependance sans validation explicite.
+- Creer un backend.
+- Ajouter de l'authentification.
+- Bloquer ou modifier les iframes avant validation du plan technique de l'etape 20.
+- Passer a l'etape 21 sans validation explicite.
 
 ## Regle De Passage
 
-Ne pas commencer l'etape 18B tant que son demarrage n'est pas valide explicitement.
+Ne pas commencer l'etape 20 tant que son demarrage n'est pas valide explicitement.
 
-Ne pas passer a l'etape 19 sans validation explicite de fin de l'etape 18B.
+Ne pas passer a l'etape 21 sans validation explicite de fin de l'etape 20.

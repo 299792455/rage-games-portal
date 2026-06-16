@@ -32,6 +32,7 @@ Regles :
 17. Badges legers locaux
 18. Help Center
 18B. Integration manuelle de liens embed reels valides
+18C. Stabilisation pre-prod du catalogue reel
 19. Pages legales
 20. Cookie consent
 21. Analytics events propres avec preparation Umami self-hosted
@@ -74,3 +75,9 @@ Elles ne font pas partie de la V1 et ne doivent pas etre anticipees.
 - Elle autorise seulement l'integration manuelle de liens embed explicitement fournis et valides par le porteur du projet.
 - Elle autorise aussi les images provider distantes validees uniquement si leurs URLs sont explicitement fournies par le porteur du projet depuis une page partenaire/provider validee, sans telechargement, rehost, modification ou transfert vers Cloudinary, et avec fallback placeholder conserve.
 - Aucun scraping, aucune API provider et aucune integration automatisee ne sont autorises a cette etape.
+- L'etape 18B est terminee cote donnees avec 23 jeux reels, aucun jeu placeholder dans `src/data/games.ts` et les donnees fictives de leaderboards/local-stats videes.
+- L'etape 18C est terminee : elle a stabilise le catalogue reel avant les pages legales.
+- Elle comprend la creation de `/populares` avec un etat vide honnete, la creation de `/aleatorio` avec redirection vers un jeu reel, le nettoyage des textes placeholder obsoletes, la clarification des statistiques nulles ou a zero et un etat vide propre sur `/clasificaciones`.
+- Elle ne doit creer aucune popularite, aucun score ni aucune donnee fictive.
+- Les pages `/contacto`, `/sobre-nosotros`, `/privacidad`, `/cookies` et `/terminos` restent reservees a l'etape 19.
+- Le consentement des iframes providers et leur impact RGPD restent reserves a l'etape 20.

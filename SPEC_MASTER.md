@@ -200,7 +200,7 @@ Stack obligatoire :
 - Tailwind CSS ;
 - MongoDB ;
 - VPS Hostinger deja disponible : VM2 ;
-- Umami self-hosted pour l'analytics, mais seulement a partir de l'etape prevue ;
+- Google Analytics 4 / Google Tag pour l'analytics, uniquement a partir de l'etape 21 et avec Google Consent Mode ;
 - MongoDB Atlas Free Cluster / ancien M0 pour demarrer ;
 - Cloudinary ou autre provider images : a decider plus tard seulement si necessaire.
 
@@ -252,9 +252,11 @@ Contraintes :
 
 ### Analytics
 
-- Choix valide pour la V1 : Umami self-hosted sur VPS.
-- Aucun analytics reel ne doit etre integre avant l'etape prevue dans la roadmap.
-- Prevoir une couche d'evenements produit compatible avec Umami.
+- Choix valide pour la V1 : Google Analytics 4 / Google Tag.
+- L'etape 20 prepare uniquement le consentement analytics compatible Google Consent Mode.
+- Aucun script Google, Google Tag ou Google Analytics ne doit etre charge a l'etape 20.
+- L'integration reelle de GA4 / Google Tag est reservee a l'etape 21.
+- Umami self-hosted n'est plus le choix retenu pour ce projet.
 - Le tracking doit rester compatible RGPD et respecter la gestion du consentement si necessaire.
 
 ## 4. Design Et Direction Artistique
@@ -1002,8 +1004,9 @@ Evenements utiles :
 Contraintes :
 
 - Ne pas implementer d'analytics invasif sans consentement.
-- Utiliser une solution propre et simple basee sur Umami self-hosted uniquement a l'etape prevue.
-- Avant cette etape, ne prevoir qu'une couche d'evenements produit ou des interfaces preparatoires si necessaire.
+- Utiliser une solution propre basee sur Google Analytics 4 / Google Tag uniquement a l'etape prevue.
+- L'etape 20 doit preparer le consentement compatible Google Consent Mode sans charger de script Google.
+- Avant cette integration, ne prevoir qu'une structure de consentement ou des interfaces preparatoires si necessaire.
 
 ## 20. Help Center
 
@@ -1056,7 +1059,7 @@ Prevoir plus tard :
 - logs ;
 - redemarrage app ;
 - securite basique ;
-- Umami self-hosted sur VPS a l'etape analytics prevue.
+- Integration GA4 / Google Tag a l'etape analytics prevue.
 
 Contraintes :
 

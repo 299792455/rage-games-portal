@@ -23,10 +23,11 @@
 - Etape 18B - Integration manuelle de liens embed reels valides : terminee
 - Etape 18C - Stabilisation pre-prod du catalogue reel : terminee
 - Etape 19 - Pages legales : terminee
+- Etape 20 - Cookie consent / consentement iframe / RGPD : terminee
 
 ## Etape actuelle
 
-Etape 20 - Cookie consent / consentement iframe / RGPD
+Etape 21 - Integration GA4 / Google Tag avec Google Consent Mode
 
 ## Statut
 
@@ -34,30 +35,32 @@ En attente de demarrage
 
 ## Prochaine Etape Apres Validation Explicite
 
-Etape 21 - Analytics events propres avec preparation Umami self-hosted
+Etape 22 - Architecture publicite : AdSlot + interstitial leger desactive par defaut
 
 ## Objectif
 
-Preparer et implementer une gestion de consentement cookies/RGPD pour la V1, incluant la banniere de consentement, les preferences, le stockage du choix utilisateur et la strategie de consentement pour les iframes providers.
+Preparer et integrer proprement Google Analytics 4 / Google Tag avec Google Consent Mode, en respectant le choix de consentement stocke a l'etape 20 et sans activer de publicite reelle.
 
 ## Autorise A Cette Etape
 
-- Analyser et proposer le plan technique de l'etape 20 apres validation explicite de demarrage.
-- Implementer uniquement les elements de consentement cookies/RGPD valides dans le perimetre de l'etape 20.
+- Analyser et proposer le plan technique de l'integration GA4 / Google Tag apres validation explicite de demarrage.
+- Implementer uniquement l'integration GA4 / Google Tag validee dans le perimetre de l'etape 21.
+- Lire le consentement analytics stocke a l'etape 20.
+- Preparer Google Consent Mode selon la structure validee.
 
 ## Interdit A Cette Etape
 
-- Commencer l'analytics Umami.
 - Activer de la publicite reelle.
+- Activer Google Ads.
 - Modifier le catalogue ou les donnees jeux.
-- Ajouter une dependance sans validation explicite.
+- Modifier les iframes providers.
 - Creer un backend.
 - Ajouter de l'authentification.
-- Bloquer ou modifier les iframes avant validation du plan technique de l'etape 20.
-- Passer a l'etape 21 sans validation explicite.
+- Modifier les pages legales sauf validation explicite.
+- Passer a l'etape 22 sans validation explicite.
 
 ## Regle De Passage
 
-Ne pas commencer l'etape 20 tant que son demarrage n'est pas valide explicitement.
+Ne pas commencer l'etape 21 tant que son demarrage n'est pas valide explicitement.
 
-Ne pas passer a l'etape 21 sans validation explicite de fin de l'etape 20.
+Ne pas passer a l'etape 22 sans validation explicite de fin de l'etape 21.

@@ -34,3 +34,5 @@ export type {
   AdPlacementLocation,
   AdPlacementType,
 } from "./ads";
+
+export type { ConsentStorageStatus, CookieConsent } from "./consent";

@@ -35,7 +35,7 @@ Regles :
 18C. Stabilisation pre-prod du catalogue reel
 19. Pages legales
 20. Cookie consent
-21. Analytics events propres avec preparation Umami self-hosted
+21. Integration GA4 / Google Tag avec Google Consent Mode
 22. Architecture publicite : AdSlot + interstitial leger desactive par defaut
 23. SEO dynamique + donnees structurees Schema.org
 24. Sitemap / robots.txt / llms.txt / preparation visibilite IA

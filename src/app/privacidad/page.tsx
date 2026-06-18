@@ -48,9 +48,9 @@ const sections = [
   {
     title: "Analytics",
     paragraphs: [
-      "JuegosDificiles.com puede utilizar una herramienta de analytics, como Umami u otra solución equivalente, para comprender el uso global del sitio.",
+      "JuegosDificiles.com puede utilizar Google Analytics 4 / Google Tag para comprender el uso global del sitio cuando esa integración esté activa.",
       "Estos datos pueden ayudarnos a saber qué páginas se visitan, qué juegos reciben más atención, qué errores pueden aparecer y cómo mejorar la experiencia general.",
-      "El analytics se configurará de forma proporcional y, cuando sea necesario, se gestionará de acuerdo con las preferencias de consentimiento del usuario.",
+      "El analytics se configurará de forma proporcional y, cuando sea necesario, se gestionará de acuerdo con las preferencias de consentimiento del usuario mediante una configuración compatible con Google Consent Mode.",
       "La configuración concreta de la herramienta de analítica podrá variar según la solución técnica utilizada por el sitio.",
     ],
   },

@@ -1,3 +1,4 @@
+export { CookieConsentBanner } from "./CookieConsentBanner";
 export { ContinuePlayingButton } from "./ContinuePlayingButton";
 export { ContinuePlayingGrid } from "./ContinuePlayingGrid";
 export { FavoriteButton } from "./FavoriteButton";

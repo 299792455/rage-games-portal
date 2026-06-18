@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { CookieConsentBanner } from "@/components/features";
 
 export const metadata: Metadata = {
   title: "Rage Games Portal",
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className="app-shell">{children}</body>
+      <body className="app-shell">
+        {children}
+        <CookieConsentBanner />
+      </body>
     </html>
   );
 }

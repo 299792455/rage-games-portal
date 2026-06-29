@@ -107,7 +107,7 @@ export default function Home() {
               </p>
               <div className="space-y-5">
                 <h1 className="max-w-4xl text-5xl font-black leading-[0.95] text-white md:text-7xl">
-                  Juegos imposibles, rage games y retos de retry.
+                  Juegos difíciles online gratis
                 </h1>
                 <p className="max-w-2xl text-lg leading-8 text-slate-300">
                   Entra directo a una seleccion de juegos dificiles, frustrantes

@@ -25,10 +25,11 @@
 - Etape 19 - Pages legales : terminee
 - Etape 20 - Cookie consent / consentement iframe / RGPD : terminee
 - Etape 21 - Integration GA4 / Google Tag avec Google Consent Mode : terminee
+- Etape 22 - Architecture publicite : AdSlot + interstitial leger desactive par defaut : terminee
 
 ## Etape actuelle
 
-Etape 22 - Architecture publicite : AdSlot + interstitial leger desactive par defaut
+Etape 23 - SEO dynamique + donnees structurees Schema.org
 
 ## Statut
 
@@ -36,37 +37,38 @@ En attente de demarrage
 
 ## Prochaine Etape Apres Validation Explicite
 
-Etape 23 - SEO dynamique + donnees structurees Schema.org
+Etape 24 - Sitemap / robots.txt / llms.txt / preparation visibilite IA
 
 ## Objectif
 
-Preparer une architecture publicitaire V1 propre et desactivee par defaut, avec AdSlot placeholder et interstitial leger optionnel, sans activer de publicite reelle ni charger de script publicitaire.
+Preparer et implementer le SEO dynamique de la V1, incluant les metadata dynamiques des pages principales, jeux et categories, ainsi que les donnees structurees Schema.org pertinentes et verifiables, sans creer sitemap, robots.txt ou llms.txt.
 
 ## Autorise A Cette Etape
 
-- Analyser et proposer le plan technique de l'architecture publicitaire apres validation explicite de demarrage.
-- Implementer uniquement les composants publicitaires placeholders valides dans le perimetre de l'etape 22.
-- Prevoir un AdSlot reutilisable si une adaptation est necessaire.
-- Prevoir un interstitial leger desactive par defaut.
-- Respecter le consentement existant sans activer de publicite reelle.
+- Analyser et proposer le plan technique du SEO dynamique et des donnees structurees apres validation explicite de demarrage.
+- Implementer uniquement les metadata dynamiques validees dans le perimetre de l'etape 23.
+- Implementer uniquement les donnees structurees Schema.org pertinentes et verifiables sur les pages validees.
+- Utiliser les donnees existantes du catalogue, des categories et des pages publiques.
+- Maintenir une logique SEO en espagnol, sans multilingue ni hreflang.
 
 ## Interdit A Cette Etape
 
-- Activer de la publicite reelle.
-- Charger un script publicitaire externe.
-- Activer Google Ads.
-- Activer du header bidding.
-- Ajouter un ad refresh avance.
-- Ajouter des rewarded ads.
-- Modifier le catalogue ou les donnees jeux.
+- Creer sitemap.xml.
+- Creer robots.txt.
+- Creer llms.txt ou llms-full.txt.
+- Commencer la preparation visibilite IA de l'etape 24.
+- Inventer de fausses donnees structurees, faux avis, fausses notes ou partenariats.
+- Modifier le catalogue ou les donnees jeux sauf validation explicite.
 - Modifier les iframes providers.
-- Modifier GA4 / Google Tag sauf validation explicite.
+- Modifier GA4 / Google Tag.
+- Modifier l'architecture publicite.
+- Ajouter une publicite reelle.
 - Creer un backend.
 - Ajouter de l'authentification.
-- Passer a l'etape 23 sans validation explicite.
+- Passer a l'etape 24 sans validation explicite.
 
 ## Regle De Passage
 
-Ne pas commencer l'etape 22 tant que son demarrage n'est pas valide explicitement.
+Ne pas commencer l'etape 23 tant que son demarrage n'est pas valide explicitement.
 
-Ne pas passer a l'etape 23 sans validation explicite de fin de l'etape 22.
+Ne pas passer a l'etape 24 sans validation explicite de fin de l'etape 23.

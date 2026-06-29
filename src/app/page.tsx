@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { ContinuePlayingGrid } from "@/components/features";
 import { Footer, Header } from "@/components/layout";
+import { JsonLd } from "@/components/seo/JsonLd";
 import {
   AdSlot,
   Card,
@@ -16,6 +17,13 @@ import {
   games,
   leaderboardPlaceholders,
 } from "@/data";
+import {
+  createCollectionPageJsonLd,
+  createItemListJsonLd,
+  createOrganizationJsonLd,
+  createWebsiteJsonLd,
+} from "@/lib/seo/json-ld";
+import { HOME_DESCRIPTION } from "@/lib/seo/site";
 
 const featuredCategories = categories.slice(0, 8);
 const impossibleGames = games.filter(
@@ -93,9 +101,39 @@ const gameSections = [
   },
 ];
 
+const homeVisibleGames = [
+  featuredGame,
+  ...gameSections.flatMap((section) => section.games.slice(0, 4)),
+  ...fastChallengeGames,
+  ...newGames,
+].filter(
+  (game, index, visibleGames) =>
+    visibleGames.findIndex((visibleGame) => visibleGame.slug === game.slug) ===
+    index,
+);
+
+const homeJsonLd = [
+  createWebsiteJsonLd(),
+  createOrganizationJsonLd(),
+  createCollectionPageJsonLd({
+    name: "Juegos difíciles online gratis",
+    description: HOME_DESCRIPTION,
+    path: "/",
+  }),
+  createItemListJsonLd({
+    name: "Juegos visibles en la portada",
+    path: "/",
+    items: homeVisibleGames.map((game) => ({
+      name: game.title,
+      path: `/juegos/${game.slug}`,
+    })),
+  }),
+];
+
 export default function Home() {
   return (
     <>
+      <JsonLd data={homeJsonLd} />
       <Header />
 
       <main className="rage-grid-bg">

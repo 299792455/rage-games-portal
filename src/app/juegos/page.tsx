@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Footer, Header } from "@/components/layout";
+import { JsonLd } from "@/components/seo/JsonLd";
 import {
   AdSlot,
   Card,
@@ -8,6 +9,10 @@ import {
   GameCard,
 } from "@/components/ui";
 import { categories, games } from "@/data";
+import {
+  createCollectionPageJsonLd,
+  createItemListJsonLd,
+} from "@/lib/seo/json-ld";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import type { DifficultyLevel, Game, InputType } from "@/types";
 
@@ -165,9 +170,26 @@ export default async function GamesPage({ searchParams }: CatalogPageProps) {
   const activeDifficulty = getParam(params, "dificultad");
   const activeInput = getParam(params, "control");
   const activeDevice = getParam(params, "dispositivo");
+  const catalogJsonLd = [
+    createCollectionPageJsonLd({
+      name: "Juegos difíciles online gratis",
+      description:
+        "Catálogo de juegos difíciles online gratis para jugar en el navegador, sin descargar.",
+      path: "/juegos",
+    }),
+    createItemListJsonLd({
+      name: "Juegos visibles en el catálogo",
+      path: "/juegos",
+      items: filteredGames.map((game) => ({
+        name: game.title,
+        path: `/juegos/${game.slug}`,
+      })),
+    }),
+  ];
 
   return (
     <>
+      <JsonLd data={catalogJsonLd} />
       <Header />
 
       <main className="rage-grid-bg">

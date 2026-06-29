@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { Footer, Header } from "@/components/layout";
+import { JsonLd } from "@/components/seo/JsonLd";
 import {
   AdSlot,
   Card,
@@ -14,6 +15,11 @@ import {
   createCategoryMetadata,
   createMissingCategoryMetadata,
 } from "@/lib/seo/metadata";
+import {
+  createBreadcrumbListJsonLd,
+  createCollectionPageJsonLd,
+  createItemListJsonLd,
+} from "@/lib/seo/json-ld";
 import type { DifficultyLevel } from "@/types";
 
 type CategoryPageProps = {
@@ -95,9 +101,30 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       game.difficultyLevel > highestLevel ? game.difficultyLevel : highestLevel,
     1,
   );
+  const categoryJsonLd = [
+    createCollectionPageJsonLd({
+      name: category.name,
+      description: category.description,
+      path: `/categorias/${category.slug}`,
+    }),
+    createItemListJsonLd({
+      name: `Juegos en ${category.name}`,
+      path: `/categorias/${category.slug}`,
+      items: categoryGames.map((game) => ({
+        name: game.title,
+        path: `/juegos/${game.slug}`,
+      })),
+    }),
+    createBreadcrumbListJsonLd([
+      { name: "Inicio", path: "/" },
+      { name: "Categorías", path: "/categorias" },
+      { name: category.name, path: `/categorias/${category.slug}` },
+    ]),
+  ];
 
   return (
     <>
+      <JsonLd data={categoryJsonLd} />
       <Header />
 
       <main className="rage-grid-bg">

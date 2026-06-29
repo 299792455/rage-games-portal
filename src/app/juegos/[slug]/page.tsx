@@ -8,6 +8,7 @@ import {
   RecentlyPlayedTracker,
 } from "@/components/features";
 import { Footer, Header } from "@/components/layout";
+import { JsonLd } from "@/components/seo/JsonLd";
 import {
   AdSlot,
   Card,
@@ -21,6 +22,11 @@ import {
   createGameMetadata,
   createMissingGameMetadata,
 } from "@/lib/seo/metadata";
+import {
+  createBreadcrumbListJsonLd,
+  createVideoGameJsonLd,
+  createWebPageJsonLd,
+} from "@/lib/seo/json-ld";
 import type { Game } from "@/types";
 
 type GamePageProps = {
@@ -108,9 +114,23 @@ export default async function GamePage({ params }: GamePageProps) {
     game.speedrunFriendly ? "Speedrun friendly" : null,
     game.averageRetryTime ? `${game.averageRetryTime}s retry medio` : null,
   ].filter(Boolean);
+  const gameJsonLd = [
+    createWebPageJsonLd({
+      name: game.title,
+      description: game.description,
+      path: `/juegos/${game.slug}`,
+    }),
+    createVideoGameJsonLd(game, category),
+    createBreadcrumbListJsonLd([
+      { name: "Inicio", path: "/" },
+      { name: "Juegos", path: "/juegos" },
+      { name: game.title, path: `/juegos/${game.slug}` },
+    ]),
+  ];
 
   return (
     <>
+      <JsonLd data={gameJsonLd} />
       <RecentlyPlayedTracker gameSlug={game.slug} />
       <Header />
 

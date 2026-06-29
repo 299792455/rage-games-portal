@@ -1,6 +1,11 @@
 import { Footer, Header } from "@/components/layout";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { AdSlot, Card, CategoryChip, DifficultyBadge } from "@/components/ui";
 import { categories, games } from "@/data";
+import {
+  createCollectionPageJsonLd,
+  createItemListJsonLd,
+} from "@/lib/seo/json-ld";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import type { DifficultyLevel } from "@/types";
 
@@ -31,9 +36,27 @@ const categorySummaries = categories.map((category) => {
   };
 });
 
+const categoriesJsonLd = [
+  createCollectionPageJsonLd({
+    name: "Categorías de juegos difíciles",
+    description:
+      "Categorías editoriales de juegos difíciles online gratis para explorar retos por trampas, reflejos, plataformas, retry y speedrun.",
+    path: "/categorias",
+  }),
+  createItemListJsonLd({
+    name: "Categorías visibles de Juegos Difíciles",
+    path: "/categorias",
+    items: categories.map((category) => ({
+      name: category.name,
+      path: `/categorias/${category.slug}`,
+    })),
+  }),
+];
+
 export default function CategoriesPage() {
   return (
     <>
+      <JsonLd data={categoriesJsonLd} />
       <Header />
 
       <main className="rage-grid-bg">

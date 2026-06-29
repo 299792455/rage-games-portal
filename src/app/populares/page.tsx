@@ -1,7 +1,9 @@
 import Link from "next/link";
 
 import { Footer, Header } from "@/components/layout";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Card } from "@/components/ui";
+import { createWebPageJsonLd } from "@/lib/seo/json-ld";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = createPageMetadata({
@@ -11,9 +13,17 @@ export const metadata = createPageMetadata({
   path: "/populares",
 });
 
+const popularGamesJsonLd = createWebPageJsonLd({
+  name: "Juegos populares",
+  description:
+    "Página de actividad local para juegos populares en este navegador, sin ranking global ni popularidad inventada.",
+  path: "/populares",
+});
+
 export default function PopularGamesPage() {
   return (
     <>
+      <JsonLd data={popularGamesJsonLd} />
       <Header />
 
       <main className="rage-grid-bg">

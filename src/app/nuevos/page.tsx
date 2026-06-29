@@ -1,6 +1,11 @@
 import { Footer, Header } from "@/components/layout";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Card, GameCard } from "@/components/ui";
 import { games } from "@/data";
+import {
+  createCollectionPageJsonLd,
+  createItemListJsonLd,
+} from "@/lib/seo/json-ld";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = createPageMetadata({
@@ -31,9 +36,27 @@ const newestGames = games
   })
   .map(({ game }) => game);
 
+const newGamesJsonLd = [
+  createCollectionPageJsonLd({
+    name: "Juegos nuevos difíciles",
+    description:
+      "Últimos juegos difíciles online gratis añadidos al catálogo para jugar en el navegador, sin descargar.",
+    path: "/nuevos",
+  }),
+  createItemListJsonLd({
+    name: "Juegos nuevos visibles",
+    path: "/nuevos",
+    items: newestGames.map((game) => ({
+      name: game.title,
+      path: `/juegos/${game.slug}`,
+    })),
+  }),
+];
+
 export default function NewGamesPage() {
   return (
     <>
+      <JsonLd data={newGamesJsonLd} />
       <Header />
 
       <main className="rage-grid-bg">

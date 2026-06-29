@@ -26,10 +26,11 @@
 - Etape 20 - Cookie consent / consentement iframe / RGPD : terminee
 - Etape 21 - Integration GA4 / Google Tag avec Google Consent Mode : terminee
 - Etape 22 - Architecture publicite : AdSlot + interstitial leger desactive par defaut : terminee
+- Etape 23 - SEO dynamique + donnees structurees Schema.org : terminee
 
 ## Etape actuelle
 
-Etape 23 - SEO dynamique + donnees structurees Schema.org
+Etape 24 - Sitemap / robots.txt / llms.txt / preparation visibilite IA
 
 ## Statut
 
@@ -37,38 +38,40 @@ En attente de demarrage
 
 ## Prochaine Etape Apres Validation Explicite
 
-Etape 24 - Sitemap / robots.txt / llms.txt / preparation visibilite IA
+Etape 25 - Preparation production VPS
 
 ## Objectif
 
-Preparer et implementer le SEO dynamique de la V1, incluant les metadata dynamiques des pages principales, jeux et categories, ainsi que les donnees structurees Schema.org pertinentes et verifiables, sans creer sitemap, robots.txt ou llms.txt.
+Preparer et implementer les fichiers de visibilite technique de la V1, incluant sitemap, robots.txt, llms.txt et preparation visibilite IA / LLM SEO / GEO, en utilisant uniquement les routes publiques, le catalogue reel et les donnees existantes validees.
 
 ## Autorise A Cette Etape
 
-- Analyser et proposer le plan technique du SEO dynamique et des donnees structurees apres validation explicite de demarrage.
-- Implementer uniquement les metadata dynamiques validees dans le perimetre de l'etape 23.
-- Implementer uniquement les donnees structurees Schema.org pertinentes et verifiables sur les pages validees.
-- Utiliser les donnees existantes du catalogue, des categories et des pages publiques.
+- Analyser et proposer le plan technique du sitemap, robots.txt, llms.txt et de la preparation visibilite IA apres validation explicite de demarrage.
+- Implementer uniquement les fichiers de visibilite valides dans le perimetre de l'etape 24.
+- Utiliser les routes publiques existantes, les jeux reels, les categories existantes et les pages publiques validees.
+- Creer un sitemap coherent avec les routes indexables de la V1.
+- Creer un robots.txt coherent avec l'indexation souhaitee.
+- Creer llms.txt et eventuellement llms-full.txt uniquement si valide explicitement dans le plan de l'etape 24.
 - Maintenir une logique SEO en espagnol, sans multilingue ni hreflang.
 
 ## Interdit A Cette Etape
 
-- Creer sitemap.xml.
-- Creer robots.txt.
-- Creer llms.txt ou llms-full.txt.
-- Commencer la preparation visibilite IA de l'etape 24.
-- Inventer de fausses donnees structurees, faux avis, fausses notes ou partenariats.
-- Modifier le catalogue ou les donnees jeux sauf validation explicite.
-- Modifier les iframes providers.
+- Modifier le catalogue ou les donnees jeux.
+- Renommer des slugs, routes ou URLs existantes.
+- Creer une nouvelle route SEO non prevue.
+- Inventer des pages, jeux, categories, notes, avis, donnees de popularite ou partenariats.
+- Modifier les metadata dynamiques ou les donnees structurees Schema.org sauf validation explicite.
 - Modifier GA4 / Google Tag.
 - Modifier l'architecture publicite.
+- Modifier les iframes providers.
 - Ajouter une publicite reelle.
 - Creer un backend.
 - Ajouter de l'authentification.
-- Passer a l'etape 24 sans validation explicite.
+- Commencer la preparation production VPS de l'etape 25.
+- Passer a l'etape 25 sans validation explicite.
 
 ## Regle De Passage
 
-Ne pas commencer l'etape 23 tant que son demarrage n'est pas valide explicitement.
+Ne pas commencer l'etape 24 tant que son demarrage n'est pas valide explicitement.
 
-Ne pas passer a l'etape 24 sans validation explicite de fin de l'etape 23.
+Ne pas passer a l'etape 25 sans validation explicite de fin de l'etape 24.

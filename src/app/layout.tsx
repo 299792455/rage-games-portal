@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { CookieConsentBanner } from "@/components/features";
+import { CookieConsentBanner, GoogleAnalytics } from "@/components/features";
 
 export const metadata: Metadata = {
   title: "Rage Games Portal",
@@ -16,6 +16,7 @@ export default function RootLayout({
     <html lang="es">
       <body className="app-shell">
         {children}
+        <GoogleAnalytics />
         <CookieConsentBanner />
       </body>
     </html>

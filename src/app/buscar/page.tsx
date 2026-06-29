@@ -3,11 +3,19 @@ import Link from "next/link";
 import { Footer, Header } from "@/components/layout";
 import { AdSlot, Card, CategoryChip, GameCard } from "@/components/ui";
 import { categories, games } from "@/data";
+import { createPageMetadata } from "@/lib/seo/metadata";
 import type { DifficultyLevel, Game, InputType } from "@/types";
 
 type SearchPageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
+
+export const metadata = createPageMetadata({
+  title: "Buscar juegos difíciles",
+  description:
+    "Busca juegos difíciles online gratis por nombre, categoría, controles, dificultad, reflejos, trampas y retos para jugar sin descargar.",
+  path: "/buscar",
+});
 
 type SortKey = "novedad" | "nota" | "dificultad";
 

@@ -10,6 +10,10 @@ import {
   GameCard,
 } from "@/components/ui";
 import { categories, games } from "@/data";
+import {
+  createCategoryMetadata,
+  createMissingCategoryMetadata,
+} from "@/lib/seo/metadata";
 import type { DifficultyLevel } from "@/types";
 
 type CategoryPageProps = {
@@ -46,6 +50,21 @@ export function generateStaticParams() {
   return categories.map((category) => ({
     slug: category.slug,
   }));
+}
+
+export async function generateMetadata({ params }: CategoryPageProps) {
+  const { slug } = await params;
+  const category = categories.find(
+    (currentCategory) => currentCategory.slug === slug,
+  );
+
+  if (!category) {
+    return createMissingCategoryMetadata(slug);
+  }
+
+  const categoryGames = games.filter((game) => game.category === category.slug);
+
+  return createCategoryMetadata(category, categoryGames.length);
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {

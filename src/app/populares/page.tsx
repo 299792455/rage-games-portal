@@ -2,6 +2,14 @@ import Link from "next/link";
 
 import { Footer, Header } from "@/components/layout";
 import { Card } from "@/components/ui";
+import { createPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = createPageMetadata({
+  title: "Juegos populares",
+  description:
+    "Consulta la actividad local de juegos jugados en este navegador y explora juegos difíciles online gratis sin descargar, sin mostrar popularidad global inventada.",
+  path: "/populares",
+});
 
 export default function PopularGamesPage() {
   return (

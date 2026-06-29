@@ -1,6 +1,14 @@
 import { Footer, Header } from "@/components/layout";
 import { Card, GameCard } from "@/components/ui";
 import { games } from "@/data";
+import { createPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = createPageMetadata({
+  title: "Juegos nuevos difíciles",
+  description:
+    "Descubre los últimos juegos difíciles online gratis añadidos al catálogo: retos de habilidad, plataformas difíciles y desafíos de reflejos para jugar en el navegador.",
+  path: "/nuevos",
+});
 
 const newestGames = games
   .map((game, index) => ({ game, index }))

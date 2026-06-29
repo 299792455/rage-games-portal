@@ -17,6 +17,10 @@ import {
   RageLevel,
 } from "@/components/ui";
 import { badges, categories, games, leaderboardPlaceholders } from "@/data";
+import {
+  createGameMetadata,
+  createMissingGameMetadata,
+} from "@/lib/seo/metadata";
 import type { Game } from "@/types";
 
 type GamePageProps = {
@@ -32,6 +36,13 @@ export function generateStaticParams() {
   return games.map((game) => ({
     slug: game.slug,
   }));
+}
+
+export async function generateMetadata({ params }: GamePageProps) {
+  const { slug } = await params;
+  const game = games.find((currentGame) => currentGame.slug === slug);
+
+  return game ? createGameMetadata(game) : createMissingGameMetadata(slug);
 }
 
 function getSimilarGames(currentGame: Game) {

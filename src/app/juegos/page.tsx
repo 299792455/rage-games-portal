@@ -8,11 +8,19 @@ import {
   GameCard,
 } from "@/components/ui";
 import { categories, games } from "@/data";
+import { createPageMetadata } from "@/lib/seo/metadata";
 import type { DifficultyLevel, Game, InputType } from "@/types";
 
 type CatalogPageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
+
+export const metadata = createPageMetadata({
+  title: "Juegos difíciles online gratis",
+  description:
+    "Explora el catálogo de Juegos Difíciles: juegos troll, juegos con trampas, retos de habilidad, reflejos y precisión para jugar online gratis, sin descargar.",
+  path: "/juegos",
+});
 
 type SortKey = "novedad" | "nota" | "dificultad";
 

@@ -1,7 +1,15 @@
 import { Footer, Header } from "@/components/layout";
 import { AdSlot, Card, CategoryChip, DifficultyBadge } from "@/components/ui";
 import { categories, games } from "@/data";
+import { createPageMetadata } from "@/lib/seo/metadata";
 import type { DifficultyLevel } from "@/types";
+
+export const metadata = createPageMetadata({
+  title: "Categorías de juegos difíciles",
+  description:
+    "Explora categorías de juegos difíciles online gratis: juegos troll, juegos con trampas, plataformas difíciles, reflejos, precisión y retos para jugar en el navegador.",
+  path: "/categorias",
+});
 
 const categorySummaries = categories.map((category) => {
   const categoryGames = games.filter((game) => game.category === category.slug);

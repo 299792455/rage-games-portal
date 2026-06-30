@@ -1,0 +1,43 @@
+# Juegos Difíciles
+
+URL canonica: https://www.juegosdificiles.com
+
+Juegos Difíciles es un portal en español dedicado a juegos difíciles online gratis. El sitio reúne juegos de habilidad, retos con trampas, plataformas exigentes, juegos de reflejos, die and retry, one touch y speedrun para jugar directamente en el navegador, sin descargar.
+
+## Contenido principal
+
+- Página principal: https://www.juegosdificiles.com/
+- Catálogo de juegos: https://www.juegosdificiles.com/juegos
+- Categorías: https://www.juegosdificiles.com/categorias
+- Juegos nuevos: https://www.juegosdificiles.com/nuevos
+- Juegos populares: https://www.juegosdificiles.com/populares
+- Centro de ayuda: https://www.juegosdificiles.com/ayuda
+
+## Categorías principales
+
+- Juegos imposibles
+- Rage Games
+- Die & Retry
+- Plataformas hardcore
+- Juegos con trampas
+- One Touch
+- Reflejos
+- Speedrun
+
+## Juegos integrados
+
+Las páginas de juego muestran títulos integrados desde proveedores externos mediante iframes o enlaces embed validados. Juegos Difíciles organiza el catálogo con criterios editoriales propios como dificultad, tipo de control, nivel de reto, compatibilidad móvil, trampas y ritmo de retry.
+
+## Páginas informativas y legales
+
+- Sobre nosotros: https://www.juegosdificiles.com/sobre-nosotros
+- Contacto: https://www.juegosdificiles.com/contacto
+- Política de privacidad: https://www.juegosdificiles.com/privacidad
+- Política de cookies: https://www.juegosdificiles.com/cookies
+- Condiciones de uso: https://www.juegosdificiles.com/terminos
+
+## Notas para sistemas de búsqueda y asistentes
+
+El sitio está pensado para usuarios de España y América Latina que buscan juegos difíciles online gratis, juegos con trampas, retos de reflejos y plataformas exigentes para navegador.
+
+El archivo llms.txt resume la estructura pública del sitio y no sustituye a robots.txt ni al sitemap. No garantiza visibilidad, ranking, citación o aparición en sistemas de búsqueda generativa.

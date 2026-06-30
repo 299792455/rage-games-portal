@@ -27,10 +27,11 @@
 - Etape 21 - Integration GA4 / Google Tag avec Google Consent Mode : terminee
 - Etape 22 - Architecture publicite : AdSlot + interstitial leger desactive par defaut : terminee
 - Etape 23 - SEO dynamique + donnees structurees Schema.org : terminee
+- Etape 24 - Sitemap / robots.txt / llms.txt / preparation visibilite IA : terminee
 
 ## Etape actuelle
 
-Etape 24 - Sitemap / robots.txt / llms.txt / preparation visibilite IA
+Etape 25 - Preparation production VPS
 
 ## Statut
 
@@ -38,40 +39,42 @@ En attente de demarrage
 
 ## Prochaine Etape Apres Validation Explicite
 
-Etape 25 - Preparation production VPS
+Etape 26 - Deploiement
 
 ## Objectif
 
-Preparer et implementer les fichiers de visibilite technique de la V1, incluant sitemap, robots.txt, llms.txt et preparation visibilite IA / LLM SEO / GEO, en utilisant uniquement les routes publiques, le catalogue reel et les donnees existantes validees.
+Preparer la configuration production cible pour le VPS Hostinger VM2, incluant les pre-requis serveur, variables d'environnement, strategie de build Next.js, processus Node.js, reverse proxy Nginx, HTTPS, logs et verification pre-deploiement, sans deployer le site ni modifier la configuration serveur.
 
 ## Autorise A Cette Etape
 
-- Analyser et proposer le plan technique du sitemap, robots.txt, llms.txt et de la preparation visibilite IA apres validation explicite de demarrage.
-- Implementer uniquement les fichiers de visibilite valides dans le perimetre de l'etape 24.
-- Utiliser les routes publiques existantes, les jeux reels, les categories existantes et les pages publiques validees.
-- Creer un sitemap coherent avec les routes indexables de la V1.
-- Creer un robots.txt coherent avec l'indexation souhaitee.
-- Creer llms.txt et eventuellement llms-full.txt uniquement si valide explicitement dans le plan de l'etape 24.
-- Maintenir une logique SEO en espagnol, sans multilingue ni hreflang.
+- Analyser et proposer le plan technique de preparation production VPS apres validation explicite de demarrage.
+- Auditer la configuration projet necessaire au build production.
+- Identifier les variables d'environnement requises sans creer de fichier secret versionne.
+- Preparer les recommandations pour Node.js, npm, process manager, Nginx, HTTPS et logs.
+- Proposer les commandes de preparation production a executer plus tard seulement apres validation explicite.
+- Verifier la compatibilite du projet avec un deploiement VPS sans commencer le deploiement.
 
 ## Interdit A Cette Etape
 
+- Deployer le site.
+- Modifier la configuration serveur reelle.
+- Lancer des commandes VPS ou SSH.
+- Installer des paquets serveur.
+- Modifier DNS, domaine, SSL ou Nginx reel.
+- Creer ou versionner un fichier contenant des secrets.
+- Hardcoder des variables d'environnement.
 - Modifier le catalogue ou les donnees jeux.
-- Renommer des slugs, routes ou URLs existantes.
-- Creer une nouvelle route SEO non prevue.
-- Inventer des pages, jeux, categories, notes, avis, donnees de popularite ou partenariats.
-- Modifier les metadata dynamiques ou les donnees structurees Schema.org sauf validation explicite.
 - Modifier GA4 / Google Tag.
 - Modifier l'architecture publicite.
 - Modifier les iframes providers.
 - Ajouter une publicite reelle.
 - Creer un backend.
 - Ajouter de l'authentification.
-- Commencer la preparation production VPS de l'etape 25.
-- Passer a l'etape 25 sans validation explicite.
+- Commencer l'etape 26.
+- Passer a l'etape 26 sans validation explicite.
 
 ## Regle De Passage
 
-Ne pas commencer l'etape 24 tant que son demarrage n'est pas valide explicitement.
+Ne pas commencer l'etape 25 tant que son demarrage n'est pas valide explicitement.
 
-Ne pas passer a l'etape 25 sans validation explicite de fin de l'etape 24.
+Ne pas passer a l'etape 26 sans validation explicite de fin de l'etape 25.

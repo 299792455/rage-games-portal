@@ -6,7 +6,7 @@ export const badges: Badge[] = [
   {
     name: "Primer juego jugado",
     slug: "primer-juego-jugado",
-    description: "Se desbloquea al lanzar el primer juego del portal.",
+    description: "Objetivo: lanzar tu primer juego del portal.",
     icon: "badge:first-play",
     condition: "play_count >= 1",
     createdAt: BADGE_DATE,
@@ -14,7 +14,7 @@ export const badges: Badge[] = [
   {
     name: "10 juegos jugados",
     slug: "10-juegos-jugados",
-    description: "Se desbloquea al jugar diez juegos distintos.",
+    description: "Objetivo: jugar diez juegos distintos.",
     icon: "badge:ten-games",
     condition: "distinct_games_played >= 10",
     createdAt: BADGE_DATE,
@@ -22,7 +22,7 @@ export const badges: Badge[] = [
   {
     name: "5 favoritos guardados",
     slug: "5-favoritos-guardados",
-    description: "Se desbloquea al guardar cinco juegos como favoritos locales.",
+    description: "Objetivo: guardar cinco juegos como favoritos.",
     icon: "badge:favorites",
     condition: "favorite_count >= 5",
     createdAt: BADGE_DATE,
@@ -30,7 +30,7 @@ export const badges: Badge[] = [
   {
     name: "Superviviente",
     slug: "superviviente",
-    description: "Se desbloquea tras superar un reto dificil sin abandonar.",
+    description: "Objetivo: superar un reto dificil sin abandonar.",
     icon: "badge:survivor",
     condition: "completed_hard_challenge >= 1",
     createdAt: BADGE_DATE,
@@ -38,7 +38,7 @@ export const badges: Badge[] = [
   {
     name: "Rey del retry",
     slug: "rey-del-retry",
-    description: "Se desbloquea al acumular muchos intentos en juegos de retry.",
+    description: "Objetivo: acumular muchos intentos en juegos de retry.",
     icon: "badge:retry-king",
     condition: "retry_attempts >= 50",
     createdAt: BADGE_DATE,
@@ -46,7 +46,7 @@ export const badges: Badge[] = [
   {
     name: "Sin rendirse",
     slug: "sin-rendirse",
-    description: "Se desbloquea al volver a jugar despues de varios fallos seguidos.",
+    description: "Objetivo: volver a jugar despues de varios fallos seguidos.",
     icon: "badge:no-surrender",
     condition: "consecutive_retries >= 10",
     createdAt: BADGE_DATE,
@@ -54,7 +54,7 @@ export const badges: Badge[] = [
   {
     name: "Fan de plataformas hardcore",
     slug: "fan-de-plataformas-hardcore",
-    description: "Se desbloquea al jugar varios retos de plataformas hardcore.",
+    description: "Objetivo: jugar varios retos de plataformas hardcore.",
     icon: "badge:hardcore-platforms",
     condition: "hardcore_platform_games_played >= 3",
     createdAt: BADGE_DATE,
@@ -62,7 +62,7 @@ export const badges: Badge[] = [
   {
     name: "Maestro de trampas",
     slug: "maestro-de-trampas",
-    description: "Se desbloquea al sobrevivir a juegos con trampas ocultas.",
+    description: "Objetivo: sobrevivir a juegos con trampas ocultas.",
     icon: "badge:trap-master",
     condition: "hidden_trap_games_played >= 3",
     createdAt: BADGE_DATE,
@@ -70,7 +70,7 @@ export const badges: Badge[] = [
   {
     name: "100 intentos",
     slug: "100-intentos",
-    description: "Se desbloquea al alcanzar cien intentos locales acumulados.",
+    description: "Objetivo: alcanzar cien intentos locales acumulados.",
     icon: "badge:hundred-attempts",
     condition: "total_attempts >= 100",
     createdAt: BADGE_DATE,
@@ -78,7 +78,7 @@ export const badges: Badge[] = [
   {
     name: "Primer juego imposible completado",
     slug: "primer-juego-imposible-completado",
-    description: "Se desbloquea al completar el primer reto de juegos imposibles.",
+    description: "Objetivo: completar tu primer reto de juegos imposibles.",
     icon: "badge:first-impossible",
     condition: "completed_impossible_games >= 1",
     createdAt: BADGE_DATE,

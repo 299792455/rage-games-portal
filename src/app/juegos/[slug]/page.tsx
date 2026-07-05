@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import {
   ContinuePlayingButton,
   FavoriteButton,
+  GameFullscreenButton,
   LocalScorePanel,
   RecentlyPlayedTracker,
 } from "@/components/features";
@@ -17,7 +18,7 @@ import {
   GameCard,
   RageLevel,
 } from "@/components/ui";
-import { badges, categories, games, leaderboardPlaceholders } from "@/data";
+import { categories, games, leaderboardPlaceholders } from "@/data";
 import {
   createGameMetadata,
   createMissingGameMetadata,
@@ -108,7 +109,7 @@ export default async function GamePage({ params }: GamePageProps) {
   const leaderboardEntries = leaderboardPlaceholders
     .filter((entry) => entry.gameId === game.slug)
     .sort((firstEntry, secondEntry) => firstEntry.rank - secondEntry.rank);
-  const badgePreview = badges.slice(0, 4);
+  const gameFrameWrapperId = `game-frame-${game.slug}`;
   const challengeTypes = [
     game.hasHiddenTraps ? "Trampas ocultas" : null,
     game.speedrunFriendly ? "Speedrun friendly" : null,
@@ -209,10 +210,14 @@ export default async function GamePage({ params }: GamePageProps) {
         <section className="container-page grid gap-6 py-6 xl:grid-cols-[1fr_320px]">
           <div className="space-y-6">
             <Card className="overflow-hidden" variant="panel">
-              <div className="relative aspect-video bg-[radial-gradient(circle_at_18%_20%,rgba(34,211,238,0.22),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(244,63,94,0.18),transparent_30%),linear-gradient(135deg,rgba(15,23,42,1),rgba(30,41,59,0.92))]">
+              <div
+                className="relative aspect-video bg-[radial-gradient(circle_at_18%_20%,rgba(34,211,238,0.22),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(244,63,94,0.18),transparent_30%),linear-gradient(135deg,rgba(15,23,42,1),rgba(30,41,59,0.92))]"
+                id={gameFrameWrapperId}
+              >
                 {game.embedUrl ? (
                   <iframe
                     allow="fullscreen; gamepad"
+                    allowFullScreen
                     className="h-full w-full border-0"
                     loading="lazy"
                     src={game.embedUrl}
@@ -240,13 +245,10 @@ export default async function GamePage({ params }: GamePageProps) {
                   className="flex-1"
                   gameSlug={game.slug}
                 />
-                <span
-                  aria-disabled="true"
-                  className="inline-flex min-h-12 flex-1 items-center justify-center rounded-[var(--radius-md)] border border-white/10 bg-white/5 px-5 text-sm font-bold text-slate-100"
-                  role="button"
-                >
-                  Fullscreen
-                </span>
+                <GameFullscreenButton
+                  className="flex-1"
+                  targetId={gameFrameWrapperId}
+                />
                 <FavoriteButton className="flex-1" gameSlug={game.slug} />
               </div>
             </Card>
@@ -293,7 +295,7 @@ export default async function GamePage({ params }: GamePageProps) {
                 <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
                   <span className="text-sm text-slate-400">Embed</span>
                   <span className="text-sm font-bold text-white">
-                    {game.embedUrl ? "Disponible" : "Pendiente"}
+                    {game.embedUrl ? "Disponible" : "No disponible"}
                   </span>
                 </div>
                 <div className="space-y-2">
@@ -321,10 +323,10 @@ export default async function GamePage({ params }: GamePageProps) {
             <div className="mb-5 flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                  Clasificacion demo
+                  Clasificacion global en preparacion
                 </p>
                 <h2 className="mt-2 text-2xl font-black text-white">
-                  Leaderboard anonimo
+                  Clasificación global
                 </h2>
               </div>
               <Link
@@ -361,8 +363,9 @@ export default async function GamePage({ params }: GamePageProps) {
               </div>
             ) : (
               <p className="rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-4 text-sm leading-6 text-slate-400">
-                Todavia no hay un ranking global publicado para este juego. Tus
-                datos locales no se envian a ningun leaderboard.
+                Esta clasificacion global esta en preparacion. No mostramos
+                puntuaciones ficticias ni mezclamos tu progreso local con un
+                ranking global.
               </p>
             )}
           </Card>
@@ -370,36 +373,18 @@ export default async function GamePage({ params }: GamePageProps) {
 
         <section className="container-page grid gap-6 py-10 lg:grid-cols-[1.1fr_0.9fr]">
           <Card className="p-6" variant="panel">
-            <div className="mb-6 space-y-2">
+            <div className="space-y-2">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Badges catalogo
+                Mis logros
               </p>
               <h2 className="text-3xl font-black text-white">
-                Retos locales preparados
+                Logros en preparación
               </h2>
               <p className="text-sm leading-6 text-slate-400">
-                Estos badges forman parte de la demostracion local. No hay
-                perfil, cuenta ni sincronizacion entre dispositivos.
+                Esta sección formará parte del progreso del jugador en una
+                próxima actualización. Por ahora, los logros no están conectados
+                a una cuenta ni a un sistema global.
               </p>
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-2">
-              {badgePreview.map((badge) => (
-                <div
-                  className="rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-4"
-                  key={badge.slug}
-                >
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-violet-200">
-                    {badge.icon}
-                  </p>
-                  <h3 className="mt-2 text-base font-black text-white">
-                    {badge.name}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-400">
-                    {badge.description}
-                  </p>
-                </div>
-              ))}
             </div>
           </Card>
 

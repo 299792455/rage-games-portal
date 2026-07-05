@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Footer, Header } from "@/components/layout";
 import { Card } from "@/components/ui";
 
-const contactEmail = "juegosdificiles@gmail.com";
+const contactEmail = "juegosdificilesportal@gmail.com";
 const contactHref = `mailto:${contactEmail}`;
 
 export const metadata: Metadata = {

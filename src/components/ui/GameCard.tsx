@@ -1,5 +1,7 @@
 import type { Game } from "@/types";
 
+import { FavoriteButton } from "@/components/features/FavoriteButton";
+
 import { DifficultyBadge } from "./DifficultyBadge";
 import { RageLevel } from "./RageLevel";
 
@@ -25,33 +27,35 @@ export function GameCard({
 
   return (
     <article className={classes}>
-      <a href={href ?? `/juegos/${game.slug}`} className="block focus-ring">
-        <div className="relative aspect-[16/10] overflow-hidden bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.28),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(168,85,247,0.24),transparent_32%),linear-gradient(135deg,rgba(15,23,42,1),rgba(76,5,25,0.8))]">
-          {game.thumbnail.kind === "provider-image" ? (
-            <img
-              alt={game.thumbnail.alt}
-              className="absolute inset-0 h-full w-full object-cover"
-              loading="lazy"
-              src={game.thumbnail.src}
-            />
-          ) : null}
-          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-slate-950/90 to-transparent" />
-          {game.thumbnail.kind !== "provider-image" ? (
-            <div className="absolute left-4 top-4 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-cyan-100">
-              {game.thumbnail.src}
-            </div>
-          ) : null}
-          {showFavoriteAction ? (
-            <span
-              aria-label="Favorito local pendiente"
-              className="absolute right-3 top-3 h-9 w-9 rounded-full border border-white/15 bg-black/35 text-sm font-bold text-white/80"
-              role="img"
-            >
-              +
-            </span>
-          ) : null}
-        </div>
+      <div className="relative">
+        <a href={href ?? `/juegos/${game.slug}`} className="block focus-ring">
+          <div className="relative aspect-[16/10] overflow-hidden bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.28),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(168,85,247,0.24),transparent_32%),linear-gradient(135deg,rgba(15,23,42,1),rgba(76,5,25,0.8))]">
+            {game.thumbnail.kind === "provider-image" ? (
+              <img
+                alt={game.thumbnail.alt}
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+                src={game.thumbnail.src}
+              />
+            ) : null}
+            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-slate-950/90 to-transparent" />
+            {game.thumbnail.kind !== "provider-image" ? (
+              <div className="absolute left-4 top-4 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-cyan-100">
+                {game.thumbnail.src}
+              </div>
+            ) : null}
+          </div>
+        </a>
+        {showFavoriteAction ? (
+          <FavoriteButton
+            className="absolute right-3 top-3 z-10"
+            compact
+            gameSlug={game.slug}
+          />
+        ) : null}
+      </div>
 
+      <a href={href ?? `/juegos/${game.slug}`} className="block focus-ring">
         <div className="space-y-4 p-4">
           <div className="space-y-2">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-200">

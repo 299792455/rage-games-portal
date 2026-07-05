@@ -3,7 +3,7 @@
 import { Footer, Header } from "@/components/layout";
 import { Card } from "@/components/ui";
 
-const contactEmail = "juegosdificiles@gmail.com";
+const contactEmail = "juegosdificilesportal@gmail.com";
 const contactHref = `mailto:${contactEmail}`;
 
 export const metadata: Metadata = {
@@ -75,7 +75,7 @@ const sections = [
     paragraphs: [
       "Cuando sea aplicable, puedes solicitar información sobre los datos personales que podamos tratar sobre ti.",
       "También puedes solicitar acceso, rectificación, supresión, oposición, limitación del tratamiento o portabilidad cuando corresponda.",
-      "Para ejercer estos derechos o realizar una consulta relacionada con privacidad, puedes escribir a juegosdificiles@gmail.com.",
+      "Para ejercer estos derechos o realizar una consulta relacionada con privacidad, puedes escribir a juegosdificilesportal@gmail.com.",
       "Podemos necesitar información adicional para verificar la solicitud si resulta necesario.",
     ],
   },

@@ -52,14 +52,15 @@ export default async function LeaderboardGamePage({
           <div className="grid gap-6 lg:grid-cols-[1fr_360px] lg:items-end">
             <div className="max-w-4xl space-y-5">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Clasificacion demo
+                Clasificacion global en preparacion
               </p>
               <h1 className="text-5xl font-black leading-[0.95] text-white md:text-6xl">
                 {game.title}
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                Leaderboard anonimo de demostracion. No usa scores locales, no
-                pertenece a usuarios reales y no envia datos a ningun servidor.
+                Esta clasificacion global esta en preparacion. Los resultados
+                locales se mantienen en este navegador y no se mezclan con un
+                ranking global.
               </p>
             </div>
 
@@ -80,10 +81,10 @@ export default async function LeaderboardGamePage({
           <Card className="overflow-hidden" variant="panel">
             <div className="border-b border-white/10 p-6">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet-200">
-                Ranking anonimo
+                Clasificacion global
               </p>
               <h2 className="mt-2 text-3xl font-black text-white">
-                Entradas placeholder
+                Entradas preparadas
               </h2>
             </div>
 
@@ -143,9 +144,9 @@ export default async function LeaderboardGamePage({
                   Sin relacion con scores locales
                 </h2>
                 <p className="text-sm leading-6 text-slate-400">
-                  Este ranking no lee localStorage, no usa MongoDB y no muestra
-                  resultados reales de jugadores. Es una vista placeholder para
-                  preparar la experiencia de clasificaciones.
+                  Esta vista no lee localStorage, no usa MongoDB y no publica
+                  resultados reales de jugadores. En una proxima actualizacion,
+                  queremos ampliar el sistema con cuentas y rankings globales.
                 </p>
                 <Link
                   className="inline-flex min-h-10 items-center justify-center rounded-[var(--radius-md)] border border-white/10 bg-white/5 px-4 text-sm font-bold text-slate-100 transition hover:border-cyan-300/40 hover:bg-cyan-300/10 focus-ring"

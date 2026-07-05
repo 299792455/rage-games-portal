@@ -56,12 +56,10 @@ const newGames = [...games]
       new Date(secondGame.createdAt).getTime() -
       new Date(firstGame.createdAt).getTime(),
   )
-  .slice(0, 4);
+  .slice(0, 3);
 const leaderboardPreview = leaderboardPlaceholders.slice(0, 5);
 const badgePreview = badges.slice(0, 6);
-const featuredGame =
-  games.find((game) => game.slug === "rage-maze-troll-hardest-platformer") ??
-  games[0];
+const featuredGame = games.find((game) => game.slug === "pixel-path") ?? games[0];
 
 const gameSections = [
   {
@@ -200,67 +198,76 @@ export default function Home() {
             </div>
           </div>
 
-          <Card className="relative overflow-hidden p-6" variant="glass">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(34,211,238,0.18),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(244,63,94,0.18),transparent_28%)]" />
-            <div className="relative space-y-6">
-              <div className="flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
-                    Reto destacado
-                  </p>
-                  <h2 className="mt-2 text-2xl font-black text-white">
-                    {featuredGame.title}
-                  </h2>
+          <Link
+            aria-label={`Jugar a ${featuredGame.title}`}
+            className="group block rounded-[var(--radius-lg)] focus-ring"
+            href={`/juegos/${featuredGame.slug}`}
+          >
+            <Card
+              className="relative overflow-hidden p-6 transition group-hover:border-cyan-300/40 group-hover:bg-white/[0.08]"
+              variant="glass"
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(34,211,238,0.18),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(244,63,94,0.18),transparent_28%)]" />
+              <div className="relative space-y-6">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
+                      Reto destacado
+                    </p>
+                    <h2 className="mt-2 text-2xl font-black text-white">
+                      {featuredGame.title}
+                    </h2>
+                  </div>
+                  <DifficultyBadge level={featuredGame.difficultyLevel} />
                 </div>
-                <DifficultyBadge level={featuredGame.difficultyLevel} />
-              </div>
 
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] border border-white/10 bg-[linear-gradient(135deg,rgba(14,165,233,0.18),rgba(168,85,247,0.18),rgba(244,63,94,0.18))]">
-                {featuredGame.thumbnail.kind === "provider-image" ? (
-                  <img
-                    alt={featuredGame.thumbnail.alt}
-                    className="h-full w-full object-cover"
-                    src={featuredGame.thumbnail.src}
-                  />
-                ) : (
-                  <>
-                    <div className="absolute left-6 top-6 h-16 w-24 rounded border border-cyan-300/40 bg-cyan-300/15" />
-                    <div className="absolute bottom-10 left-10 h-4 w-36 rounded-full bg-rose-400/70 shadow-[0_0_24px_rgba(251,113,133,0.45)]" />
-                    <div className="absolute bottom-20 right-8 h-28 w-4 rounded-full bg-violet-300/70 shadow-[0_0_24px_rgba(168,85,247,0.45)]" />
-                    <div className="absolute inset-x-6 bottom-6 flex items-end justify-between">
-                      <span className="h-10 w-10 rounded border border-white/20 bg-white/10" />
-                      <span className="h-16 w-16 rounded border border-cyan-300/30 bg-cyan-300/10" />
-                      <span className="h-8 w-24 rounded border border-rose-300/30 bg-rose-400/10" />
-                    </div>
-                  </>
-                )}
-              </div>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] border border-white/10 bg-[linear-gradient(135deg,rgba(14,165,233,0.18),rgba(168,85,247,0.18),rgba(244,63,94,0.18))]">
+                  {featuredGame.thumbnail.kind === "provider-image" ? (
+                    <img
+                      alt={featuredGame.thumbnail.alt}
+                      className="h-full w-full object-cover"
+                      src={featuredGame.thumbnail.src}
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute left-6 top-6 h-16 w-24 rounded border border-cyan-300/40 bg-cyan-300/15" />
+                      <div className="absolute bottom-10 left-10 h-4 w-36 rounded-full bg-rose-400/70 shadow-[0_0_24px_rgba(251,113,133,0.45)]" />
+                      <div className="absolute bottom-20 right-8 h-28 w-4 rounded-full bg-violet-300/70 shadow-[0_0_24px_rgba(168,85,247,0.45)]" />
+                      <div className="absolute inset-x-6 bottom-6 flex items-end justify-between">
+                        <span className="h-10 w-10 rounded border border-white/20 bg-white/10" />
+                        <span className="h-16 w-16 rounded border border-cyan-300/30 bg-cyan-300/10" />
+                        <span className="h-8 w-24 rounded border border-rose-300/30 bg-rose-400/10" />
+                      </div>
+                    </>
+                  )}
+                </div>
 
-              <p className="text-sm leading-6 text-slate-300">
-                {featuredGame.description}
-              </p>
+                <p className="text-sm leading-6 text-slate-300">
+                  {featuredGame.description}
+                </p>
 
-              <div className="flex flex-wrap gap-2">
-                {featuredGame.tags.slice(0, 4).map((tag) => (
-                  <span
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-slate-300"
-                    key={tag}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+                <div className="flex flex-wrap gap-2">
+                  {featuredGame.tags.slice(0, 4).map((tag) => (
+                    <span
+                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-slate-300"
+                      key={tag}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
-              <div className="flex items-center justify-between border-t border-white/10 pt-4">
-                <RageLevel level={featuredGame.rageLevel} />
-                {featuredGame.playCount > 0 ? (
-                  <span className="text-sm font-bold text-slate-300">
-                    {featuredGame.playCount.toLocaleString("es-ES")} jugadas
-                  </span>
-                ) : null}
+                <div className="flex items-center justify-between border-t border-white/10 pt-4">
+                  <RageLevel level={featuredGame.rageLevel} />
+                  {featuredGame.playCount > 0 ? (
+                    <span className="text-sm font-bold text-slate-300">
+                      {featuredGame.playCount.toLocaleString("es-ES")} jugadas
+                    </span>
+                  ) : null}
+                </div>
               </div>
-            </div>
-          </Card>
+            </Card>
+          </Link>
         </section>
 
         <section className="container-page space-y-6 py-8">
@@ -312,6 +319,32 @@ export default function Home() {
           </div>
 
           <ContinuePlayingGrid games={games} />
+        </section>
+
+        <section className="container-page space-y-6 py-10">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl space-y-2">
+              <h2 className="text-3xl font-black text-white">
+                Últimos juegos añadidos
+              </h2>
+              <p className="text-sm leading-6 text-slate-400">
+                Las incorporaciones mas recientes del catalogo real, listas
+                para jugar directamente en el navegador.
+              </p>
+            </div>
+            <a
+              className="text-sm font-bold text-cyan-100 hover:text-cyan-200 focus-ring"
+              href="/nuevos"
+            >
+              Ver novedades
+            </a>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {newGames.map((game) => (
+              <GameCard game={game} key={game.slug} />
+            ))}
+          </div>
         </section>
 
         {gameSections.map((section) => (
@@ -381,30 +414,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="container-page space-y-6 py-10">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-2xl space-y-2">
-              <h2 className="text-3xl font-black text-white">Nuevos juegos</h2>
-              <p className="text-sm leading-6 text-slate-400">
-                Las incorporaciones mas recientes del catalogo real, listas
-                para jugar directamente en el navegador.
-              </p>
-            </div>
-            <a
-              className="text-sm font-bold text-cyan-100 hover:text-cyan-200 focus-ring"
-              href="/nuevos"
-            >
-              Ver novedades
-            </a>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {newGames.map((game) => (
-              <GameCard game={game} key={game.slug} />
-            ))}
-          </div>
-        </section>
-
         <section className="container-page py-10">
           <Card className="p-6" variant="panel">
             <div className="mb-5 flex items-center justify-between gap-4">
@@ -469,8 +478,8 @@ export default function Home() {
                 Recompensas ligeras, sin cuenta
               </h2>
               <p className="max-w-2xl text-sm leading-6 text-slate-400">
-                Catalogo de badges de demostracion para progreso local en el
-                navegador. No hay perfil, usuario ni sincronizacion.
+                Catalogo de badges locales para seguir objetivos personales en
+                este navegador. No hay perfil, usuario ni sincronizacion.
               </p>
             </div>
 

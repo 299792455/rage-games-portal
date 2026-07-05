@@ -3,6 +3,7 @@ export { ContinuePlayingButton } from "./ContinuePlayingButton";
 export { ContinuePlayingGrid } from "./ContinuePlayingGrid";
 export { FavoriteButton } from "./FavoriteButton";
 export { FavoritesGrid } from "./FavoritesGrid";
+export { GameFullscreenButton } from "./GameFullscreenButton";
 export { GoogleAnalytics } from "./GoogleAnalytics";
 export { LocalBadgesPanel } from "./LocalBadgesPanel";
 export { LocalScorePanel } from "./LocalScorePanel";

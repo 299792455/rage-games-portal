@@ -42,12 +42,12 @@ const helpArticles = [
   {
     title: "Badges",
     slug: "badges",
-    description: "Consulta como funcionan los badges locales de demostracion.",
+    description: "Consulta como funcionan los badges locales y objetivos personales.",
   },
   {
     title: "Anuncios",
     slug: "anuncios",
-    description: "Entiende los espacios publicitarios placeholder.",
+    description: "Entiende los espacios publicitarios preparados y desactivados por defecto.",
   },
   {
     title: "Privacidad",
@@ -83,8 +83,8 @@ export default function HelpPage() {
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
                 Respuestas cortas sobre juegos dificiles, favoritos locales,
-                clasificaciones demo, badges y controles. Todo pensado para la
-                V1 sin registro.
+                clasificaciones en preparacion, badges y controles. Todo
+                pensado para la V1 sin registro.
               </p>
             </div>
 

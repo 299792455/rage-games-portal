@@ -129,22 +129,22 @@ const helpArticles: HelpArticle[] = [
   {
     title: "Badges",
     slug: "badges",
-    summary: "Los badges locales son ligeros y de demostracion.",
+    summary: "Los badges locales ayudan a seguir objetivos personales.",
     sections: [
       {
-        title: "Demo local",
-        body: "Los desbloqueos de badges se guardan en localStorage con badgeSlug y unlockedAt.",
+        title: "Progreso local",
+        body: "Los badges se guardan en localStorage con badgeSlug y unlockedAt. Por ahora puedes marcarlos manualmente para seguir tu progreso personal.",
       },
       {
         title: "Sin cuenta",
-        body: "No hay UserBadge, perfil publico ni sincronizacion en V1.",
+        body: "No hay perfil publico ni sincronizacion en V1. En una proxima actualizacion, el sistema evolucionara con cuentas, progreso automatico, badges desbloqueables y rankings globales.",
       },
     ],
   },
   {
     title: "Anuncios",
     slug: "anuncios",
-    summary: "Los espacios de anuncios son placeholders al inicio.",
+    summary: "Los espacios publicitarios estan preparados y desactivados por defecto.",
     sections: [
       {
         title: "Sin publicidad real",
@@ -163,7 +163,7 @@ const helpArticles: HelpArticle[] = [
     sections: [
       {
         title: "Datos locales",
-        body: "Favoritos, recientes, continuar jugando, scores demo y badges locales se guardan en el navegador.",
+        body: "Favoritos, recientes, continuar jugando, progreso local y badges locales se guardan en el navegador.",
       },
       {
         title: "Sin cuenta",
@@ -189,15 +189,15 @@ const helpArticles: HelpArticle[] = [
   {
     title: "Contacto",
     slug: "contacto",
-    summary: "El contacto real se tratara sin formulario funcional en esta etapa.",
+    summary: "El contacto del sitio se gestiona desde la pagina publica de contacto.",
     sections: [
       {
         title: "Sin formulario",
-        body: "Esta etapa no incluye envio de mensajes ni llamadas a servidor.",
+        body: "Por ahora no hay formulario activo en el sitio. Puedes usar el email indicado en la pagina de contacto.",
       },
       {
-        title: "Pagina futura",
-        body: "La pagina de contacto publica se creara en su etapa validada, sin inventar datos de empresa.",
+        title: "Contacto directo",
+        body: "Usa la pagina de contacto para reportar problemas, sugerir juegos o enviar propuestas relacionadas con el sitio.",
       },
     ],
   },

@@ -163,8 +163,10 @@ export default function LeaderboardsPage() {
                   Todavia no hay rankings publicados
                 </h2>
                 <p className="text-sm leading-6 text-slate-400">
-                  No mostramos scores ficticios ni mezclamos tus resultados
-                  locales con una clasificacion global.
+                  No mostramos puntuaciones ficticias ni mezclamos tus
+                  resultados locales con una clasificacion global. Estamos
+                  preparando una funcionalidad de rankings globales para
+                  comparar resultados con otros jugadores mas adelante.
                 </p>
                 <Link
                   className="mt-2 inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] border border-cyan-300/40 bg-cyan-300 px-5 text-sm font-black text-slate-950 shadow-[var(--glow-cyan)] transition hover:bg-cyan-200 focus-ring"

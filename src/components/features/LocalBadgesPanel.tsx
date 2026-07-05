@@ -58,8 +58,10 @@ export function LocalBadgesPanel({ badges }: LocalBadgesPanelProps) {
               {unlockedCount} / {badges.length} badges desbloqueados
             </h2>
             <p className="text-sm leading-6 text-slate-400">
-              Estos desbloqueos son manuales, locales y de demostracion. No se
-              conectan con scores, intentos, favoritos, leaderboards ni cuentas.
+              Estos badges se guardan solo en este navegador por ahora. Puedes
+              marcarlos manualmente para seguir tu progreso personal. En una
+              proxima actualizacion, el sistema evolucionara con cuentas,
+              progreso automatico, badges desbloqueables y rankings globales.
             </p>
           </div>
           <Button
@@ -108,10 +110,10 @@ export function LocalBadgesPanel({ badges }: LocalBadgesPanelProps) {
 
                   <div className="rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-3">
                     <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
-                      Condicion catalogo
+                      Seguimiento actual
                     </p>
                     <p className="mt-1 text-sm font-semibold text-slate-300">
-                      {badge.condition}
+                      Marcado manual en este navegador.
                     </p>
                   </div>
 
@@ -121,7 +123,7 @@ export function LocalBadgesPanel({ badges }: LocalBadgesPanelProps) {
                     </p>
                   ) : (
                     <p className="text-sm leading-6 text-slate-500">
-                      No hay desbloqueo automatico en esta etapa.
+                      No hay desbloqueo automatico por acciones de juego todavia.
                     </p>
                   )}
                 </div>
@@ -129,7 +131,7 @@ export function LocalBadgesPanel({ badges }: LocalBadgesPanelProps) {
                 <div className="mt-auto">
                   {isUnlocked ? (
                     <Button className="w-full" disabled variant="ghost">
-                      Desbloqueado demo local
+                      Marcado como conseguido
                     </Button>
                   ) : (
                     <Button
@@ -137,7 +139,7 @@ export function LocalBadgesPanel({ badges }: LocalBadgesPanelProps) {
                       onClick={() => unlockDemoLocalBadge(badge.slug)}
                       variant="secondary"
                     >
-                      Desbloquear demo local
+                      Marcar como conseguido
                     </Button>
                   )}
                 </div>

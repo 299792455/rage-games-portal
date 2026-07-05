@@ -53,10 +53,10 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-slate-950/80">
       <div className="container-page grid gap-8 py-10 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div className="space-y-3">
-          <p className="text-lg font-black text-white">Rage Games Portal</p>
+          <p className="text-lg font-black text-white">JuegosDificiles.com</p>
           <p className="max-w-sm text-sm leading-6 text-slate-400">
-            Juegos dificiles, rage games y retos de retry para jugar gratis en
-            el navegador.
+            Juegos difíciles online gratis para jugar en el navegador, sin
+            descargar.
           </p>
         </div>
 

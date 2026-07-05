@@ -2,7 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import {
-  ContinuePlayingButton,
   FavoriteButton,
   GameFullscreenButton,
   LocalScorePanel,
@@ -241,10 +240,6 @@ export default async function GamePage({ params }: GamePageProps) {
               </div>
 
               <div className="flex flex-col gap-3 border-t border-white/10 p-4 sm:flex-row">
-                <ContinuePlayingButton
-                  className="flex-1"
-                  gameSlug={game.slug}
-                />
                 <GameFullscreenButton
                   className="flex-1"
                   targetId={gameFrameWrapperId}

@@ -70,8 +70,8 @@ export function ContinuePlayingGrid({ games }: ContinuePlayingGridProps) {
             Tus partidas guardadas aparecerán aquí
           </h2>
           <p className="text-sm leading-6 text-slate-400">
-            Pulsa Play en una página de juego para guardar ese reto localmente.
-            Solo se almacenan slug, startedAt y updatedAt en este navegador.
+            Abre la página de un juego para guardarlo en esta lista local. Solo
+            se almacenan slug, startedAt y updatedAt en este navegador.
           </p>
           <Link
             className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] border border-cyan-300/40 bg-cyan-300 px-4 text-sm font-black text-slate-950 shadow-[var(--glow-cyan)] transition hover:bg-cyan-200 focus-ring"

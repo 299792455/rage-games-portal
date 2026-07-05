@@ -9,7 +9,7 @@ const contactHref = `mailto:${contactEmail}`;
 export const metadata: Metadata = {
   title: "Política de privacidad | JuegosDificiles.com",
   description:
-    "Consulta la política de privacidad de JuegosDificiles.com y cómo se tratan los datos relacionados con el contacto, la navegación, los juegos integrados, analytics, publicidad y cookies.",
+    "Consulta la política de privacidad de JuegosDificiles.com y cómo se tratan los datos relacionados con el contacto, la navegación, los juegos integrados, analítica, publicidad y cookies.",
 };
 
 const dataTypes = [
@@ -50,7 +50,7 @@ const sections = [
     paragraphs: [
       "JuegosDificiles.com puede utilizar Google Analytics 4 / Google Tag para comprender el uso global del sitio cuando esa integración esté activa.",
       "Estos datos pueden ayudarnos a saber qué páginas se visitan, qué juegos reciben más atención, qué errores pueden aparecer y cómo mejorar la experiencia general.",
-      "El analytics se configurará de forma proporcional y, cuando sea necesario, se gestionará de acuerdo con las preferencias de consentimiento del usuario mediante una configuración compatible con Google Consent Mode.",
+      "La analítica se configurará de forma proporcional y, cuando sea necesario, se gestionará de acuerdo con las preferencias de consentimiento del usuario mediante una configuración compatible con Google Consent Mode.",
       "La configuración concreta de la herramienta de analítica podrá variar según la solución técnica utilizada por el sitio.",
     ],
   },
@@ -90,7 +90,7 @@ const sections = [
   {
     title: "Cambios en esta política",
     paragraphs: [
-      "Esta política de privacidad puede actualizarse si el sitio evoluciona, si se incorporan nuevas funciones, si cambian los proveedores externos o si se activan herramientas como analytics, publicidad o sistemas de consentimiento.",
+      "Esta política de privacidad puede actualizarse si el sitio evoluciona, si se incorporan nuevas funciones, si cambian los proveedores externos o si se activan herramientas como analítica, publicidad o sistemas de consentimiento.",
       "La versión publicada en esta página será la referencia vigente en cada momento.",
     ],
   },
@@ -176,7 +176,7 @@ export default function PrivacyPage() {
                 <p className="text-base leading-8 text-slate-300">
                   El sitio puede generar datos relacionados con el uso de sus
                   funciones locales, como favoritos, juegos recientes, continuar
-                  jugando, scores locales o badges locales. Cuando estas
+                  jugando, resultados locales o logros locales. Cuando estas
                   funciones se guardan en el navegador, permanecen en el
                   dispositivo del usuario y no implican necesariamente el envío
                   de esos datos a nuestros servidores.

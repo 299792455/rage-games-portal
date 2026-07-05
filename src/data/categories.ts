@@ -29,7 +29,7 @@ export const categories: Category[] = [
     name: "Die & Retry",
     slug: "die-and-retry",
     description:
-      "Desafios de aprendizaje rapido donde cada intento revela una trampa nueva.",
+      "Desafíos de aprendizaje rápido donde cada intento revela una trampa nueva.",
     icon: "retry",
     order: 3,
     language: "es",
@@ -40,7 +40,7 @@ export const categories: Category[] = [
     name: "Plataformas hardcore",
     slug: "plataformas-hardcore",
     description:
-      "Plataformas exigentes con timing estricto, rutas estrechas y precision constante.",
+      "Plataformas exigentes con timing estricto, rutas estrechas y precisión constante.",
     icon: "platforms",
     order: 4,
     language: "es",
@@ -62,7 +62,7 @@ export const categories: Category[] = [
     name: "One Touch",
     slug: "one-touch",
     description:
-      "Retos de un solo toque con decisiones rapidas, ritmo directo y mucho riesgo.",
+      "Retos de un solo toque con decisiones rápidas, ritmo directo y mucho riesgo.",
     icon: "one-touch",
     order: 6,
     language: "es",
@@ -84,7 +84,7 @@ export const categories: Category[] = [
     name: "Speedrun",
     slug: "speedrun",
     description:
-      "Retos rapidos para optimizar rutas, recortar errores y repetir hasta clavar el tiempo.",
+      "Retos rápidos para optimizar rutas, recortar errores y repetir hasta clavar el tiempo.",
     icon: "speedrun",
     order: 8,
     language: "es",

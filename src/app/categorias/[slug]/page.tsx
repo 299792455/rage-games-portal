@@ -29,27 +29,27 @@ type CategoryPageProps = {
 };
 
 const sortLabels = ["Popularidad", "Novedad", "Nota", "Dificultad"];
-const difficultyFilters = ["Dificil", "Extremo", "Imposible"];
+const difficultyFilters = ["Difícil", "Extremo", "Imposible"];
 const deviceFilters = ["Mobile OK", "Desktop recomendado"];
 const inputFilters = ["Teclado", "Mouse", "Tactil", "One touch"];
 
 const editorialNotes: Record<string, string> = {
   "juegos-imposibles":
-    "Los juegos imposibles concentran saltos de precision, trampas duras y rutas con margen minimo. Son retos para repetir mucho, leer cada detalle y celebrar pequenos avances.",
+    "Los juegos imposibles concentran saltos de precisión, trampas duras y rutas con margen mínimo. Son retos para repetir mucho, leer cada detalle y celebrar pequeños avances.",
   "rage-games":
-    "Los rage games buscan tension, caidas largas y errores memorables. La clave esta en volver a intentarlo sin que la frustracion rompa el ritmo de juego.",
+    "Los rage games buscan tensión, caídas largas y errores memorables. La clave está en volver a intentarlo sin que la frustración rompa el ritmo de juego.",
   "die-and-retry":
-    "Los juegos die & retry ensenan sus reglas a base de fallos. Cada intento revela un patron, una trampa o una decision mejor para avanzar.",
+    "Los juegos die & retry enseñan sus reglas a base de fallos. Cada intento revela un patrón, una trampa o una decisión mejor para avanzar.",
   "plataformas-hardcore":
-    "Las plataformas hardcore dependen del timing, el control y la precision constante. Un salto tarde o un aterrizaje corto pueden reiniciar toda la ruta.",
+    "Las plataformas hardcore dependen del timing, el control y la precisión constante. Un salto tarde o un aterrizaje corto pueden reiniciar toda la ruta.",
   "juegos-con-trampas":
-    "Los juegos con trampas mezclan reglas falsas, sorpresas ocultas y memoria. No basta con reaccionar: hay que aprender donde el escenario miente.",
+    "Los juegos con trampas mezclan reglas falsas, sorpresas ocultas y memoria. No basta con reaccionar: hay que aprender dónde el escenario miente.",
   "one-touch":
-    "Los retos one touch reducen los controles al minimo y suben la presion. Cada toque importa, especialmente en partidas cortas y rapidas.",
+    "Los retos one touch reducen los controles al mínimo y suben la presión. Cada toque importa, especialmente en partidas cortas y rápidas.",
   reflejos:
-    "Los juegos de reflejos exigen lectura inmediata de patrones, obstaculos veloces y decisiones en segundos. Ideales para retos breves pero intensos.",
+    "Los juegos de reflejos exigen lectura inmediata de patrones, obstáculos veloces y decisiones en segundos. Ideales para retos breves pero intensos.",
   speedrun:
-    "Los juegos speedrun premian repetir, optimizar rutas y bajar tiempos. El objetivo no es solo llegar: es llegar mejor, mas rapido y con menos errores.",
+    "Los juegos speedrun premian repetir, optimizar rutas y bajar tiempos. El objetivo no es solo llegar: es llegar mejor, más rápido y con menos errores.",
 };
 
 export function generateStaticParams() {
@@ -135,7 +135,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 className="text-sm font-bold text-cyan-100 hover:text-cyan-200 focus-ring"
                 href="/categorias"
               >
-                Todas las categorias
+                Todas las categorías
               </Link>
               <div className="space-y-4">
                 <p className="inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-cyan-100">
@@ -241,7 +241,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               </div>
 
               <p className="mt-5 border-t border-white/10 pt-4 text-xs leading-5 text-slate-500">
-                Filtros visuales preparados para la etapa de busqueda y filtros.
+                Filtros visuales preparados para la etapa de búsqueda y filtros.
               </p>
             </Card>
 
@@ -287,7 +287,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               Destacados en {category.name}
             </h2>
             <p className="text-sm leading-6 text-slate-400">
-              Una seleccion de juegos disponibles dentro de esta categoria.
+              Una selección de juegos disponibles dentro de esta categoría.
             </p>
           </div>
 
@@ -302,17 +302,17 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           <Card className="p-6" variant="glass">
             <div className="space-y-3">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Guia de categoria
+                Guía de categoría
               </p>
               <h2 className="text-3xl font-black text-white">
-                Como jugar {category.name.toLowerCase()}
+                Cómo jugar {category.name.toLowerCase()}
               </h2>
               <p className="text-sm leading-6 text-slate-400">
                 {editorialNotes[category.slug]}
               </p>
               <p className="text-sm leading-6 text-slate-400">
-                Todos los juegos de esta pagina forman parte del catalogo real
-                integrado. La seleccion mantiene criterios editoriales de
+                Todos los juegos de esta página forman parte del catálogo real
+                integrado. La selección mantiene criterios editoriales de
                 dificultad, controles, trampas y ritmo de retry.
               </p>
             </div>
@@ -321,7 +321,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           <Card className="p-6" variant="panel">
             <div className="space-y-4">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet-200">
-                Categorias cercanas
+                Categorías cercanas
               </p>
               <div className="flex flex-wrap gap-3">
                 {relatedCategories.map((relatedCategory) => (

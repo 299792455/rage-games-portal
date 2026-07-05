@@ -55,13 +55,13 @@ export function LocalBadgesPanel({ badges }: LocalBadgesPanelProps) {
               Progreso local
             </p>
             <h2 className="text-3xl font-black text-white">
-              {unlockedCount} / {badges.length} badges desbloqueados
+              {unlockedCount} / {badges.length} logros desbloqueados
             </h2>
             <p className="text-sm leading-6 text-slate-400">
-              Estos badges se guardan solo en este navegador por ahora. Puedes
+              Estos logros se guardan solo en este navegador por ahora. Puedes
               marcarlos manualmente para seguir tu progreso personal. En una
-              proxima actualizacion, el sistema evolucionara con cuentas,
-              progreso automatico, badges desbloqueables y rankings globales.
+              próxima actualización, el sistema evolucionará con cuentas,
+              progreso automático, logros desbloqueables y rankings globales.
             </p>
           </div>
           <Button
@@ -69,7 +69,7 @@ export function LocalBadgesPanel({ badges }: LocalBadgesPanelProps) {
             onClick={resetLocalBadges}
             variant="danger"
           >
-            Reiniciar badges locales
+            Reiniciar logros locales
           </Button>
         </div>
       </Card>
@@ -123,7 +123,7 @@ export function LocalBadgesPanel({ badges }: LocalBadgesPanelProps) {
                     </p>
                   ) : (
                     <p className="text-sm leading-6 text-slate-500">
-                      No hay desbloqueo automatico por acciones de juego todavia.
+                      No hay desbloqueo automático por acciones de juego todavía.
                     </p>
                   )}
                 </div>

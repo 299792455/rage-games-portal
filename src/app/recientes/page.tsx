@@ -19,7 +19,7 @@ export default function RecentlyPlayedPage() {
                 Juegos que ya abriste en este navegador
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                Vuelve rapido a los retos que acabas de probar. Este historial
+                Vuelve rápido a los retos que acabas de probar. Este historial
                 es local, limitado a 12 juegos y no usa cuenta de usuario.
               </p>
             </div>
@@ -29,8 +29,8 @@ export default function RecentlyPlayedPage() {
                 Historial local
               </p>
               <p className="mt-3 text-sm leading-6 text-slate-400">
-                Se guardan unicamente el slug del juego y la fecha local de la
-                visita. No hay userId, email, perfil ni sincronizacion.
+                Se guardan únicamente el slug del juego y la fecha local de la
+                visita. No hay userId, email, perfil ni sincronización.
               </p>
             </Card>
           </div>

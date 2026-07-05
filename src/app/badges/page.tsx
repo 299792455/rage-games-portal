@@ -17,18 +17,18 @@ export default function BadgesPage() {
                 Mis logros
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                Esta seccion formara parte del progreso del jugador en una
-                proxima actualizacion. Por ahora, los logros no estan
+                Esta sección formará parte del progreso del jugador en una
+                próxima actualización. Por ahora, los logros no están
                 conectados a una cuenta ni a un sistema global.
               </p>
             </div>
 
             <Card className="p-5" variant="glass">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet-200">
-                Proxima actualizacion
+                Próxima actualización
               </p>
               <p className="mt-3 text-sm leading-6 text-slate-400">
-                Queremos ampliar esta seccion con cuentas, progreso automatico,
+                Queremos ampliar esta sección con cuentas, progreso automático,
                 logros desbloqueables y rankings globales, sin prometer una
                 fecha concreta.
               </p>
@@ -38,15 +38,15 @@ export default function BadgesPage() {
           <Card className="p-6" variant="panel">
             <div className="space-y-3">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Todavia no hay logros activos
+                Todavía no hay logros activos
               </p>
               <h2 className="text-3xl font-black text-white">
                 Sigue jugando mientras preparamos el sistema
               </h2>
               <p className="text-sm leading-6 text-slate-400">
                 Los favoritos, recientes y progreso local siguen funcionando en
-                este navegador. Los logros publicos y sincronizados llegaran
-                cuando exista una base tecnica adecuada para cuentas y progreso
+                este navegador. Los logros públicos y sincronizados llegarán
+                cuando exista una base técnica adecuada para cuentas y progreso
                 persistente.
               </p>
             </div>

@@ -13,7 +13,7 @@ type HeaderProps = {
 
 const defaultNavItems: HeaderNavItem[] = [
   { label: "Juegos", href: "/juegos" },
-  { label: "Categorias", href: "/categorias" },
+  { label: "Categorías", href: "/categorias" },
   { label: "Populares", href: "/populares" },
   { label: "Favoritos", href: "/favoritos" },
   { label: "Clasificaciones", href: "/clasificaciones" },

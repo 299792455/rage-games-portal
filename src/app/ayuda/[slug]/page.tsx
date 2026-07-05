@@ -22,9 +22,9 @@ type HelpArticlePageProps = {
 
 const helpArticles: HelpArticle[] = [
   {
-    title: "Como jugar",
+    title: "Cómo jugar",
     slug: "como-jugar",
-    summary: "Elige un juego, abre su pagina y pulsa Play cuando este listo.",
+    summary: "Elige un juego, abre su página y pulsa Play cuando esté listo.",
     sections: [
       {
         title: "Jugar gratis",
@@ -32,7 +32,7 @@ const helpArticles: HelpArticle[] = [
       },
       {
         title: "Sin descarga",
-        body: "No necesitas instalar nada. Cada juego disponible se abre desde la integracion autorizada de su provider.",
+        body: "No necesitas instalar nada. Cada juego disponible se abre desde la integración autorizada de su proveedor.",
       },
     ],
   },
@@ -46,7 +46,7 @@ const helpArticles: HelpArticle[] = [
         body: "Al marcar un juego como favorito, se guarda su slug en localStorage. No se crea cuenta ni perfil.",
       },
       {
-        title: "Sin sincronizacion",
+        title: "Sin sincronización",
         body: "Si cambias de navegador o dispositivo, esa lista local no se sincroniza en V1.",
       },
     ],
@@ -54,30 +54,30 @@ const helpArticles: HelpArticle[] = [
   {
     title: "El juego no carga",
     slug: "el-juego-no-carga",
-    summary: "Un juego integrado puede fallar por conexion, navegador o restricciones del provider.",
+    summary: "Un juego integrado puede fallar por conexión, navegador o restricciones del proveedor.",
     sections: [
       {
-        title: "Comprobaciones rapidas",
-        body: "Recarga la pagina, comprueba tu conexion y verifica si el juego recomienda usar un ordenador.",
+        title: "Comprobaciones rápidas",
+        body: "Recarga la página, comprueba tu conexión y verifica si el juego recomienda usar un ordenador.",
       },
       {
         title: "Contenido externo",
-        body: "Algunos providers pueden limitar temporalmente un juego o aplicar restricciones de compatibilidad fuera de su sitio.",
+        body: "Algunos proveedores pueden limitar temporalmente un juego o aplicar restricciones de compatibilidad fuera de su sitio.",
       },
     ],
   },
   {
-    title: "Jugar en movil",
+    title: "Jugar en móvil",
     slug: "jugar-en-movil",
-    summary: "Algunos retos funcionan bien en movil y otros recomiendan desktop.",
+    summary: "Algunos retos funcionan bien en móvil y otros recomiendan desktop.",
     sections: [
       {
         title: "Mobile OK",
-        body: "Mobile OK indica que el juego puede funcionar con controles tactiles o one touch.",
+        body: "Mobile OK indica que el juego puede funcionar con controles táctiles o one touch.",
       },
       {
         title: "Desktop recomendado",
-        body: "Desktop recomendado se usa para retos que necesitan teclado, mouse o precision dificil en pantalla tactil.",
+        body: "Desktop recomendado se usa para retos que necesitan teclado, mouse o precisión difícil en pantalla táctil.",
       },
     ],
   },
@@ -88,11 +88,11 @@ const helpArticles: HelpArticle[] = [
     sections: [
       {
         title: "Tipos de control",
-        body: "Puedes encontrar teclado, mouse, tactil, one touch o combinaciones segun el reto.",
+        body: "Puedes encontrar teclado, mouse, táctil, one touch o combinaciones según el reto.",
       },
       {
         title: "Elegir bien",
-        body: "En juegos dificiles, usar el control recomendado puede cambiar mucho la experiencia.",
+        body: "En juegos difíciles, usar el control recomendado puede cambiar mucho la experiencia.",
       },
     ],
   },
@@ -114,45 +114,45 @@ const helpArticles: HelpArticle[] = [
   {
     title: "Clasificaciones",
     slug: "clasificaciones",
-    summary: "Actualmente no se publica ningun ranking global de jugadores.",
+    summary: "Actualmente no se publica ningún ranking global de jugadores.",
     sections: [
       {
         title: "Sin usuarios reales",
         body: "Las clasificaciones de V1 no pertenecen a cuentas reales y no usan perfiles.",
       },
       {
-        title: "Sin scores locales",
-        body: "Tus scores locales no se envian ni se mezclan con clasificaciones globales.",
+        title: "Sin resultados locales",
+        body: "Tus resultados locales no se envían ni se mezclan con clasificaciones globales.",
       },
     ],
   },
   {
-    title: "Badges",
+    title: "Logros",
     slug: "badges",
-    summary: "Los badges locales ayudan a seguir objetivos personales.",
+    summary: "Los logros locales ayudan a seguir objetivos personales.",
     sections: [
       {
         title: "Progreso local",
-        body: "Los badges se guardan en localStorage con badgeSlug y unlockedAt. Por ahora puedes marcarlos manualmente para seguir tu progreso personal.",
+        body: "Los logros se guardan localmente con badgeSlug y unlockedAt. Por ahora puedes marcarlos manualmente para seguir tu progreso personal.",
       },
       {
         title: "Sin cuenta",
-        body: "No hay perfil publico ni sincronizacion en V1. En una proxima actualizacion, el sistema evolucionara con cuentas, progreso automatico, badges desbloqueables y rankings globales.",
+        body: "No hay perfil público ni sincronización en V1. En una próxima actualización, el sistema evolucionará con cuentas, progreso automático, logros desbloqueables y rankings globales.",
       },
     ],
   },
   {
     title: "Anuncios",
     slug: "anuncios",
-    summary: "Los espacios publicitarios estan preparados y desactivados por defecto.",
+    summary: "Los espacios publicitarios están preparados y desactivados por defecto.",
     sections: [
       {
         title: "Sin publicidad real",
-        body: "La V1 prepara ubicaciones visuales, pero no activa una red publicitaria real sin validacion.",
+        body: "La V1 prepara ubicaciones visuales, pero no activa una red publicitaria real sin validación.",
       },
       {
         title: "Experiencia primero",
-        body: "Los anuncios reales se evaluaran mas adelante para no bloquear el juego de forma agresiva.",
+        body: "Los anuncios reales se evaluarán más adelante para no bloquear el juego de forma agresiva.",
       },
     ],
   },
@@ -163,7 +163,7 @@ const helpArticles: HelpArticle[] = [
     sections: [
       {
         title: "Datos locales",
-        body: "Favoritos, recientes, continuar jugando, progreso local y badges locales se guardan en el navegador.",
+        body: "Favoritos, recientes, continuar jugando, progreso local y logros locales se guardan en el navegador.",
       },
       {
         title: "Sin cuenta",
@@ -174,30 +174,30 @@ const helpArticles: HelpArticle[] = [
   {
     title: "Reportar un juego",
     slug: "reportar-un-juego",
-    summary: "Prepara informacion clara si detectas un problema.",
+    summary: "Prepara información clara si detectas un problema.",
     sections: [
       {
-        title: "Que indicar",
-        body: "Anota el nombre del juego, el navegador, el dispositivo y que estabas intentando hacer.",
+        title: "Qué indicar",
+        body: "Anota el nombre del juego, el navegador, el dispositivo y qué estabas intentando hacer.",
       },
       {
-        title: "Juego y provider",
-        body: "Indica tambien el provider mostrado en la pagina para facilitar la revision de la integracion.",
+        title: "Juego y proveedor",
+        body: "Indica también el proveedor mostrado en la página para facilitar la revisión de la integración.",
       },
     ],
   },
   {
     title: "Contacto",
     slug: "contacto",
-    summary: "El contacto del sitio se gestiona desde la pagina publica de contacto.",
+    summary: "El contacto del sitio se gestiona desde la página pública de contacto.",
     sections: [
       {
         title: "Sin formulario",
-        body: "Por ahora no hay formulario activo en el sitio. Puedes usar el email indicado en la pagina de contacto.",
+        body: "Por ahora no hay formulario activo en el sitio. Puedes usar el email indicado en la página de contacto.",
       },
       {
         title: "Contacto directo",
-        body: "Usa la pagina de contacto para reportar problemas, sugerir juegos o enviar propuestas relacionadas con el sitio.",
+        body: "Usa la página de contacto para reportar problemas, sugerir juegos o enviar propuestas relacionadas con el sitio.",
       },
     ],
   },
@@ -243,7 +243,7 @@ export default async function HelpArticlePage({
                 Ayuda V1
               </p>
               <p className="mt-3 text-sm leading-6 text-slate-400">
-                Contenido corto, sin formulario, sin cuenta y sin envio de datos.
+                Contenido corto, sin formulario, sin cuenta y sin envío de datos.
               </p>
             </Card>
           </div>
@@ -275,7 +275,7 @@ export default async function HelpArticlePage({
                 className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] border border-cyan-300/40 bg-cyan-300 px-4 text-sm font-black text-slate-950 shadow-[var(--glow-cyan)] transition hover:bg-cyan-200 focus-ring"
                 href="/ayuda"
               >
-                Ver todos los articulos
+                Ver todos los artículos
               </Link>
             </div>
           </Card>

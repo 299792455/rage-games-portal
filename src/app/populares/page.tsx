@@ -37,7 +37,7 @@ export default function PopularGamesPage() {
                 Juegos populares
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                Esta pagina no muestra popularidad global ni utiliza datos de
+                Esta página no muestra popularidad global ni utiliza datos de
                 otros jugadores.
               </p>
             </div>
@@ -49,10 +49,10 @@ export default function PopularGamesPage() {
                 Sin datos suficientes
               </p>
               <h2 className="text-3xl font-black text-white">
-                Todavia no hay juegos populares en este navegador
+                Todavía no hay juegos populares en este navegador
               </h2>
               <p className="text-sm leading-6 text-slate-400">
-                Juega a algunos titulos para ver tus mas jugados aqui.
+                Juega a algunos títulos para ver tus más jugados aquí.
               </p>
               <p className="text-xs leading-5 text-slate-500">
                 El portal no publica por ahora un ranking global de popularidad.

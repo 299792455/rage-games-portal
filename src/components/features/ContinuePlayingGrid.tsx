@@ -67,10 +67,10 @@ export function ContinuePlayingGrid({ games }: ContinuePlayingGridProps) {
             Seguir jugando
           </p>
           <h2 className="text-2xl font-black text-white">
-            Tus partidas guardadas apareceran aqui
+            Tus partidas guardadas aparecerán aquí
           </h2>
           <p className="text-sm leading-6 text-slate-400">
-            Pulsa Play en una pagina de juego para guardar ese reto localmente.
+            Pulsa Play en una página de juego para guardar ese reto localmente.
             Solo se almacenan slug, startedAt y updatedAt en este navegador.
           </p>
           <Link

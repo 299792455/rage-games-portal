@@ -37,7 +37,7 @@ type GamePageProps = {
 };
 
 const unavailableGameMessage =
-  "Este juego no esta disponible temporalmente.";
+  "Este juego no está disponible temporalmente.";
 
 export function generateStaticParams() {
   return games.map((game) => ({
@@ -181,7 +181,7 @@ export default async function GamePage({ params }: GamePageProps) {
               <div className="flex items-center justify-between gap-4">
                 <DifficultyBadge level={game.difficultyLevel} />
                 <span className="text-sm font-black text-white">
-                  {game.rating > 0 ? game.rating.toFixed(1) : "Sin valoracion"}
+                  {game.rating > 0 ? game.rating.toFixed(1) : "Sin valoración"}
                 </span>
               </div>
               <RageLevel level={game.rageLevel} />
@@ -256,15 +256,15 @@ export default async function GamePage({ params }: GamePageProps) {
             <Card className="p-6" variant="glass">
               <div className="space-y-3">
                 <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                  Seleccion editorial
+                  Selección editorial
                 </p>
                 <h2 className="text-3xl font-black text-white">
-                  Reto dificil preparado para retry
+                  Reto difícil preparado para retry
                 </h2>
                 <p className="text-sm leading-6 text-slate-400">
-                  Este juego forma parte de nuestra seleccion de retos dificiles
-                  y juegos de retry, con informacion editorial sobre dificultad,
-                  controles y tipo de desafio.
+                  Este juego forma parte de nuestra selección de retos difíciles
+                  y juegos de retry, con información editorial sobre dificultad,
+                  controles y tipo de desafío.
                 </p>
               </div>
             </Card>
@@ -287,7 +287,7 @@ export default async function GamePage({ params }: GamePageProps) {
                   </span>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
-                  <span className="text-sm text-slate-400">Provider</span>
+                  <span className="text-sm text-slate-400">Proveedor</span>
                   <span className="text-sm font-bold text-white">
                     {game.provider}
                   </span>
@@ -323,7 +323,7 @@ export default async function GamePage({ params }: GamePageProps) {
             <div className="mb-5 flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                  Clasificacion global en preparacion
+                  Clasificación global en preparación
                 </p>
                 <h2 className="mt-2 text-2xl font-black text-white">
                   Clasificación global
@@ -363,8 +363,8 @@ export default async function GamePage({ params }: GamePageProps) {
               </div>
             ) : (
               <p className="rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-4 text-sm leading-6 text-slate-400">
-                Esta clasificacion global esta en preparacion. No mostramos
-                puntuaciones ficticias ni mezclamos tu progreso local con un
+                Esta clasificación global está en preparación. No mostramos
+                resultados ficticios ni mezclamos tu progreso local con un
                 ranking global.
               </p>
             )}
@@ -391,7 +391,7 @@ export default async function GamePage({ params }: GamePageProps) {
           <Card className="p-6" variant="glass">
             <div className="space-y-4">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-rose-200">
-                Misma categoria
+                Misma categoría
               </p>
               <h2 className="text-3xl font-black text-white">
                 Otros juegos de {category?.name ?? game.category}
@@ -425,7 +425,7 @@ export default async function GamePage({ params }: GamePageProps) {
               Mas retos para seguir fallando mejor
             </h2>
             <p className="text-sm leading-6 text-slate-400">
-              Seleccion basada en categoria, tags, dificultad y rage level.
+              Selección basada en categoría, tags, dificultad y rage level.
             </p>
           </div>
 
@@ -441,10 +441,10 @@ export default async function GamePage({ params }: GamePageProps) {
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div className="space-y-2">
                 <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                  Navegacion
+                  Navegación
                 </p>
                 <h2 className="text-2xl font-black text-white">
-                  Explora mas juegos dificiles
+                  Explora más juegos difíciles
                 </h2>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -453,7 +453,7 @@ export default async function GamePage({ params }: GamePageProps) {
                     {category.name}
                   </CategoryChip>
                 ) : null}
-                <CategoryChip href="/categorias">Categorias</CategoryChip>
+                <CategoryChip href="/categorias">Categorías</CategoryChip>
               </div>
             </div>
           </Card>

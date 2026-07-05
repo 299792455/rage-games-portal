@@ -42,29 +42,17 @@ export default function LeaderboardsPage() {
 
       <main className="rage-grid-bg">
         <section className="container-page space-y-8 py-12 lg:py-16">
-          <div className="grid gap-6 lg:grid-cols-[1fr_360px] lg:items-end">
-            <div className="max-w-4xl space-y-5">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Clasificaciones
-              </p>
-              <h1 className="text-5xl font-black leading-[0.95] text-white md:text-6xl">
-                Rankings de juegos dificiles
-              </h1>
-              <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                Consulta las clasificaciones globales cuando existan datos
-                publicados. Los scores locales permanecen en este navegador.
-              </p>
-            </div>
-
-            <Card className="p-5" variant="glass">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet-200">
-                Sin cuenta
-              </p>
-              <p className="mt-3 text-sm leading-6 text-slate-400">
-                No hay perfil, login, userId ni envio automatico de resultados
-                locales.
-              </p>
-            </Card>
+          <div className="max-w-4xl space-y-5">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
+              Clasificaciones
+            </p>
+            <h1 className="text-5xl font-black leading-[0.95] text-white md:text-6xl">
+              Rankings de juegos difíciles
+            </h1>
+            <p className="max-w-2xl text-lg leading-8 text-slate-300">
+              Los rankings globales llegarán en una próxima actualización. Por
+              ahora, solo se guardan resultados locales en tu dispositivo.
+            </p>
           </div>
 
           {hasPublishedLeaderboards ? (
@@ -75,7 +63,7 @@ export default function LeaderboardsPage() {
                     Top global
                   </p>
                   <h2 className="text-3xl font-black text-white">
-                    Mejores scores publicados
+                    Mejores resultados publicados
                   </h2>
                 </div>
 
@@ -141,7 +129,7 @@ export default function LeaderboardsPage() {
                         </div>
                         <div className="text-left sm:text-right">
                           <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
-                            Top score
+                            Mejor resultado
                           </p>
                           <p className="mt-1 text-2xl font-black text-white">
                             {topEntry.score.toLocaleString("es-ES")}
@@ -157,16 +145,16 @@ export default function LeaderboardsPage() {
             <Card className="p-8 text-center" variant="glass">
               <div className="mx-auto flex max-w-2xl flex-col items-center gap-4">
                 <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                  Sin clasificacion global
+                  Sin clasificación global
                 </p>
                 <h2 className="text-3xl font-black text-white">
-                  Todavia no hay rankings publicados
+                  Todavía no hay rankings publicados
                 </h2>
                 <p className="text-sm leading-6 text-slate-400">
-                  No mostramos puntuaciones ficticias ni mezclamos tus
-                  resultados locales con una clasificacion global. Estamos
+                  No mostramos resultados ficticios ni mezclamos tus
+                  resultados locales con una clasificación global. Estamos
                   preparando una funcionalidad de rankings globales para
-                  comparar resultados con otros jugadores mas adelante.
+                  comparar resultados con otros jugadores más adelante.
                 </p>
                 <Link
                   className="mt-2 inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] border border-cyan-300/40 bg-cyan-300 px-5 text-sm font-black text-slate-950 shadow-[var(--glow-cyan)] transition hover:bg-cyan-200 focus-ring"

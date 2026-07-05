@@ -5,7 +5,7 @@ type FooterLink = {
 
 const catalogLinks: FooterLink[] = [
   { label: "Juegos", href: "/juegos" },
-  { label: "Categorias", href: "/categorias" },
+  { label: "Categorías", href: "/categorias" },
   { label: "Populares", href: "/populares" },
   { label: "Nuevos", href: "/nuevos" },
   { label: "Favoritos", href: "/favoritos" },
@@ -60,7 +60,7 @@ export function Footer() {
           </p>
         </div>
 
-        <FooterColumn links={catalogLinks} title="Catalogo" />
+        <FooterColumn links={catalogLinks} title="Catálogo" />
         <FooterColumn links={supportLinks} title="Soporte" />
         <FooterColumn links={legalLinks} title="Legal" />
       </div>

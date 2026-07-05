@@ -64,15 +64,15 @@ export default function NewGamesPage() {
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
             <div className="space-y-5">
               <p className="inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-cyan-100">
-                Novedades del catalogo
+                Novedades del catálogo
               </p>
               <div className="space-y-4">
                 <h1 className="max-w-4xl text-5xl font-black leading-[0.95] text-white md:text-6xl">
                   Juegos nuevos
                 </h1>
                 <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                  Descubre los ultimos juegos dificiles, retos de reflejos y
-                  plataformas de retry incorporados al catalogo.
+                  Descubre los últimos juegos difíciles, retos de reflejos y
+                  plataformas de retry incorporados al catálogo.
                 </p>
               </div>
             </div>

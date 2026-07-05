@@ -52,13 +52,13 @@ export default async function LeaderboardGamePage({
           <div className="grid gap-6 lg:grid-cols-[1fr_360px] lg:items-end">
             <div className="max-w-4xl space-y-5">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Clasificacion global en preparacion
+                Clasificación global en preparación
               </p>
               <h1 className="text-5xl font-black leading-[0.95] text-white md:text-6xl">
                 {game.title}
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                Esta clasificacion global esta en preparacion. Los resultados
+                Esta clasificación global está en preparación. Los resultados
                 locales se mantienen en este navegador y no se mezclan con un
                 ranking global.
               </p>
@@ -81,7 +81,7 @@ export default async function LeaderboardGamePage({
           <Card className="overflow-hidden" variant="panel">
             <div className="border-b border-white/10 p-6">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet-200">
-                Clasificacion global
+                Clasificación global
               </p>
               <h2 className="mt-2 text-3xl font-black text-white">
                 Entradas preparadas
@@ -141,11 +141,11 @@ export default async function LeaderboardGamePage({
                   Aviso de datos
                 </p>
                 <h2 className="text-3xl font-black text-white">
-                  Sin relacion con scores locales
+                  Sin relación con resultados locales
                 </h2>
                 <p className="text-sm leading-6 text-slate-400">
                   Esta vista no lee localStorage, no usa MongoDB y no publica
-                  resultados reales de jugadores. En una proxima actualizacion,
+                  resultados reales de jugadores. En una próxima actualización,
                   queremos ampliar el sistema con cuentas y rankings globales.
                 </p>
                 <Link

@@ -26,7 +26,7 @@ const sortOptions: { label: string; value: SortKey }[] = [
 ];
 
 const difficultyOptions: { label: string; value: DifficultyLevel }[] = [
-  { label: "Dificil", value: 3 },
+  { label: "Difícil", value: 3 },
   { label: "Extremo", value: 4 },
   { label: "Imposible", value: 5 },
 ];
@@ -173,11 +173,11 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             </p>
             <div className="space-y-4">
               <h1 className="text-5xl font-black leading-[0.95] text-white md:text-6xl">
-                Buscar juegos dificiles
+                Buscar juegos difíciles
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                Encuentra juegos por nombre, categoria, tags, controles,
-                dificultad, compatibilidad movil o tipo de reto.
+                Encuentra juegos por nombre, categoría, tags, controles,
+                dificultad, compatibilidad móvil o tipo de reto.
               </p>
             </div>
           </div>
@@ -222,7 +222,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
               <div className="mt-5 space-y-6">
                 <div className="space-y-2">
                   <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
-                    Categorias
+                    Categorías
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {categories.map((category) => (
@@ -393,17 +393,17 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             ) : (
               <Card className="p-8 text-center" variant="glass">
                 <h2 className="text-2xl font-black text-white">
-                  Ningun reto encontrado
+                  Ningún reto encontrado
                 </h2>
                 <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-slate-400">
-                  Cambia el texto de busqueda, elimina algun filtro o vuelve al
-                  catalogo completo para descubrir mas juegos.
+                  Cambia el texto de búsqueda, elimina algún filtro o vuelve al
+                  catálogo completo para descubrir más juegos.
                 </p>
                 <Link
                   className="mt-5 inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] border border-cyan-300/40 bg-cyan-300 px-5 text-sm font-black text-slate-950 shadow-[var(--glow-cyan)] focus-ring"
                   href="/juegos"
                 >
-                  Ver catalogo
+                  Ver catálogo
                 </Link>
               </Card>
             )}

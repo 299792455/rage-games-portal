@@ -14,12 +14,12 @@ export function LocalScorePanel({ gameSlug }: LocalScorePanelProps) {
           Progreso local
         </p>
         <h2 className="text-3xl font-black text-white">
-          Scores, tiempo e intentos locales
+          Resultados, tiempo e intentos locales
         </h2>
         <p className="text-sm leading-6 text-slate-400">
           Por ahora, estos datos se guardan solo en este navegador. En una
-          proxima actualizacion, el sistema evolucionara con cuentas, progreso
-          automatico, badges y rankings globales.
+          próxima actualización, el sistema evolucionará con cuentas, progreso
+          automático, logros y rankings globales.
         </p>
       </div>
     </Card>

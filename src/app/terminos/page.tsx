@@ -53,10 +53,10 @@ const sections = [
   {
     title: "Datos locales y funcionalidades del sitio",
     paragraphs: [
-      "JuegosDificiles.com puede ofrecer funciones locales en el navegador, como favoritos, juegos recientes, continuar jugando, scores locales o badges locales.",
+      "JuegosDificiles.com puede ofrecer funciones locales en el navegador, como favoritos, juegos recientes, continuar jugando, resultados locales o logros locales.",
       "Estas funciones pueden guardar información en el propio navegador del usuario.",
       "Si el usuario borra los datos del navegador, cambia de dispositivo o utiliza otro navegador, esas preferencias o datos locales pueden perderse.",
-      "Los scores locales, badges locales u otras funciones guardadas en el navegador no constituyen rankings globales oficiales ni resultados verificados frente a otros jugadores.",
+      "Los resultados locales, los logros locales u otras funciones guardadas en el navegador no constituyen rankings globales oficiales ni resultados verificados frente a otros jugadores.",
     ],
   },
   {

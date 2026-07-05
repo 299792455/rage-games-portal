@@ -5,24 +5,24 @@ import { Card } from "@/components/ui";
 
 const helpArticles = [
   {
-    title: "Como jugar",
+    title: "Cómo jugar",
     slug: "como-jugar",
     description: "Empieza a jugar gratis desde el navegador, sin descarga.",
   },
   {
     title: "Favoritos",
     slug: "favoritos",
-    description: "Guarda juegos localmente para volver a ellos mas rapido.",
+    description: "Guarda juegos localmente para volver a ellos más rápido.",
   },
   {
     title: "El juego no carga",
     slug: "el-juego-no-carga",
-    description: "Revisa que hacer si un juego integrado no abre.",
+    description: "Revisa qué hacer si un juego integrado no abre.",
   },
   {
-    title: "Jugar en movil",
+    title: "Jugar en móvil",
     slug: "jugar-en-movil",
-    description: "Entiende cuando un juego es mobile OK o desktop recomendado.",
+    description: "Entiende cuándo un juego es mobile OK o desktop recomendado.",
   },
   {
     title: "Controles",
@@ -40,9 +40,9 @@ const helpArticles = [
     description: "Consulta el estado actual de las clasificaciones globales.",
   },
   {
-    title: "Badges",
+    title: "Logros",
     slug: "badges",
-    description: "Consulta como funcionan los badges locales y objetivos personales.",
+    description: "Consulta cómo funcionan los logros locales y objetivos personales.",
   },
   {
     title: "Anuncios",
@@ -52,17 +52,17 @@ const helpArticles = [
   {
     title: "Privacidad",
     slug: "privacidad",
-    description: "Resumen de datos locales antes de las paginas legales.",
+    description: "Resumen de datos locales antes de las páginas legales.",
   },
   {
     title: "Reportar un juego",
     slug: "reportar-un-juego",
-    description: "Que preparar si un juego tiene un problema.",
+    description: "Qué preparar si un juego tiene un problema.",
   },
   {
     title: "Contacto",
     slug: "contacto",
-    description: "Como se gestionara el contacto en esta V1.",
+    description: "Cómo se gestionará el contacto en esta V1.",
   },
 ];
 
@@ -82,8 +82,8 @@ export default function HelpPage() {
                 Ayuda rapida para jugar sin cuenta
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                Respuestas cortas sobre juegos dificiles, favoritos locales,
-                clasificaciones en preparacion, badges y controles. Todo
+                Respuestas cortas sobre juegos difíciles, favoritos locales,
+                clasificaciones en preparación, logros y controles. Todo
                 pensado para la V1 sin registro.
               </p>
             </div>
@@ -93,7 +93,7 @@ export default function HelpPage() {
                 V1 sin cuenta
               </p>
               <p className="mt-3 text-sm leading-6 text-slate-400">
-                No hay login, perfil, sincronizacion ni pagina de cuenta. Los
+                No hay login, perfil, sincronización ni página de cuenta. Los
                 datos de progreso disponibles son locales del navegador.
               </p>
             </Card>
@@ -128,9 +128,9 @@ export default function HelpPage() {
                 Funciones todavia limitadas
               </h2>
               <p className="text-sm leading-6 text-slate-400">
-                Los juegos reales ya estan disponibles. Las clasificaciones
+                Los juegos reales ya están disponibles. Las clasificaciones
                 globales y los anuncios reales siguen desactivados. El Help
-                Center no envia datos ni incluye formularios funcionales.
+                Center no envía datos ni incluye formularios funcionales.
               </p>
             </div>
           </Card>

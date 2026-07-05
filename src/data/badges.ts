@@ -30,7 +30,7 @@ export const badges: Badge[] = [
   {
     name: "Superviviente",
     slug: "superviviente",
-    description: "Objetivo: superar un reto dificil sin abandonar.",
+    description: "Objetivo: superar un reto difícil sin abandonar.",
     icon: "badge:survivor",
     condition: "completed_hard_challenge >= 1",
     createdAt: BADGE_DATE,
@@ -46,7 +46,7 @@ export const badges: Badge[] = [
   {
     name: "Sin rendirse",
     slug: "sin-rendirse",
-    description: "Objetivo: volver a jugar despues de varios fallos seguidos.",
+    description: "Objetivo: volver a jugar después de varios fallos seguidos.",
     icon: "badge:no-surrender",
     condition: "consecutive_retries >= 10",
     createdAt: BADGE_DATE,

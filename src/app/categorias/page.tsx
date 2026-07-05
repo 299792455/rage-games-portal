@@ -64,16 +64,16 @@ export default function CategoriesPage() {
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
             <div className="space-y-5">
               <p className="inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-cyan-100">
-                Categorias curadas
+                Categorías curadas
               </p>
               <div className="space-y-4">
                 <h1 className="max-w-4xl text-5xl font-black leading-[0.95] text-white md:text-6xl">
-                  Categorias de juegos dificiles
+                  Categorías de juegos difíciles
                 </h1>
                 <p className="max-w-2xl text-lg leading-8 text-slate-300">
                   Explora juegos imposibles, rage games, die & retry,
-                  plataformas hardcore y retos rapidos organizados por criterio
-                  editorial, no por una categoria generica de provider.
+                  plataformas hardcore y retos rápidos organizados por criterio
+                  editorial, no por una categoría genérica de proveedor.
                 </p>
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function CategoriesPage() {
                     {categories.length}
                   </p>
                   <p className="mt-1 text-sm text-slate-400">
-                    categorias principales
+                    categorías principales
                   </p>
                 </div>
                 <div>
@@ -175,14 +175,14 @@ export default function CategoriesPage() {
           <Card className="p-6" variant="glass">
             <div className="space-y-3">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Top categorias
+                Top categorías
               </p>
               <h2 className="text-3xl font-black text-white">
-                La dificultad como mapa del catalogo
+                La dificultad como mapa del catálogo
               </h2>
               <p className="text-sm leading-6 text-slate-400">
-                Cada categoria agrupa juegos por tipo de desafio: precision,
-                trampas ocultas, retry rapido, reflejos o rutas speedrun.
+                Cada categoría agrupa juegos por tipo de desafío: precisión,
+                trampas ocultas, retry rápido, reflejos o rutas speedrun.
               </p>
             </div>
           </Card>
@@ -213,13 +213,13 @@ export default function CategoriesPage() {
                 Criterio editorial
               </p>
               <h2 className="text-3xl font-black text-white">
-                Una seleccion pensada para juegos dificiles
+                Una selección pensada para juegos difíciles
               </h2>
               <p className="text-sm leading-6 text-slate-400">
-                La organizacion del portal prioriza dificultad, rage level,
-                controles, compatibilidad movil y tipo de reto. Las categorias
-                mantienen una curation interna independiente de las categorias
-                genericas de cada provider.
+                La organización del portal prioriza dificultad, rage level,
+                controles, compatibilidad móvil y tipo de reto. Las categorías
+                mantienen una selección interna independiente de las categorías
+                genéricas de cada proveedor.
               </p>
             </div>
           </Card>

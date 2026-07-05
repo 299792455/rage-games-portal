@@ -67,10 +67,10 @@ export function RecentlyPlayedGrid({ games }: RecentlyPlayedGridProps) {
             Recientes locales
           </p>
           <h2 className="text-3xl font-black text-white">
-            Todavia no hay juegos recientes
+            Todavía no hay juegos recientes
           </h2>
           <p className="text-sm leading-6 text-slate-400">
-            Abre la pagina de un juego para guardarlo en este historial local.
+            Abre la página de un juego para guardarlo en este historial local.
             Solo se almacena el slug del juego y la fecha local de la visita.
           </p>
           <Link

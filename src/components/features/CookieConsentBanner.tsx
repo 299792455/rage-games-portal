@@ -54,9 +54,9 @@ export function CookieConsentBanner() {
                 Control de cookies
               </h2>
               <p className="max-w-3xl text-sm leading-6 text-slate-300">
-                Usamos almacenamiento necesario para que el sitio funcione. Con
-                tu permiso, prepararemos analytics para medir el uso global del
-                sitio cuando GA4 / Google Tag se integre en la siguiente etapa.
+                Usamos cookies necesarias para que el sitio funcione. Con tu
+                permiso, activaremos la analítica para medir el uso global del
+                sitio.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 text-xs font-semibold text-slate-400">
@@ -77,7 +77,7 @@ export function CookieConsentBanner() {
 
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
             <Button onClick={handleAcceptAnalytics} size="sm">
-              Aceptar analytics
+              Aceptar analítica
             </Button>
             <Button onClick={handleReject} size="sm" variant="ghost">
               Rechazar
@@ -113,10 +113,10 @@ export function CookieConsentBanner() {
             <div className="rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-4">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="font-black text-white">Analytics</h3>
+                  <h3 className="font-black text-white">Analítica</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-400">
-                    Nos ayudará a entender el uso general del sitio cuando GA4 /
-                    Google Tag se integre en la etapa correspondiente.
+                    Nos ayudará a entender el uso general del sitio si aceptas
+                    la analítica.
                   </p>
                 </div>
                 <button
@@ -140,8 +140,8 @@ export function CookieConsentBanner() {
                   />
                   <span className="sr-only">
                     {isAnalyticsEnabled
-                      ? "Desactivar analytics"
-                      : "Activar analytics"}
+                      ? "Desactivar analítica"
+                      : "Activar analítica"}
                   </span>
                 </button>
               </div>

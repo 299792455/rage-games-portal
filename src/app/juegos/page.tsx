@@ -36,7 +36,7 @@ const sortOptions: { label: string; value: SortKey }[] = [
 ];
 
 const difficultyOptions: { label: string; value: DifficultyLevel }[] = [
-  { label: "Dificil", value: 3 },
+  { label: "Difícil", value: 3 },
   { label: "Extremo", value: 4 },
   { label: "Imposible", value: 5 },
 ];
@@ -200,11 +200,11 @@ export default async function GamesPage({ searchParams }: CatalogPageProps) {
             </p>
             <div className="space-y-4">
               <h1 className="max-w-4xl text-5xl font-black leading-[0.95] text-white md:text-6xl">
-                Juegos dificiles online
+                Juegos difíciles online
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
                 Busca rage games, juegos imposibles, plataformas hardcore y
-                retos de reflejos usando los filtros del catalogo actual.
+                retos de reflejos usando los filtros del catálogo actual.
               </p>
             </div>
           </div>
@@ -213,7 +213,7 @@ export default async function GamesPage({ searchParams }: CatalogPageProps) {
             <form action="/juegos" className="space-y-4">
               <label className="block">
                 <span className="text-sm font-bold text-slate-300">
-                  Buscar en el catalogo
+                  Buscar en el catálogo
                 </span>
                 <input
                   className="mt-2 w-full rounded-[var(--radius-md)] border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus-ring"
@@ -251,7 +251,7 @@ export default async function GamesPage({ searchParams }: CatalogPageProps) {
               <div className="mt-5 space-y-6">
                 <div className="space-y-2">
                   <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
-                    Categorias
+                    Categorías
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {categories.map((category) => (
@@ -425,8 +425,8 @@ export default async function GamesPage({ searchParams }: CatalogPageProps) {
                   No encontramos juegos con esos filtros
                 </h2>
                 <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-slate-400">
-                  Prueba otra palabra, baja la dificultad o elimina algun filtro
-                  para ver mas retos del catalogo.
+                  Prueba otra palabra, baja la dificultad o elimina algún filtro
+                  para ver más retos del catálogo.
                 </p>
               </Card>
             )}

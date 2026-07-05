@@ -7,9 +7,9 @@ type DifficultyBadgeProps = {
 };
 
 const difficultyLabels: Record<DifficultyLevel, string> = {
-  1: "Facil",
+  1: "Fácil",
   2: "Medio",
-  3: "Dificil",
+  3: "Difícil",
   4: "Extremo",
   5: "Imposible",
 };

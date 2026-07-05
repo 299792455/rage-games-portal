@@ -11,7 +11,7 @@ export function SearchBar({
   className,
   label = "Buscar juegos",
   name = "search",
-  placeholder = "Buscar juegos dificiles...",
+  placeholder = "Buscar juegos difíciles...",
   value,
   onChange,
   ...props

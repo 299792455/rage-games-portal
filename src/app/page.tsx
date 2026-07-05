@@ -72,7 +72,7 @@ const gameSections = [
   {
     title: "Rage games destacados",
     description:
-      "Los juegos con mas nivel de rage y mas intensidad dentro del catalogo curado.",
+      "Los juegos con más nivel de rage y más intensidad dentro del catálogo curado.",
     games: rageGames,
     href: "/populares",
   },
@@ -86,14 +86,14 @@ const gameSections = [
   {
     title: "Plataformas hardcore",
     description:
-      "Plataformas exigentes con precision, timing estricto y rutas que no perdonan.",
+      "Plataformas exigentes con precisión, timing estricto y rutas que no perdonan.",
     games: hardcorePlatformGames,
     href: "/categorias/plataformas-hardcore",
   },
   {
     title: "Juegos con trampas",
     description:
-      "Puertas falsas, pinchos ocultos y reglas que solo se entienden despues de caer.",
+      "Puertas falsas, pinchos ocultos y reglas que solo se entienden después de caer.",
     games: trapGames,
     href: "/categorias/juegos-con-trampas",
   },
@@ -146,9 +146,9 @@ export default function Home() {
                   Juegos difíciles online gratis
                 </h1>
                 <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                  Entra directo a una seleccion de juegos dificiles, frustrantes
+                  Entra directo a una selección de juegos difíciles, frustrantes
                   y memorables. Sin descarga, sin cuenta y pensados para decir:
-                  solo un intento mas.
+                  solo un intento más.
                 </p>
               </div>
             </div>
@@ -186,7 +186,7 @@ export default function Home() {
                   {categories.length}
                 </p>
                 <p className="mt-1 text-sm text-slate-400">
-                  categorias principales
+                  categorías principales
                 </p>
               </Card>
               <Card className="p-4" variant="panel">
@@ -274,17 +274,17 @@ export default function Home() {
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div className="space-y-2">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Explora por categoria
+                Explora por categoría
               </p>
               <h2 className="text-3xl font-black text-white">
-                Elige tu tipo de frustracion favorita
+                Elige tu tipo de frustración favorita
               </h2>
             </div>
             <Link
               className="text-sm font-bold text-cyan-100 hover:text-cyan-200 focus-ring"
               href="/categorias"
             >
-              Ver todas las categorias
+              Ver todas las categorías
             </Link>
           </div>
 
@@ -328,7 +328,7 @@ export default function Home() {
                 Últimos juegos añadidos
               </h2>
               <p className="text-sm leading-6 text-slate-400">
-                Las incorporaciones mas recientes del catalogo real, listas
+                Las incorporaciones más recientes del catálogo real, listas
                 para jugar directamente en el navegador.
               </p>
             </div>
@@ -362,7 +362,7 @@ export default function Home() {
                 className="text-sm font-bold text-cyan-100 hover:text-cyan-200 focus-ring"
                 href={section.href}
               >
-                Ver mas
+                Ver más
               </a>
             </div>
 
@@ -378,14 +378,14 @@ export default function Home() {
           <Card className="p-6" variant="panel">
             <div className="space-y-3">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Retos rapidos
+                Retos rápidos
               </p>
               <h2 className="text-3xl font-black text-white">
                 Partidas cortas, fallos veloces
               </h2>
               <p className="text-sm leading-6 text-slate-400">
-                One touch, reflejos y speedrun para sesiones rapidas donde cada
-                intento dura poco y la presion llega enseguida.
+                One touch, reflejos y speedrun para sesiones rápidas donde cada
+                intento dura poco y la presión llega enseguida.
               </p>
             </div>
           </Card>
@@ -462,7 +462,7 @@ export default function Home() {
               </div>
             ) : (
               <p className="rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-4 text-sm leading-6 text-slate-400">
-                Todavia no hay un ranking global publicado.
+                Todavía no hay un ranking global publicado.
               </p>
             )}
           </Card>
@@ -472,14 +472,14 @@ export default function Home() {
           <Card className="p-6" variant="glass">
             <div className="mb-6 space-y-2">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Badges locales
+                Logros locales
               </p>
               <h2 className="text-3xl font-black text-white">
                 Recompensas ligeras, sin cuenta
               </h2>
               <p className="max-w-2xl text-sm leading-6 text-slate-400">
-                Catalogo de badges locales para seguir objetivos personales en
-                este navegador. No hay perfil, usuario ni sincronizacion.
+                Catálogo de logros locales para seguir objetivos personales en
+                este navegador. No hay perfil, usuario ni sincronización.
               </p>
             </div>
 
@@ -507,13 +507,13 @@ export default function Home() {
             <div className="space-y-5">
               <div className="space-y-2">
                 <p className="text-sm font-bold uppercase tracking-[0.18em] text-rose-200">
-                  Top categorias
+                  Top categorías
                 </p>
                 <h2 className="text-3xl font-black text-white">
                   La dificultad como criterio
                 </h2>
                 <p className="text-sm leading-6 text-slate-400">
-                  La seleccion no depende de una categoria generica de provider.
+                  La selección no depende de una categoría genérica de proveedor.
                   Se organiza por dificultad, rage, controles y tipo de reto.
                 </p>
               </div>
@@ -556,7 +556,7 @@ export default function Home() {
                 Favoritos, recientes y progreso guardados localmente
               </h2>
               <p className="max-w-3xl text-sm leading-6 text-slate-400">
-                La V1 funciona sin registro. Las funciones de retencion
+                La V1 funciona sin registro. Las funciones de retención
                 disponibles se guardan localmente en este navegador.
               </p>
             </div>

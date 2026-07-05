@@ -40,11 +40,11 @@ export function FavoritesGrid({ games }: FavoritesGridProps) {
             Favoritos locales
           </p>
           <h2 className="text-3xl font-black text-white">
-            Todavia no tienes favoritos guardados
+            Todavía no tienes favoritos guardados
           </h2>
           <p className="text-sm leading-6 text-slate-400">
-            Guarda juegos desde su pagina. La lista se queda solo en este
-            navegador y no depende de ningun perfil.
+            Guarda juegos desde su página. La lista se queda solo en este
+            navegador y no depende de ningún perfil.
           </p>
           <Link
             className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] border border-cyan-300/40 bg-cyan-300 px-4 text-sm font-black text-slate-950 shadow-[var(--glow-cyan)] transition hover:bg-cyan-200 focus-ring"

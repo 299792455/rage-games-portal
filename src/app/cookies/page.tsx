@@ -10,7 +10,7 @@ const contactHref = `mailto:${contactEmail}`;
 export const metadata: Metadata = {
   title: "Política de cookies | JuegosDificiles.com",
   description:
-    "Consulta la política de cookies de JuegosDificiles.com y cómo se utilizan cookies, almacenamiento local, juegos integrados, analytics, publicidad y tecnologías similares.",
+    "Consulta la política de cookies de JuegosDificiles.com y cómo se utilizan cookies, almacenamiento local, juegos integrados, analítica, publicidad y tecnologías similares.",
 };
 
 const sections = [
@@ -34,7 +34,7 @@ const sections = [
     title: "Almacenamiento local del navegador",
     paragraphs: [
       "Algunas funciones del sitio pueden utilizar almacenamiento local del navegador.",
-      "Esto puede incluir favoritos, juegos recientes, continuar jugando, scores locales o badges locales.",
+      "Esto puede incluir favoritos, juegos recientes, continuar jugando, resultados locales o logros locales.",
       "Estos datos se guardan en el propio navegador del usuario y permiten que ciertas funciones funcionen sin necesidad de crear una cuenta.",
       "El usuario puede borrar estos datos desde la configuración de su navegador o limpiando los datos del sitio.",
     ],
@@ -54,9 +54,9 @@ const sections = [
     title: "Analytics",
     paragraphs: [
       "JuegosDificiles.com puede utilizar Google Analytics 4 / Google Tag para comprender el uso global del sitio cuando esa integración esté activa.",
-      "El analytics puede ayudar a conocer qué páginas se visitan, qué juegos reciben más atención, cómo navegan los usuarios y si existen problemas técnicos.",
-      "La configuración concreta de analytics podrá variar según la solución técnica utilizada por el sitio.",
-      "Cuando sea necesario, el uso de analytics se gestionará de acuerdo con las preferencias de consentimiento disponibles en el sitio mediante una configuración compatible con Google Consent Mode.",
+      "La analítica puede ayudar a conocer qué páginas se visitan, qué juegos reciben más atención, cómo navegan los usuarios y si existen problemas técnicos.",
+      "La configuración concreta de analítica podrá variar según la solución técnica utilizada por el sitio.",
+      "Cuando sea necesario, el uso de analítica se gestionará de acuerdo con las preferencias de consentimiento disponibles en el sitio mediante una configuración compatible con Google Consent Mode.",
     ],
   },
   {
@@ -116,7 +116,7 @@ export default function CookiesPage() {
             </p>
             <p className="mt-4 text-sm leading-6 text-slate-400">
               Esta página resume las tecnologías que pueden intervenir en el
-              funcionamiento del sitio, los juegos integrados, analytics,
+              funcionamiento del sitio, los juegos integrados, analítica,
               publicidad y preferencias del navegador.
             </p>
           </Card>

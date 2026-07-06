@@ -58,6 +58,15 @@ export function Footer() {
             Juegos difíciles online gratis para jugar en el navegador, sin
             descargar.
           </p>
+          <a
+            aria-label="Juegos Difíciles en X"
+            className="inline-flex text-sm font-semibold text-slate-400 transition hover:text-cyan-100 focus-ring"
+            href="https://x.com/JuegosRage"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            X / Twitter
+          </a>
         </div>
 
         <FooterColumn links={catalogLinks} title="Catálogo" />

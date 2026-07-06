@@ -28,6 +28,7 @@
 - Etape 22 - Architecture publicite : AdSlot + interstitial leger desactive par defaut : terminee
 - Etape 23 - SEO dynamique + donnees structurees Schema.org : terminee
 - Etape 24 - Sitemap / robots.txt / llms.txt / preparation visibilite IA : terminee
+- Etape 25 - Preparation production VPS : terminee
 
 ## Etape actuelle
 
@@ -35,7 +36,7 @@ Etape 25 - Preparation production VPS
 
 ## Statut
 
-En attente de demarrage
+Terminee / validee
 
 ## Prochaine Etape Apres Validation Explicite
 
@@ -43,16 +44,21 @@ Etape 26 - Deploiement
 
 ## Objectif
 
-Preparer la configuration production cible pour le VPS Hostinger VM2, incluant les pre-requis serveur, variables d'environnement, strategie de build Next.js, processus Node.js, reverse proxy Nginx, HTTPS, logs et verification pre-deploiement, sans deployer le site ni modifier la configuration serveur.
+Preparation de l'environnement de production validee.
+
+L'etape 25 a prepare les fichiers de production VPS : `Dockerfile`, `.dockerignore`, `docker-compose.yml`, `.env.production.example` et `DEPLOYMENT.md`.
+
+L'audit final 25F est OK. TypeScript, lint et build sont OK.
+
+Aucun deploiement reel VPS n'a ete effectue pendant l'etape 25.
+
+L'etape suivante sera l'etape 26 - Deploiement reel VPS, uniquement apres validation explicite.
 
 ## Autorise A Cette Etape
 
-- Analyser et proposer le plan technique de preparation production VPS apres validation explicite de demarrage.
-- Auditer la configuration projet necessaire au build production.
-- Identifier les variables d'environnement requises sans creer de fichier secret versionne.
-- Preparer les recommandations pour Node.js, npm, process manager, Nginx, HTTPS et logs.
-- Proposer les commandes de preparation production a executer plus tard seulement apres validation explicite.
-- Verifier la compatibilite du projet avec un deploiement VPS sans commencer le deploiement.
+- Lire les fichiers de pilotage.
+- Proposer la preparation de l'etape 26 apres validation explicite.
+- Ne commencer aucune action de deploiement sans validation explicite.
 
 ## Interdit A Cette Etape
 
@@ -75,6 +81,6 @@ Preparer la configuration production cible pour le VPS Hostinger VM2, incluant l
 
 ## Regle De Passage
 
-Ne pas commencer l'etape 25 tant que son demarrage n'est pas valide explicitement.
+L'etape 25 est terminee et validee.
 
-Ne pas passer a l'etape 26 sans validation explicite de fin de l'etape 25.
+Ne pas commencer l'etape 26 sans validation explicite.

@@ -29,10 +29,11 @@
 - Etape 23 - SEO dynamique + donnees structurees Schema.org : terminee
 - Etape 24 - Sitemap / robots.txt / llms.txt / preparation visibilite IA : terminee
 - Etape 25 - Preparation production VPS : terminee
+- Etape 26 - Deploiement reel VPS : terminee
 
 ## Etape actuelle
 
-Etape 25 - Preparation production VPS
+Etape 26 - Deploiement reel VPS
 
 ## Statut
 
@@ -40,33 +41,39 @@ Terminee / validee
 
 ## Prochaine Etape Apres Validation Explicite
 
-Etape 26 - Deploiement
+Etape 27 - Preparation dossier de contact providers
 
 ## Objectif
 
-Preparation de l'environnement de production validee.
+Deploiement reel VPS termine et valide.
 
-L'etape 25 a prepare les fichiers de production VPS : `Dockerfile`, `.dockerignore`, `docker-compose.yml`, `.env.production.example` et `DEPLOYMENT.md`.
+Le site est deploye sur le VPS Hostinger VM2 avec Docker Compose.
 
-L'audit final 25F est OK. TypeScript, lint et build sont OK.
+Docker build est OK et le container `juegos-dificiles-app` est healthy.
 
-Aucun deploiement reel VPS n'a ete effectue pendant l'etape 25.
+Nginx reverse proxy est actif et valide. HTTPS Let's Encrypt est actif pour `juegosdificiles.com` et `www.juegosdificiles.com`.
 
-L'etape suivante sera l'etape 26 - Deploiement reel VPS, uniquement apres validation explicite.
+La redirection HTTP vers HTTPS est active. Le DNS pointe correctement vers le VPS.
+
+La securite de base est validee : UFW actif, Fail2ban actif, Docker expose uniquement `127.0.0.1:3000`, Certbot auto-renew actif.
+
+Les verifications fonctionnelles production sont OK. L'audit production final 26J est OK.
+
+La prochaine etape sera l'etape 27 - Preparation dossier de contact providers, uniquement apres validation explicite.
 
 ## Autorise A Cette Etape
 
 - Lire les fichiers de pilotage.
-- Proposer la preparation de l'etape 26 apres validation explicite.
-- Ne commencer aucune action de deploiement sans validation explicite.
+- Documenter la validation finale de l'etape 26.
+- Proposer la preparation de l'etape 27 apres validation explicite.
+- Ne commencer aucune action de l'etape 27 sans validation explicite.
 
 ## Interdit A Cette Etape
 
-- Deployer le site.
 - Modifier la configuration serveur reelle.
 - Lancer des commandes VPS ou SSH.
 - Installer des paquets serveur.
-- Modifier DNS, domaine, SSL ou Nginx reel.
+- Modifier DNS, domaine, SSL, Nginx, Docker, UFW, Fail2ban ou Certbot.
 - Creer ou versionner un fichier contenant des secrets.
 - Hardcoder des variables d'environnement.
 - Modifier le catalogue ou les donnees jeux.
@@ -76,11 +83,11 @@ L'etape suivante sera l'etape 26 - Deploiement reel VPS, uniquement apres valida
 - Ajouter une publicite reelle.
 - Creer un backend.
 - Ajouter de l'authentification.
-- Commencer l'etape 26.
-- Passer a l'etape 26 sans validation explicite.
+- Commencer l'etape 27.
+- Passer a l'etape 27 sans validation explicite.
 
 ## Regle De Passage
 
-L'etape 25 est terminee et validee.
+L'etape 26 est terminee et validee.
 
-Ne pas commencer l'etape 26 sans validation explicite.
+Ne pas commencer l'etape 27 sans validation explicite.

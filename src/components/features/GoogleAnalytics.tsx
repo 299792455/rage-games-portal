@@ -9,6 +9,7 @@ import {
   subscribeToCookieConsentChanges,
 } from "@/lib/local-storage/consent";
 import {
+  applyDefaultGoogleConsent,
   initializeGoogleTag,
   trackGooglePageView,
   updateGoogleConsentIfConfigured,
@@ -22,6 +23,10 @@ export function GoogleAnalytics() {
     getServerCookieConsent,
   );
   const analyticsStorage = consent?.analytics_storage;
+
+  useEffect(() => {
+    applyDefaultGoogleConsent();
+  }, []);
 
   useEffect(() => {
     if (!analyticsStorage) {

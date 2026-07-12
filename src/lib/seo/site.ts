@@ -9,3 +9,10 @@ export const HOME_DESCRIPTION =
 export const TITLE_TEMPLATE = `%s | ${SITE_NAME}`;
 export const DEFAULT_DESCRIPTION =
   "Juegos difíciles online gratis para poner a prueba tus reflejos, tu precisión y tu paciencia directamente en el navegador, sin descargar.";
+
+export const SOCIAL_PREVIEW_IMAGE = {
+  url: "/web-app-manifest-512x512.png",
+  alt: "Logo JD de Juegos Difíciles",
+  width: 512,
+  height: 512,
+};

@@ -2,18 +2,12 @@ import type { Metadata } from "next";
 
 import type { Category, Game } from "@/types";
 
-import { DEFAULT_DESCRIPTION, SITE_NAME } from "./site";
-
-type SeoImage = {
-  url: string;
-  alt: string;
-};
+import { DEFAULT_DESCRIPTION, SITE_NAME, SOCIAL_PREVIEW_IMAGE } from "./site";
 
 type PageMetadataInput = {
   title: string;
   description?: string | null;
   path: `/${string}`;
-  image?: SeoImage | null;
 };
 
 const DEFAULT_LOCALE = "es_ES";
@@ -42,39 +36,21 @@ function normalizePath(path: `/${string}`) {
   return path === "/" ? "/" : path.replace(/\/+$/, "");
 }
 
-function getProviderImage(game: Game): SeoImage | null {
-  if (game.thumbnail.kind !== "provider-image") {
-    return null;
-  }
-
-  const imageUrl = normalizeText(game.thumbnail.src);
-
-  if (!imageUrl) {
-    return null;
-  }
-
-  return {
-    url: imageUrl,
-    alt: game.thumbnail.alt,
-  };
-}
-
 export function createPageMetadata({
   title,
   description,
   path,
-  image,
 }: PageMetadataInput): Metadata {
   const seoDescription = createSeoDescription(description);
   const canonicalPath = normalizePath(path);
-  const openGraphImages = image
-    ? [
-        {
-          url: image.url,
-          alt: image.alt,
-        },
-      ]
-    : undefined;
+  const openGraphImages = [
+    {
+      url: SOCIAL_PREVIEW_IMAGE.url,
+      alt: SOCIAL_PREVIEW_IMAGE.alt,
+      width: SOCIAL_PREVIEW_IMAGE.width,
+      height: SOCIAL_PREVIEW_IMAGE.height,
+    },
+  ];
 
   return {
     title,
@@ -89,13 +65,13 @@ export function createPageMetadata({
       locale: DEFAULT_LOCALE,
       type: "website",
       url: canonicalPath,
-      ...(openGraphImages ? { images: openGraphImages } : {}),
+      images: openGraphImages,
     },
     twitter: {
-      card: image ? "summary_large_image" : "summary",
+      card: "summary",
       title,
       description: seoDescription,
-      ...(image ? { images: [image.url] } : {}),
+      images: [SOCIAL_PREVIEW_IMAGE.url],
     },
   };
 }
@@ -105,7 +81,6 @@ export function createGameMetadata(game: Game): Metadata {
     title: `${game.title} online gratis`,
     description: `Juega ${game.title} online gratis en el navegador, sin descargar. ${game.description}`,
     path: `/juegos/${game.slug}`,
-    image: getProviderImage(game),
   });
 }
 

@@ -1,6 +1,6 @@
 import type { Category, Game } from "@/types";
 
-import { HOME_DESCRIPTION, SITE_NAME, SITE_URL } from "./site";
+import { HOME_DESCRIPTION, SITE_NAME, SITE_URL, SOCIAL_PREVIEW_IMAGE } from "./site";
 
 export type JsonLdNode = Record<string, unknown>;
 
@@ -93,6 +93,7 @@ export function createOrganizationJsonLd(): JsonLdNode {
     "@type": "Organization",
     name: SITE_NAME,
     url: SITE_URL,
+    logo: absoluteUrl(SOCIAL_PREVIEW_IMAGE.url),
   });
 }
 

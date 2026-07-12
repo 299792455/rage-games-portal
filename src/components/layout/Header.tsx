@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { FormEvent, ReactNode } from "react";
@@ -101,8 +102,15 @@ export function Header({ navItems = defaultNavItems, searchSlot }: HeaderProps) 
     <header className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/85 backdrop-blur-xl">
       <div className="container-page flex min-h-16 items-center justify-between gap-4 py-3 lg:min-h-20 lg:py-4">
         <Link className="flex items-center gap-3 focus-ring" href="/">
-          <span className="flex h-11 w-11 items-center justify-center rounded-[var(--radius-md)] border border-cyan-300/35 bg-cyan-300/10 text-sm font-black text-cyan-100 shadow-[var(--glow-cyan)]">
-            JD
+          <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-[var(--radius-md)] border border-cyan-300/35 bg-slate-950 shadow-[var(--glow-cyan)]">
+            <Image
+              alt="Logo Juegos Difíciles"
+              className="h-full w-full object-cover"
+              height={44}
+              priority
+              src="/apple-touch-icon.png"
+              width={44}
+            />
           </span>
           <span className="flex flex-col leading-none">
             <span className="text-base font-black text-white">

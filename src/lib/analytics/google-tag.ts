@@ -1,6 +1,7 @@
 import type { ConsentStorageStatus } from "@/types";
 
 type DataLayerCommand = [command: string, ...parameters: unknown[]];
+type DataLayerEntry = DataLayerCommand | IArguments;
 
 type GoogleConsentModeState = {
   analytics_storage: ConsentStorageStatus;
@@ -11,7 +12,7 @@ type GoogleConsentModeState = {
 
 declare global {
   interface Window {
-    dataLayer?: DataLayerCommand[];
+    dataLayer?: DataLayerEntry[];
     gtag?: (...args: DataLayerCommand) => void;
   }
 }
@@ -47,9 +48,10 @@ function ensureDataLayer() {
   window.dataLayer = window.dataLayer ?? [];
   window.gtag =
     window.gtag ??
-    ((...args: DataLayerCommand) => {
-      window.dataLayer?.push(args);
-    });
+    function gtag() {
+      // eslint-disable-next-line prefer-rest-params -- Google Tag expects the official dataLayer.push(arguments) proxy shape.
+      window.dataLayer?.push(arguments);
+    };
 
   return window.gtag;
 }

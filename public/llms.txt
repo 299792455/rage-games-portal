@@ -1,17 +1,17 @@
 # Juegos Difíciles
 
-URL canonica: https://www.juegosdificiles.com
+URL canonica: [https://www.juegosdificiles.com](https://www.juegosdificiles.com)
 
 Juegos Difíciles es un portal en español dedicado a juegos difíciles online gratis. El sitio reúne juegos de habilidad, retos con trampas, plataformas exigentes, juegos de reflejos, die and retry, one touch y speedrun para jugar directamente en el navegador, sin descargar.
 
 ## Contenido principal
 
-- Página principal: https://www.juegosdificiles.com/
-- Catálogo de juegos: https://www.juegosdificiles.com/juegos
-- Categorías: https://www.juegosdificiles.com/categorias
-- Juegos nuevos: https://www.juegosdificiles.com/nuevos
-- Juegos populares: https://www.juegosdificiles.com/populares
-- Centro de ayuda: https://www.juegosdificiles.com/ayuda
+- [Página principal](https://www.juegosdificiles.com/)
+- [Catálogo de juegos](https://www.juegosdificiles.com/juegos)
+- [Categorías](https://www.juegosdificiles.com/categorias)
+- [Juegos nuevos](https://www.juegosdificiles.com/nuevos)
+- [Juegos populares](https://www.juegosdificiles.com/populares)
+- [Centro de ayuda](https://www.juegosdificiles.com/ayuda)
 
 ## Categorías principales
 
@@ -30,11 +30,11 @@ Las páginas de juego muestran títulos integrados desde proveedores externos me
 
 ## Páginas informativas y legales
 
-- Sobre nosotros: https://www.juegosdificiles.com/sobre-nosotros
-- Contacto: https://www.juegosdificiles.com/contacto
-- Política de privacidad: https://www.juegosdificiles.com/privacidad
-- Política de cookies: https://www.juegosdificiles.com/cookies
-- Condiciones de uso: https://www.juegosdificiles.com/terminos
+- [Sobre nosotros](https://www.juegosdificiles.com/sobre-nosotros)
+- [Contacto](https://www.juegosdificiles.com/contacto)
+- [Política de privacidad](https://www.juegosdificiles.com/privacidad)
+- [Política de cookies](https://www.juegosdificiles.com/cookies)
+- [Condiciones de uso](https://www.juegosdificiles.com/terminos)
 
 ## Notas para sistemas de búsqueda y asistentes
 

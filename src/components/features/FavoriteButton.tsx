@@ -65,7 +65,7 @@ export function FavoriteButton({
       onClick={handleClick}
       variant={isFavorite ? "secondary" : "ghost"}
     >
-      {isFavorite ? "En favoritos" : "Favorito local"}
+      {isFavorite ? "En favoritos" : "Guardar en favoritos"}
     </Button>
   );
 }

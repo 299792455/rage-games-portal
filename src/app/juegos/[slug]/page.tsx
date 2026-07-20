@@ -287,12 +287,6 @@ export default async function GamePage({ params }: GamePageProps) {
                     {game.provider}
                   </span>
                 </div>
-                <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
-                  <span className="text-sm text-slate-400">Embed</span>
-                  <span className="text-sm font-bold text-white">
-                    {game.embedUrl ? "Disponible" : "No disponible"}
-                  </span>
-                </div>
                 <div className="space-y-2">
                   <span className="text-sm text-slate-400">Tipo de reto</span>
                   <div className="flex flex-wrap gap-2">

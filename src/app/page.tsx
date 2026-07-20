@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ContinuePlayingGrid } from "@/components/features";
@@ -24,6 +25,12 @@ import {
   createWebsiteJsonLd,
 } from "@/lib/seo/json-ld";
 import { HOME_DESCRIPTION } from "@/lib/seo/site";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 const featuredCategories = categories.slice(0, 8);
 const impossibleGames = games.filter(

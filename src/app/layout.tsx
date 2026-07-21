@@ -33,7 +33,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  manifest: "/site.webmanifest",
   openGraph: {
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,

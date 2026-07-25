@@ -21,7 +21,6 @@ const defaultNavItems: HeaderNavItem[] = [
   { label: "Categorías", href: "/categorias" },
   { label: "Populares", href: "/populares" },
   { label: "Favoritos", href: "/favoritos" },
-  { label: "Clasificaciones", href: "/clasificaciones" },
   { label: "Ayuda", href: "/ayuda" },
 ];
 

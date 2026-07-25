@@ -432,12 +432,6 @@ export default function Home() {
                   Ranking global
                 </h2>
               </div>
-              <Link
-                className="text-sm font-bold text-cyan-100 hover:text-cyan-200 focus-ring"
-                href="/clasificaciones"
-              >
-                Ver rankings
-              </Link>
             </div>
 
             {leaderboardPreview.length > 0 ? (

@@ -225,27 +225,16 @@ export default async function HelpArticlePage({
 
       <main className="rage-grid-bg">
         <section className="container-page space-y-8 py-12 lg:py-16">
-          <div className="grid gap-6 lg:grid-cols-[1fr_320px] lg:items-end">
-            <div className="max-w-4xl space-y-5">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Centro de ayuda
-              </p>
-              <h1 className="text-5xl font-black leading-[0.95] text-white md:text-6xl">
-                {article.title}
-              </h1>
-              <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                {article.summary}
-              </p>
-            </div>
-
-            <Card className="p-5" variant="glass">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet-200">
-                Ayuda V1
-              </p>
-              <p className="mt-3 text-sm leading-6 text-slate-400">
-                Contenido corto, sin formulario, sin cuenta y sin envío de datos.
-              </p>
-            </Card>
+          <div className="max-w-4xl space-y-5">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
+              Centro de ayuda
+            </p>
+            <h1 className="text-5xl font-black leading-[0.95] text-white md:text-6xl">
+              {article.title}
+            </h1>
+            <p className="max-w-2xl text-lg leading-8 text-slate-300">
+              {article.summary}
+            </p>
           </div>
 
           <div className="grid gap-4 lg:grid-cols-2">

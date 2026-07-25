@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { Footer, Header } from "@/components/layout";
-import { Card } from "@/components/ui";
 
 const helpArticles = [
   {
@@ -35,21 +34,6 @@ const helpArticles = [
     description: "Interpreta dificultad, rage level y retos de retry.",
   },
   {
-    title: "Clasificaciones",
-    slug: "clasificaciones",
-    description: "Consulta el estado actual de las clasificaciones globales.",
-  },
-  {
-    title: "Logros",
-    slug: "badges",
-    description: "Consulta cómo funcionan los logros locales y objetivos personales.",
-  },
-  {
-    title: "Anuncios",
-    slug: "anuncios",
-    description: "Entiende los espacios publicitarios preparados y desactivados por defecto.",
-  },
-  {
     title: "Privacidad",
     slug: "privacidad",
     description: "Resumen de datos locales antes de las páginas legales.",
@@ -73,30 +57,17 @@ export default function HelpPage() {
 
       <main className="rage-grid-bg">
         <section className="container-page space-y-8 py-12 lg:py-16">
-          <div className="grid gap-6 lg:grid-cols-[1fr_360px] lg:items-end">
-            <div className="max-w-4xl space-y-5">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Centro de ayuda
-              </p>
-              <h1 className="text-5xl font-black leading-[0.95] text-white md:text-6xl">
-                Ayuda rapida para jugar sin cuenta
-              </h1>
-              <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                Respuestas cortas sobre juegos difíciles, favoritos locales,
-                clasificaciones en preparación, logros y controles. Todo
-                pensado para la V1 sin registro.
-              </p>
-            </div>
-
-            <Card className="p-5" variant="glass">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet-200">
-                V1 sin cuenta
-              </p>
-              <p className="mt-3 text-sm leading-6 text-slate-400">
-                No hay login, perfil, sincronización ni página de cuenta. Los
-                datos de progreso disponibles son locales del navegador.
-              </p>
-            </Card>
+          <div className="max-w-4xl space-y-5">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
+              Centro de ayuda
+            </p>
+            <h1 className="text-5xl font-black leading-[0.95] text-white md:text-6xl">
+              Ayuda rápida para jugar
+            </h1>
+            <p className="max-w-2xl text-lg leading-8 text-slate-300">
+              Respuestas claras sobre los juegos, los favoritos locales, los
+              controles, la dificultad y el uso del portal.
+            </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -118,22 +89,6 @@ export default function HelpPage() {
               </Link>
             ))}
           </div>
-
-          <Card className="p-6" variant="panel">
-            <div className="space-y-3">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-rose-200">
-                Limites actuales
-              </p>
-              <h2 className="text-3xl font-black text-white">
-                Funciones todavia limitadas
-              </h2>
-              <p className="text-sm leading-6 text-slate-400">
-                Los juegos reales ya están disponibles. Las clasificaciones
-                globales y los anuncios reales siguen desactivados. El Help
-                Center no envía datos ni incluye formularios funcionales.
-              </p>
-            </div>
-          </Card>
         </section>
       </main>
 

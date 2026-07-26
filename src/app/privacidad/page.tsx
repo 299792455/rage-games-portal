@@ -2,15 +2,17 @@
 
 import { Footer, Header } from "@/components/layout";
 import { Card } from "@/components/ui";
+import { createPageMetadata } from "@/lib/seo/metadata";
 
 const contactEmail = "juegosdificilesportal@gmail.com";
 const contactHref = `mailto:${contactEmail}`;
 
-export const metadata: Metadata = {
-  title: "Política de privacidad | JuegosDificiles.com",
+export const metadata: Metadata = createPageMetadata({
+  title: "Política de privacidad",
   description:
     "Consulta la política de privacidad de JuegosDificiles.com y cómo se tratan los datos relacionados con el contacto, la navegación, los juegos integrados, analítica, publicidad y cookies.",
-};
+  path: "/privacidad",
+});
 
 const dataTypes = [
   "Datos enviados voluntariamente por email, como la dirección de correo, el contenido del mensaje y la información incluida por el usuario.",

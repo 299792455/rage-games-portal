@@ -1,5 +1,19 @@
 import { Footer, Header } from "@/components/layout";
 import { Card } from "@/components/ui";
+import { createPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = {
+  ...createPageMetadata({
+    title: "Logros",
+    description:
+      "Consulta el estado provisional de los logros de Juegos Difíciles, una función todavía no conectada a cuentas ni progreso global.",
+    path: "/badges",
+  }),
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function BadgesPage() {
   return (

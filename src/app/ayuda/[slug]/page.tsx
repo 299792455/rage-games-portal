@@ -1,8 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { Footer, Header } from "@/components/layout";
 import { Card } from "@/components/ui";
+import { createPageMetadata } from "@/lib/seo/metadata";
 
 type HelpArticle = {
   title: string;
@@ -202,6 +204,44 @@ const helpArticles: HelpArticle[] = [
     ],
   },
 ];
+
+const noindexHelpArticleSlugs = new Set([
+  "como-jugar",
+  "favoritos",
+  "privacidad",
+  "clasificaciones",
+  "badges",
+  "anuncios",
+]);
+
+export async function generateMetadata({
+  params,
+}: HelpArticlePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const article = helpArticles.find(
+    (currentArticle) => currentArticle.slug === slug,
+  );
+
+  if (!article) {
+    notFound();
+  }
+
+  const metadata = createPageMetadata({
+    title: article.title,
+    description: article.summary,
+    path: `/ayuda/${article.slug}`,
+  });
+
+  return noindexHelpArticleSlugs.has(article.slug)
+    ? {
+        ...metadata,
+        robots: {
+          index: false,
+          follow: true,
+        },
+      }
+    : metadata;
+}
 
 export function generateStaticParams() {
   return helpArticles.map((article) => ({

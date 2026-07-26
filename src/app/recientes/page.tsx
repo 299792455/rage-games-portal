@@ -2,6 +2,20 @@ import { RecentlyPlayedGrid } from "@/components/features";
 import { Footer, Header } from "@/components/layout";
 import { Card } from "@/components/ui";
 import { games } from "@/data";
+import { createPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = {
+  ...createPageMetadata({
+    title: "Juegos recientes",
+    description:
+      "Consulta los últimos juegos difíciles abiertos en este navegador. El historial se guarda localmente y no requiere una cuenta.",
+    path: "/recientes",
+  }),
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function RecentlyPlayedPage() {
   return (

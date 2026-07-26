@@ -3,6 +3,20 @@ import Link from "next/link";
 import { Footer, Header } from "@/components/layout";
 import { Card, DifficultyBadge } from "@/components/ui";
 import { games, leaderboardPlaceholders } from "@/data";
+import { createPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = {
+  ...createPageMetadata({
+    title: "Clasificaciones",
+    description:
+      "Consulta el estado de las clasificaciones de Juegos Difíciles. Los rankings globales todavía no están publicados.",
+    path: "/clasificaciones",
+  }),
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 function getLeaderboardGames() {
   const gameSlugs = Array.from(

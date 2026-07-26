@@ -1,6 +1,20 @@
 import { Footer, Header } from "@/components/layout";
 import { FavoritesGrid } from "@/components/features";
 import { games } from "@/data";
+import { createPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = {
+  ...createPageMetadata({
+    title: "Favoritos",
+    description:
+      "Consulta los juegos difíciles guardados como favoritos en este navegador, sin cuenta ni sincronización entre dispositivos.",
+    path: "/favoritos",
+  }),
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function FavoritesPage() {
   return (

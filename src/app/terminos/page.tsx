@@ -3,15 +3,17 @@ import Link from "next/link";
 
 import { Footer, Header } from "@/components/layout";
 import { Card } from "@/components/ui";
+import { createPageMetadata } from "@/lib/seo/metadata";
 
 const contactEmail = "juegosdificilesportal@gmail.com";
 const contactHref = `mailto:${contactEmail}`;
 
-export const metadata: Metadata = {
-  title: "Condiciones de uso | JuegosDificiles.com",
+export const metadata: Metadata = createPageMetadata({
+  title: "Condiciones de uso",
   description:
     "Consulta las condiciones de uso de JuegosDificiles.com, el acceso a juegos integrados, contenidos de terceros, funcionalidades locales, publicidad y límites de responsabilidad.",
-};
+  path: "/terminos",
+});
 
 const sections = [
   {

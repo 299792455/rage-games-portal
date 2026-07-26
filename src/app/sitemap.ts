@@ -41,6 +41,36 @@ const staticRoutes: MetadataRoute.Sitemap = [
     priority: 0.5,
   },
   {
+    url: createUrl("/ayuda/el-juego-no-carga"),
+    changeFrequency: "monthly",
+    priority: 0.4,
+  },
+  {
+    url: createUrl("/ayuda/jugar-en-movil"),
+    changeFrequency: "monthly",
+    priority: 0.4,
+  },
+  {
+    url: createUrl("/ayuda/controles"),
+    changeFrequency: "monthly",
+    priority: 0.4,
+  },
+  {
+    url: createUrl("/ayuda/dificultad"),
+    changeFrequency: "monthly",
+    priority: 0.4,
+  },
+  {
+    url: createUrl("/ayuda/reportar-un-juego"),
+    changeFrequency: "monthly",
+    priority: 0.4,
+  },
+  {
+    url: createUrl("/ayuda/contacto"),
+    changeFrequency: "monthly",
+    priority: 0.4,
+  },
+  {
     url: createUrl("/sobre-nosotros"),
     changeFrequency: "monthly",
     priority: 0.4,

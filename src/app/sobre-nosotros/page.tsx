@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Footer, Header } from "@/components/layout";
 import { Card } from "@/components/ui";
+import { createPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Sobre nosotros | JuegosDificiles.com",
+export const metadata = createPageMetadata({
+  title: "Sobre nosotros",
   description:
     "Descubre qué es JuegosDificiles.com, un proyecto independiente dedicado a reunir juegos difíciles online, rage games, juegos de habilidad y retos gratuitos para navegador.",
-};
+  path: "/sobre-nosotros",
+});
 
 const gameTypes = [
   "juegos difíciles online",

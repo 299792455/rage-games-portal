@@ -3,15 +3,17 @@ import Link from "next/link";
 
 import { Footer, Header } from "@/components/layout";
 import { Card } from "@/components/ui";
+import { createPageMetadata } from "@/lib/seo/metadata";
 
 const contactEmail = "juegosdificilesportal@gmail.com";
 const contactHref = `mailto:${contactEmail}`;
 
-export const metadata: Metadata = {
-  title: "Política de cookies | JuegosDificiles.com",
+export const metadata: Metadata = createPageMetadata({
+  title: "Política de cookies",
   description:
     "Consulta la política de cookies de JuegosDificiles.com y cómo se utilizan cookies, almacenamiento local, juegos integrados, analítica, publicidad y tecnologías similares.",
-};
+  path: "/cookies",
+});
 
 const sections = [
   {

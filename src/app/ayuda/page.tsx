@@ -1,6 +1,14 @@
 import Link from "next/link";
 
 import { Footer, Header } from "@/components/layout";
+import { createPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = createPageMetadata({
+  title: "Centro de ayuda",
+  description:
+    "Encuentra respuestas sobre cómo jugar, favoritos locales, controles, compatibilidad móvil, dificultad, privacidad y problemas con los juegos.",
+  path: "/ayuda",
+});
 
 const helpArticles = [
   {

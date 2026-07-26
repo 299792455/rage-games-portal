@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
-
 import { Footer, Header } from "@/components/layout";
 import { Card } from "@/components/ui";
+import { createPageMetadata } from "@/lib/seo/metadata";
 
 const contactEmail = "juegosdificilesportal@gmail.com";
 const contactHref = `mailto:${contactEmail}`;
 
-export const metadata: Metadata = {
-  title: "Contacto | JuegosDificiles.com",
+export const metadata = createPageMetadata({
+  title: "Contacto",
   description:
     "Contacta con JuegosDificiles.com para reportar problemas con juegos, sugerir nuevos retos o enviar propuestas relacionadas con el sitio.",
-};
+  path: "/contacto",
+});
 
 const contactSections = [
   {

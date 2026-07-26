@@ -7,14 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: [
-        "/aleatorio",
-        "/buscar",
-        "/favoritos",
-        "/recientes",
-        "/badges",
-        "/clasificaciones",
-      ],
+      disallow: ["/aleatorio"],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
   };

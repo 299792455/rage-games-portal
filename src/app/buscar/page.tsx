@@ -10,12 +10,18 @@ type SearchPageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-export const metadata = createPageMetadata({
-  title: "Buscar juegos difíciles",
-  description:
-    "Busca juegos difíciles online gratis por nombre, categoría, controles, dificultad, reflejos, trampas y retos para jugar sin descargar.",
-  path: "/buscar",
-});
+export const metadata = {
+  ...createPageMetadata({
+    title: "Buscar juegos difíciles",
+    description:
+      "Busca juegos difíciles online gratis por nombre, categoría, controles, dificultad, reflejos, trampas y retos para jugar sin descargar.",
+    path: "/buscar",
+  }),
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 type SortKey = "novedad" | "nota" | "dificultad";
 

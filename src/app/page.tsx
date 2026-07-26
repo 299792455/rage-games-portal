@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { ContinuePlayingGrid } from "@/components/features";
 import { Footer, Header } from "@/components/layout";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   AdSlot,
   Card,
-  CategoryChip,
   DifficultyBadge,
   GameCard,
   RageLevel,
@@ -28,30 +26,6 @@ export const metadata: Metadata = {
 };
 
 const featuredCategories = categories.slice(0, 8);
-const impossibleGames = games.filter(
-  (game) => game.category === "juegos-imposibles",
-);
-const rageGames = [...games]
-  .sort((firstGame, secondGame) => {
-    if (secondGame.rageLevel !== firstGame.rageLevel) {
-      return secondGame.rageLevel - firstGame.rageLevel;
-    }
-
-    return secondGame.playCount - firstGame.playCount;
-  })
-  .slice(0, 4);
-const dieAndRetryGames = games.filter(
-  (game) => game.category === "die-and-retry",
-);
-const hardcorePlatformGames = games.filter(
-  (game) => game.category === "plataformas-hardcore",
-);
-const trapGames = games.filter((game) => game.category === "juegos-con-trampas");
-const fastChallengeGames = games
-  .filter((game) =>
-    ["one-touch", "reflejos", "speedrun"].includes(game.category),
-  )
-  .slice(0, 6);
 const newGames = [...games]
   .sort(
     (firstGame, secondGame) =>
@@ -61,50 +35,7 @@ const newGames = [...games]
   .slice(0, 3);
 const featuredGame = games.find((game) => game.slug === "pixel-path") ?? games[0];
 
-const gameSections = [
-  {
-    title: "Juegos imposibles",
-    description:
-      "Retos extremos para quienes quieren saltos precisos, rutas duras y muy poco margen de error.",
-    games: impossibleGames,
-    href: "/categorias/juegos-imposibles",
-  },
-  {
-    title: "Rage games destacados",
-    description:
-      "Los juegos con más nivel de rage y más intensidad dentro del catálogo curado.",
-    games: rageGames,
-    href: "/populares",
-  },
-  {
-    title: "Die & Retry",
-    description:
-      "Falla, aprende la trampa, vuelve a intentarlo y mejora cada intento.",
-    games: dieAndRetryGames,
-    href: "/categorias/die-and-retry",
-  },
-  {
-    title: "Plataformas hardcore",
-    description:
-      "Plataformas exigentes con precisión, timing estricto y rutas que no perdonan.",
-    games: hardcorePlatformGames,
-    href: "/categorias/plataformas-hardcore",
-  },
-  {
-    title: "Juegos con trampas",
-    description:
-      "Puertas falsas, pinchos ocultos y reglas que solo se entienden después de caer.",
-    games: trapGames,
-    href: "/categorias/juegos-con-trampas",
-  },
-];
-
-const homeVisibleGames = [
-  featuredGame,
-  ...gameSections.flatMap((section) => section.games.slice(0, 4)),
-  ...fastChallengeGames,
-  ...newGames,
-].filter(
+const homeVisibleGames = [featuredGame, ...newGames].filter(
   (game, index, visibleGames) =>
     visibleGames.findIndex((visibleGame) => visibleGame.slug === game.slug) ===
     index,
@@ -288,37 +219,26 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {featuredCategories.map((category) => (
-              <CategoryChip
+              <Link
+                className="group flex h-full min-h-32 flex-col rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-4 transition hover:border-cyan-300/30 hover:bg-cyan-300/10 focus-ring"
                 href={`/categorias/${category.slug}`}
                 key={category.slug}
               >
-                {category.name}
-              </CategoryChip>
+                <h3 className="text-base font-black text-white transition group-hover:text-cyan-100">
+                  {category.name}
+                </h3>
+                <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-400">
+                  {category.description}
+                </p>
+              </Link>
             ))}
           </div>
         </section>
 
         <section className="container-page py-8">
           <AdSlot label="AdSlot placeholder - home banner" />
-        </section>
-
-        <section className="container-page space-y-6 py-10">
-          <div className="max-w-2xl space-y-2">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet-200">
-              Seguir jugando
-            </p>
-            <h2 className="text-3xl font-black text-white">
-              Retoma tus retos guardados
-            </h2>
-            <p className="text-sm leading-6 text-slate-400">
-              Lista local creada al pulsar Play. Funciona sin cuenta y se queda
-              en este navegador.
-            </p>
-          </div>
-
-          <ContinuePlayingGrid games={games} />
         </section>
 
         <section className="container-page space-y-6 py-10">
@@ -343,73 +263,6 @@ export default function Home() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {newGames.map((game) => (
               <GameCard game={game} key={game.slug} />
-            ))}
-          </div>
-        </section>
-
-        {gameSections.map((section) => (
-          <section className="container-page space-y-6 py-10" key={section.title}>
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-              <div className="max-w-2xl space-y-2">
-                <h2 className="text-3xl font-black text-white">
-                  {section.title}
-                </h2>
-                <p className="text-sm leading-6 text-slate-400">
-                  {section.description}
-                </p>
-              </div>
-              <a
-                className="text-sm font-bold text-cyan-100 hover:text-cyan-200 focus-ring"
-                href={section.href}
-              >
-                Ver más
-              </a>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-              {section.games.slice(0, 4).map((game) => (
-                <GameCard game={game} key={game.slug} />
-              ))}
-            </div>
-          </section>
-        ))}
-
-        <section className="container-page grid gap-6 py-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <Card className="p-6" variant="panel">
-            <div className="space-y-3">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Retos rápidos
-              </p>
-              <h2 className="text-3xl font-black text-white">
-                Partidas cortas, fallos veloces
-              </h2>
-              <p className="text-sm leading-6 text-slate-400">
-                One touch, reflejos y speedrun para sesiones rápidas donde cada
-                intento dura poco y la presión llega enseguida.
-              </p>
-            </div>
-          </Card>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {fastChallengeGames.map((game) => (
-              <a
-                className="rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-4 transition hover:border-cyan-300/30 hover:bg-cyan-300/10 focus-ring"
-                href={`/juegos/${game.slug}`}
-                key={game.slug}
-              >
-                <p className="text-sm font-bold text-white">{game.title}</p>
-                <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-400">
-                  {game.description}
-                </p>
-                <div className="mt-3 flex items-center justify-between gap-3">
-                  <DifficultyBadge level={game.difficultyLevel} />
-                  {game.averageRetryTime !== null ? (
-                    <span className="text-xs font-semibold text-slate-500">
-                      {game.averageRetryTime}s retry
-                    </span>
-                  ) : null}
-                </div>
-              </a>
             ))}
           </div>
         </section>

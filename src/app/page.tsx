@@ -82,6 +82,11 @@ export default function Home() {
                   y memorables. Sin descarga, sin cuenta y pensados para decir:
                   solo un intento más.
                 </p>
+                <p className="max-w-2xl font-semibold leading-7 text-cyan-100">
+                  ¿Tienes cinco minutos que perder? ¿Estás esperando el autobús?
+                  ¿Te quedan cinco minutos en el baño? Pues este sitio es para
+                  ti. 😈
+                </p>
               </div>
             </div>
 
@@ -108,12 +113,6 @@ export default function Home() {
 
             <div className="grid gap-3 sm:grid-cols-3">
               <Card className="p-4" variant="panel">
-                <p className="text-3xl font-black text-white">{games.length}</p>
-                <p className="mt-1 text-sm text-slate-400">
-                  juegos reales disponibles
-                </p>
-              </Card>
-              <Card className="p-4" variant="panel">
                 <p className="text-3xl font-black text-white">
                   {categories.length}
                 </p>
@@ -125,6 +124,12 @@ export default function Home() {
                 <p className="text-3xl font-black text-white">0</p>
                 <p className="mt-1 text-sm text-slate-400">
                   descargas necesarias
+                </p>
+              </Card>
+              <Card className="p-4" variant="panel">
+                <p className="text-3xl font-black text-white">100%</p>
+                <p className="mt-1 text-sm text-slate-400">
+                  juegos en tu navegador
                 </p>
               </Card>
             </div>
@@ -275,11 +280,6 @@ export default function Home() {
                 ¿Qué es Juegos Difíciles?
               </h2>
               <div className="mt-6 space-y-4 text-base leading-7 text-slate-300">
-                <p className="border-l-2 border-cyan-300/60 pl-4 font-semibold text-cyan-100">
-                  ¿Tienes cinco minutos que perder? ¿Estás esperando el autobús?
-                  ¿Te quedan cinco minutos en el baño? Pues este sitio es para
-                  ti. 😈
-                </p>
                 <p>
                   Juegos Difíciles es un rincón dedicado a los juegos online que
                   ponen a prueba tus reflejos, tu paciencia y, a veces, tus

@@ -21,6 +21,7 @@ import {
 import { HOME_DESCRIPTION } from "@/lib/seo/site";
 
 export const metadata: Metadata = {
+  description: HOME_DESCRIPTION,
   alternates: {
     canonical: "/",
   },

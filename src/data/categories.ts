@@ -73,7 +73,7 @@ export const categories: Category[] = [
     name: "Reflejos",
     slug: "reflejos",
     description:
-      "Juegos de reaccion inmediata con obstaculos veloces, patrones cortos y tension constante.",
+      "Juegos de reacción inmediata con obstáculos veloces, patrones cortos y tensión constante.",
     icon: "reflex",
     order: 7,
     language: "es",

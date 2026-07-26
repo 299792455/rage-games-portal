@@ -12,12 +12,7 @@ import {
   GameCard,
   RageLevel,
 } from "@/components/ui";
-import {
-  badges,
-  categories,
-  games,
-  leaderboardPlaceholders,
-} from "@/data";
+import { categories, games } from "@/data";
 import {
   createCollectionPageJsonLd,
   createItemListJsonLd,
@@ -64,8 +59,6 @@ const newGames = [...games]
       new Date(firstGame.createdAt).getTime(),
   )
   .slice(0, 3);
-const leaderboardPreview = leaderboardPlaceholders.slice(0, 5);
-const badgePreview = badges.slice(0, 6);
 const featuredGame = games.find((game) => game.slug === "pixel-path") ?? games[0];
 
 const gameSections = [
@@ -421,154 +414,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="container-page py-10">
-          <Card className="p-6" variant="panel">
-            <div className="mb-5 flex items-center justify-between gap-4">
-              <div>
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                  Clasificaciones
-                </p>
-                <h2 className="mt-2 text-2xl font-black text-white">
-                  Ranking global
-                </h2>
-              </div>
-            </div>
-
-            {leaderboardPreview.length > 0 ? (
-              <div className="divide-y divide-white/10">
-                {leaderboardPreview.map((entry) => (
-                  <div
-                    className="grid grid-cols-[auto_1fr_auto] items-center gap-4 py-3"
-                    key={`${entry.gameId}-${entry.rank}`}
-                  >
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-100">
-                      {entry.rank}
-                    </span>
-                    <div>
-                      <p className="text-sm font-bold text-white">
-                        {entry.usernamePlaceholder}
-                      </p>
-                      <p className="text-xs text-slate-500">{entry.gameId}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-sm font-black text-white">
-                        {entry.score.toLocaleString("es-ES")}
-                      </p>
-                      <p className="text-xs text-slate-500">
-                        {entry.attempts} intentos
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-4 text-sm leading-6 text-slate-400">
-                Todavía no hay un ranking global publicado.
-              </p>
-            )}
-          </Card>
-        </section>
-
-        <section className="container-page grid gap-6 py-10 lg:grid-cols-[1.15fr_0.85fr]">
-          <Card className="p-6" variant="glass">
-            <div className="mb-6 space-y-2">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Logros locales
-              </p>
-              <h2 className="text-3xl font-black text-white">
-                Recompensas ligeras, sin cuenta
-              </h2>
-              <p className="max-w-2xl text-sm leading-6 text-slate-400">
-                Catálogo de logros locales para seguir objetivos personales en
-                este navegador. No hay perfil, usuario ni sincronización.
-              </p>
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-2">
-              {badgePreview.map((badge) => (
-                <div
-                  className="rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-4"
-                  key={badge.slug}
-                >
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-violet-200">
-                    {badge.icon}
-                  </p>
-                  <h3 className="mt-2 text-base font-black text-white">
-                    {badge.name}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-400">
-                    {badge.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Card>
-
-          <Card className="p-6" variant="panel">
-            <div className="space-y-5">
-              <div className="space-y-2">
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-rose-200">
-                  Top categorías
-                </p>
-                <h2 className="text-3xl font-black text-white">
-                  La dificultad como criterio
-                </h2>
-                <p className="text-sm leading-6 text-slate-400">
-                  La selección no depende de una categoría genérica de proveedor.
-                  Se organiza por dificultad, rage, controles y tipo de reto.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                {categories.slice(0, 5).map((category) => (
-                  <a
-                    className="flex items-center justify-between gap-4 rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-4 transition hover:border-cyan-300/30 hover:bg-cyan-300/10 focus-ring"
-                    href={`/categorias/${category.slug}`}
-                    key={category.slug}
-                  >
-                    <span>
-                      <span className="block text-sm font-bold text-white">
-                        {category.name}
-                      </span>
-                      <span className="mt-1 line-clamp-1 block text-xs text-slate-500">
-                        {category.description}
-                      </span>
-                    </span>
-                    <span className="text-xs font-black text-cyan-100">
-                      {category.order}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </Card>
-        </section>
-
-        <section className="container-page py-10">
-          <Card
-            className="grid gap-6 overflow-hidden p-6 lg:grid-cols-[1fr_auto]"
-            variant="glass"
-          >
-            <div className="space-y-2">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Comunidad sin cuenta en V1
-              </p>
-              <h2 className="text-3xl font-black text-white">
-                Favoritos, recientes y progreso guardados localmente
-              </h2>
-              <p className="max-w-3xl text-sm leading-6 text-slate-400">
-                La V1 funciona sin registro. Las funciones de retención
-                disponibles se guardan localmente en este navegador.
-              </p>
-            </div>
-            <Link
-              className="inline-flex min-h-12 items-center justify-center rounded-[var(--radius-md)] border border-white/10 bg-white/5 px-5 text-sm font-bold text-slate-100 transition hover:border-cyan-300/40 hover:bg-cyan-300/10 focus-ring"
-              href="/ayuda"
-            >
-              Centro de ayuda
-            </Link>
-          </Card>
-        </section>
       </main>
 
       <Footer />

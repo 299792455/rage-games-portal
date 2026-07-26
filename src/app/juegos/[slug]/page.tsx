@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import {
   FavoriteButton,
   GameFullscreenButton,
-  LocalScorePanel,
   RecentlyPlayedTracker,
 } from "@/components/features";
 import { Footer, Header } from "@/components/layout";
@@ -17,7 +16,7 @@ import {
   GameCard,
   RageLevel,
 } from "@/components/ui";
-import { categories, games, leaderboardPlaceholders } from "@/data";
+import { categories, games } from "@/data";
 import {
   createGameMetadata,
   createMissingGameMetadata,
@@ -105,9 +104,6 @@ export default async function GamePage({ params }: GamePageProps) {
       currentGame.category === game.category && currentGame.slug !== game.slug,
   );
   const similarGames = getSimilarGames(game);
-  const leaderboardEntries = leaderboardPlaceholders
-    .filter((entry) => entry.gameId === game.slug)
-    .sort((firstEntry, secondEntry) => firstEntry.rank - secondEntry.rank);
   const gameFrameWrapperId = `game-frame-${game.slug}`;
   const challengeTypes = [
     game.hasHiddenTraps ? "Trampas ocultas" : null,
@@ -135,8 +131,8 @@ export default async function GamePage({ params }: GamePageProps) {
       <Header />
 
       <main className="rage-grid-bg">
-        <section className="container-page grid gap-8 py-12 lg:grid-cols-[1fr_360px] lg:py-16">
-          <div className="space-y-6">
+        <section className="container-page py-12 lg:py-16">
+          <div className="max-w-5xl space-y-6">
             <div className="flex flex-wrap items-center gap-3">
               {category ? (
                 <Link
@@ -174,36 +170,6 @@ export default async function GamePage({ params }: GamePageProps) {
               ))}
             </div>
           </div>
-
-          <Card className="p-6" variant="glass">
-            <div className="space-y-5">
-              <div className="flex items-center justify-between gap-4">
-                <DifficultyBadge level={game.difficultyLevel} />
-                <span className="text-sm font-black text-white">
-                  {game.rating > 0 ? game.rating.toFixed(1) : "Sin valoración"}
-                </span>
-              </div>
-              <RageLevel level={game.rageLevel} />
-              <div className="grid grid-cols-2 gap-4 border-t border-white/10 pt-5">
-                <div>
-                  <p className="text-2xl font-black text-white">
-                    {game.playCount > 0
-                      ? game.playCount.toLocaleString("es-ES")
-                      : "Sin datos"}
-                  </p>
-                  <p className="mt-1 text-sm text-slate-400">
-                    jugadas globales
-                  </p>
-                </div>
-                <div>
-                  <p className="text-2xl font-black text-white">
-                    {game.inputType}
-                  </p>
-                  <p className="mt-1 text-sm text-slate-400">control</p>
-                </div>
-              </div>
-            </div>
-          </Card>
         </section>
 
         <section className="container-page grid gap-6 py-6 xl:grid-cols-[1fr_320px]">
@@ -247,22 +213,6 @@ export default async function GamePage({ params }: GamePageProps) {
                 <FavoriteButton className="flex-1" gameSlug={game.slug} />
               </div>
             </Card>
-
-            <Card className="p-6" variant="glass">
-              <div className="space-y-3">
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                  Selección editorial
-                </p>
-                <h2 className="text-3xl font-black text-white">
-                  Reto difícil preparado para retry
-                </h2>
-                <p className="text-sm leading-6 text-slate-400">
-                  Este juego forma parte de nuestra selección de retos difíciles
-                  y juegos de retry, con información editorial sobre dificultad,
-                  controles y tipo de desafío.
-                </p>
-              </div>
-            </Card>
           </div>
 
           <aside className="space-y-6">
@@ -273,6 +223,20 @@ export default async function GamePage({ params }: GamePageProps) {
                 Info de juego
               </p>
               <div className="mt-5 space-y-4">
+                <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
+                  <span className="text-sm text-slate-400">Dificultad</span>
+                  <DifficultyBadge level={game.difficultyLevel} />
+                </div>
+                <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
+                  <span className="text-sm text-slate-400">Rage</span>
+                  <RageLevel level={game.rageLevel} />
+                </div>
+                <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
+                  <span className="text-sm text-slate-400">Control</span>
+                  <span className="text-sm font-bold text-white">
+                    {game.inputType}
+                  </span>
+                </div>
                 <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
                   <span className="text-sm text-slate-400">Dispositivo</span>
                   <span className="text-sm font-bold text-white">
@@ -305,72 +269,7 @@ export default async function GamePage({ params }: GamePageProps) {
           </aside>
         </section>
 
-        <section className="container-page grid gap-6 py-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <LocalScorePanel gameSlug={game.slug} />
-
-          <Card className="p-6" variant="panel">
-            <div className="mb-5 flex items-center justify-between gap-4">
-              <div>
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                  Clasificación global en preparación
-                </p>
-                <h2 className="mt-2 text-2xl font-black text-white">
-                  Clasificación global
-                </h2>
-              </div>
-            </div>
-
-            {leaderboardEntries.length > 0 ? (
-              <div className="divide-y divide-white/10">
-                {leaderboardEntries.map((entry) => (
-                  <div
-                    className="grid grid-cols-[auto_1fr_auto] items-center gap-4 py-3"
-                    key={`${entry.gameId}-${entry.rank}`}
-                  >
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-100">
-                      {entry.rank}
-                    </span>
-                    <div>
-                      <p className="text-sm font-bold text-white">
-                        {entry.usernamePlaceholder}
-                      </p>
-                      <p className="text-xs text-slate-500">
-                        {entry.attempts} intentos
-                      </p>
-                    </div>
-                    <p className="text-sm font-black text-white">
-                      {entry.score.toLocaleString("es-ES")}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-4 text-sm leading-6 text-slate-400">
-                Esta clasificación global está en preparación. No mostramos
-                resultados ficticios ni mezclamos tu progreso local con un
-                ranking global.
-              </p>
-            )}
-          </Card>
-        </section>
-
-        <section className="container-page grid gap-6 py-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <Card className="p-6" variant="panel">
-            <div className="space-y-2">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Mis logros
-              </p>
-              <h2 className="text-3xl font-black text-white">
-                Logros en preparación
-              </h2>
-              <p className="text-sm leading-6 text-slate-400">
-                Esta sección formará parte del progreso del jugador en una
-                próxima actualización. Por ahora, los logros no están conectados
-                a una cuenta ni a un sistema global.
-              </p>
-            </div>
-          </Card>
-
+        <section className="container-page py-10">
           <Card className="p-6" variant="glass">
             <div className="space-y-4">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-rose-200">

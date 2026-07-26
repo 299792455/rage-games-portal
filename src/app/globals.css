@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #070812;
+  --background: #01030f;
   --foreground: #f8fafc;
   --muted: #94a3b8;
   --surface: rgba(15, 23, 42, 0.78);
@@ -33,11 +33,27 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  background:
-    radial-gradient(circle at 14% 12%, rgba(139, 92, 246, 0.18), transparent 30rem),
-    radial-gradient(circle at 86% 8%, rgba(34, 211, 238, 0.14), transparent 26rem),
-    radial-gradient(circle at 68% 82%, rgba(251, 44, 54, 0.1), transparent 24rem),
-    linear-gradient(135deg, #070812 0%, #0b1020 48%, #050712 100%);
+  background-color: var(--background);
+  background-image:
+    radial-gradient(
+      ellipse 38rem 30rem at 18% 18%,
+      rgba(34, 211, 238, 0.09) 0%,
+      rgba(34, 211, 238, 0.035) 45%,
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 42rem 32rem at 82% 24%,
+      rgba(139, 92, 246, 0.09) 0%,
+      rgba(139, 92, 246, 0.03) 45%,
+      transparent 74%
+    ),
+    linear-gradient(
+      180deg,
+      #01030f 0%,
+      #030714 50%,
+      #01020b 100%
+    );
+  background-repeat: no-repeat;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   text-rendering: optimizeLegibility;
@@ -75,10 +91,6 @@ body {
 
 .app-shell {
   min-height: 100vh;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 40px 40px;
 }
 
 .container-page {
@@ -115,10 +127,7 @@ body {
 }
 
 .rage-grid-bg {
-  background-image:
-    linear-gradient(rgba(34, 211, 238, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 92, 246, 0.08) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-image: none;
 }
 
 .focus-ring {

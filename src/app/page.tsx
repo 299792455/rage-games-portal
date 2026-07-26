@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { Footer, Header } from "@/components/layout";
@@ -264,6 +265,49 @@ export default function Home() {
             {newGames.map((game) => (
               <GameCard game={game} key={game.slug} />
             ))}
+          </div>
+        </section>
+
+        <section className="container-page py-12 lg:py-16">
+          <div className="grid overflow-hidden rounded-[var(--radius-lg)] border border-white/10 bg-slate-950/70 p-6 md:p-8 lg:grid-cols-[minmax(0,1fr)_14rem] lg:items-center lg:gap-10 xl:grid-cols-[minmax(0,1fr)_16rem]">
+            <div className="max-w-3xl">
+              <h2 className="text-3xl font-black text-white">
+                ¿Qué es Juegos Difíciles?
+              </h2>
+              <div className="mt-6 space-y-4 text-base leading-7 text-slate-300">
+                <p className="border-l-2 border-cyan-300/60 pl-4 font-semibold text-cyan-100">
+                  ¿Tienes cinco minutos que perder? ¿Estás esperando el autobús?
+                  ¿Te quedan cinco minutos en el baño? Pues este sitio es para
+                  ti. 😈
+                </p>
+                <p>
+                  Juegos Difíciles es un rincón dedicado a los juegos online que
+                  ponen a prueba tus reflejos, tu paciencia y, a veces, tus
+                  ganas de no lanzar el teclado por la ventana.
+                </p>
+                <p>
+                  La idea es simple: entrar, elegir un juego y empezar a jugar
+                  en pocos segundos. Sin crear una cuenta, sin instalar nada y
+                  sin complicarte la vida.
+                </p>
+                <p>
+                  Reunimos juegos difíciles, rage games, retos de reflejos y
+                  desafíos cortos que puedes abrir directamente en el
+                  navegador. Entras, juegas un rato y te vas cuando quieras.
+                </p>
+              </div>
+            </div>
+
+            <div className="hidden items-center justify-center lg:flex">
+              <Image
+                alt="Logo Juegos Difíciles"
+                className="h-auto w-32 object-contain sm:w-40 lg:w-56 xl:w-64"
+                height={512}
+                sizes="(min-width: 1280px) 256px, (min-width: 1024px) 224px, (min-width: 640px) 160px, 128px"
+                src="/web-app-manifest-512x512.png"
+                width={512}
+              />
+            </div>
           </div>
         </section>
 

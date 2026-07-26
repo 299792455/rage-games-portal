@@ -50,42 +50,49 @@ export async function generateMetadata({ params }: GamePageProps) {
   return game ? createGameMetadata(game) : createMissingGameMetadata(slug);
 }
 
-function getSimilarGames(currentGame: Game) {
-  const sameCategoryGames = games.filter(
-    (game) =>
-      game.slug !== currentGame.slug && game.category === currentGame.category,
-  );
+const ignoredSimilarityTags = new Set(["mobile-ok"]);
 
-  const tagRelatedGames = games
-    .filter(
-      (game) =>
-        game.slug !== currentGame.slug &&
-        game.category !== currentGame.category &&
-        game.tags.some((tag) => currentGame.tags.includes(tag)),
-    )
+function getRecommendedGames(currentGame: Game) {
+  const seenGameSlugs = new Set([currentGame.slug]);
+
+  return games
+    .map((game, index) => ({
+      game,
+      index,
+      sameCategory: game.category === currentGame.category,
+      sharedTagCount: game.tags.filter(
+        (tag) =>
+          !ignoredSimilarityTags.has(tag) && currentGame.tags.includes(tag),
+      ).length,
+      difficultyGap: Math.abs(
+        game.difficultyLevel - currentGame.difficultyLevel,
+      ),
+    }))
+    .filter(({ game }) => {
+      if (seenGameSlugs.has(game.slug)) {
+        return false;
+      }
+
+      seenGameSlugs.add(game.slug);
+      return true;
+    })
     .sort((firstGame, secondGame) => {
-      const firstScore =
-        firstGame.playCount +
-        firstGame.rageLevel * 1000 +
-        firstGame.difficultyLevel * 1000;
-      const secondScore =
-        secondGame.playCount +
-        secondGame.rageLevel * 1000 +
-        secondGame.difficultyLevel * 1000;
+      if (firstGame.sameCategory !== secondGame.sameCategory) {
+        return Number(secondGame.sameCategory) - Number(firstGame.sameCategory);
+      }
 
-      return secondScore - firstScore;
-    });
+      if (firstGame.sharedTagCount !== secondGame.sharedTagCount) {
+        return secondGame.sharedTagCount - firstGame.sharedTagCount;
+      }
 
-  const fallbackGames = games
-    .filter(
-      (game) =>
-        game.slug !== currentGame.slug &&
-        !sameCategoryGames.some((sameGame) => sameGame.slug === game.slug) &&
-        !tagRelatedGames.some((relatedGame) => relatedGame.slug === game.slug),
-    )
-    .sort((firstGame, secondGame) => secondGame.playCount - firstGame.playCount);
+      if (firstGame.difficultyGap !== secondGame.difficultyGap) {
+        return firstGame.difficultyGap - secondGame.difficultyGap;
+      }
 
-  return [...sameCategoryGames, ...tagRelatedGames, ...fallbackGames].slice(0, 4);
+      return firstGame.index - secondGame.index;
+    })
+    .slice(0, 4)
+    .map(({ game }) => game);
 }
 
 export default async function GamePage({ params }: GamePageProps) {
@@ -99,11 +106,7 @@ export default async function GamePage({ params }: GamePageProps) {
   const category = categories.find(
     (currentCategory) => currentCategory.slug === game.category,
   );
-  const sameCategoryGames = games.filter(
-    (currentGame) =>
-      currentGame.category === game.category && currentGame.slug !== game.slug,
-  );
-  const similarGames = getSimilarGames(game);
+  const recommendedGames = getRecommendedGames(game);
   const gameFrameWrapperId = `game-frame-${game.slug}`;
   const challengeTypes = [
     game.hasHiddenTraps ? "Trampas ocultas" : null,
@@ -269,51 +272,22 @@ export default async function GamePage({ params }: GamePageProps) {
           </aside>
         </section>
 
-        <section className="container-page py-10">
-          <Card className="p-6" variant="glass">
-            <div className="space-y-4">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-rose-200">
-                Misma categoría
-              </p>
-              <h2 className="text-3xl font-black text-white">
-                Otros juegos de {category?.name ?? game.category}
-              </h2>
-              <div className="space-y-3">
-                {sameCategoryGames.map((sameCategoryGame) => (
-                  <Link
-                    className="block rounded-[var(--radius-md)] border border-white/10 bg-white/5 p-4 transition hover:border-cyan-300/30 hover:bg-cyan-300/10 focus-ring"
-                    href={`/juegos/${sameCategoryGame.slug}`}
-                    key={sameCategoryGame.slug}
-                  >
-                    <span className="block text-sm font-bold text-white">
-                      {sameCategoryGame.title}
-                    </span>
-                    <span className="mt-1 line-clamp-1 block text-xs text-slate-500">
-                      {sameCategoryGame.description}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </Card>
-        </section>
-
         <section className="container-page space-y-6 py-10">
           <div className="max-w-2xl space-y-2">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-              Juegos similares
+              Recomendaciones
             </p>
             <h2 className="text-3xl font-black text-white">
-              Mas retos para seguir fallando mejor
+              También te puede gustar
             </h2>
             <p className="text-sm leading-6 text-slate-400">
-              Selección basada en categoría, tags, dificultad y rage level.
+              Selección basada en categoría, tags y dificultad.
             </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {similarGames.map((similarGame) => (
-              <GameCard game={similarGame} key={similarGame.slug} />
+            {recommendedGames.map((recommendedGame) => (
+              <GameCard game={recommendedGame} key={recommendedGame.slug} />
             ))}
           </div>
         </section>

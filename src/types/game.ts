@@ -14,6 +14,7 @@ export type GameProvider =
   | "gamedistribution"
   | "onlinegames.io"
   | "twoplayergames"
+  | "trees-hateyou.io"
   | "other";
 
 export type GameInputType = InputType;

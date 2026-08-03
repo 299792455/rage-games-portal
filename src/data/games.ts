@@ -5,7 +5,7 @@ export const games: Game[] = [
     title: "Snail Odyssey - Hardest Game",
     slug: "snail-odyssey-hardest-game",
     description:
-      "Un plataformas difícil donde acompañas a un caracol por un mundo lleno de trampas, obstáculos y decisiones de timing. Cada nivel exige observar, repetir y ajustar la estrategia.",
+      "Guía a un caracol hasta el final de recorridos que mezclan plataformas, observación y pequeños rompecabezas. Muévete con las flechas o A y D, salta con Espacio y usa Shift para impulsarte cuando necesites ganar velocidad o salvar una distancia complicada.\n\nLas trampas no siempre se superan reaccionando deprisa: observa sus patrones, calcula el momento de cada salto y decide cuándo avanzar sin improvisar a ciegas. En móvil, los controles táctiles permiten jugar directamente sobre la pantalla.",
     category: "juegos-imposibles",
     tags: [
       "platformer",
@@ -43,7 +43,7 @@ export const games: Game[] = [
     title: "Rage Maze Troll Hardest Platformer",
     slug: "rage-maze-troll-hardest-platformer",
     description:
-      "Un plataformas troll diseñado para poner a prueba tu paciencia. Supera saltos imposibles, esquiva trampas, resuelve pequeños puzzles y repite cada nivel hasta dominar el caos.",
+      "Atraviesa 15 niveles construidos para engañarte con trampas troll, pequeños puzles y cambios inesperados en el recorrido. Llegar a la salida requiere probar rutas, recordar dónde aparece cada peligro y ajustar el movimiento en intentos breves.\n\nPuedes jugar con controles tradicionales o los botones en pantalla, desbloquear personajes y cambiar su aspecto mientras progresas. El modo speedrun añade otro objetivo: completar los niveles con una ruta más limpia y reducir el tiempo sin caer en las mismas bromas.",
     category: "rage-games",
     tags: [
       "platformer",
@@ -83,7 +83,7 @@ export const games: Game[] = [
     title: "Geometry Escape",
     slug: "geometry-escape",
     description:
-      "Un plataformas automático sin checkpoints donde debes saltar, volar y reaccionar al instante. Evita pinchos, fosos, sierras, cambios de gravedad y aumentos de velocidad en cada intento.",
+      "Avanza automáticamente por 30 niveles sin checkpoints, alternando saltos precisos y fases de vuelo con cohete. Pulsa Espacio, haz clic o toca la pantalla para esquivar sierras, superar desniveles y reaccionar a cambios de gravedad que alteran la trayectoria en pleno recorrido.\n\nLa velocidad aumenta y los impulsos pueden cambiar el ritmo justo antes de un obstáculo. Recoge monedas para desbloquear opciones de personalización, pero un solo error devuelve el intento al inicio del nivel: aquí importa aprender la secuencia completa y mantener el control hasta el final.",
     category: "die-and-retry",
     tags: [
       "geometry",
@@ -122,7 +122,7 @@ export const games: Game[] = [
     title: "Jelly Bro",
     slug: "jelly-bro",
     description:
-      "Un plataformas pixel-art donde guías a una gelatina verde por niveles llenos de peligros, puzzles y caminos ocultos. La clave está en medir bien cada salto y no caer en los obstáculos.",
+      "Lleva a Jelly Bro hasta la corona situada al final de cada recorrido. Un toque o clic controla el avance y obliga a medir bien cada movimiento entre plataformas, pinchos y otros peligros que aparecen cerca del personaje.\n\nLa dificultad nace de leer el escenario antes de comprometerte: algunas zonas dejan poco margen para corregir una mala entrada y los patrones deben observarse con calma. El objetivo es claro, pero alcanzarlo depende de encadenar decisiones precisas sin regalar un choque.",
     category: "die-and-retry",
     tags: [
       "platformer",
@@ -160,7 +160,7 @@ export const games: Game[] = [
     title: "Mothman Death Troll Game",
     slug: "mothman-death-troll-game",
     description:
-      "Un plataformas retro donde guías a un moth decidido por niveles peligrosos. Cada salto exige precisión, paciencia y varios intentos para superar obstáculos cada vez más exigentes.",
+      "Guía a una pequeña polilla hacia la luz a través de recorridos que usan el escenario para confundirte. Las flechas controlan el movimiento, mientras las rutas aparentemente seguras, los desvíos engañosos y las trampas troll convierten una meta visible en un problema de observación.\n\nEl juego deja indicios sutiles sobre el camino correcto, pero no siempre donde esperas encontrarlos. Avanzar con cuidado, comparar las alternativas y recordar lo ocurrido en el intento anterior resulta más útil que lanzarse directamente hacia el brillo.",
     category: "die-and-retry",
     tags: [
       "platformer",
@@ -198,7 +198,7 @@ export const games: Game[] = [
     title: "Utoo",
     slug: "utoo",
     description:
-      "Un plataformas 2D de ocho niveles donde cada movimiento importa. Usa saltos dobles, evita enemigos y supera obstáculos traicioneros mientras recoges cubos azules.",
+      "Ayuda a Utoo a completar ocho niveles y reunir todos los cubos azules sin tocar sierras ni pinchos. Las flechas o WASD controlan el movimiento, y el doble salto permite corregir la altura o cruzar espacios que un salto normal no cubre.\n\nLos recorridos combinan coleccionables con plataformas cada vez menos cómodas. Conviene reservar el segundo salto para el momento preciso, porque gastarlo demasiado pronto puede dejar al personaje sin margen frente al siguiente obstáculo.",
     category: "plataformas-hardcore",
     tags: [
       "platformer",
@@ -236,7 +236,7 @@ export const games: Game[] = [
     title: "Pinkii",
     slug: "pinkii",
     description:
-      "Un plataformas de ocho niveles donde debes esquivar monstruos y pinchos hasta llegar a la bandera rosa. El doble salto y los reflejos rápidos son clave para superar cada tramo.",
+      "Conduce a Pinkii hasta la bandera rosa al final de ocho niveles llenos de monstruos, pinchos y saltos ajustados. Puedes moverte con WASD o las flechas y utilizar un doble salto para ganar altura, cambiar la trayectoria en el aire o salvar separaciones más largas.\n\nLa progresión introduce recorridos con menos espacio para aterrizar y peligros que castigan una entrada apresurada. Controlar cuándo usar el segundo impulso es clave para mantener una ruta estable hasta la meta.",
     category: "plataformas-hardcore",
     tags: [
       "platformer",
@@ -274,7 +274,7 @@ export const games: Game[] = [
     title: "Traigon",
     slug: "traigon",
     description:
-      "Un plataformas pixel-art centrado en saltos precisos, terrenos difíciles y obstáculos letales. Cada nivel exige paciencia, timing y control para seguir avanzando.",
+      "Corre por un recorrido que no permite volver atrás y adapta cada decisión al obstáculo que llega. El personaje avanza de forma continua: puedes saltar o hacer doble salto con Espacio o clic, detenerte con Z y deslizarte con X para pasar por zonas bajas.\n\nBarrancos, pinchos y cambios de ritmo obligan a escoger la acción correcta antes de alcanzar cada peligro. Las monedas añaden riesgo y permiten desbloquear opciones de personalización. En móvil, los controles táctiles trasladan estas acciones a la pantalla sin alterar el ritmo del recorrido.",
     category: "plataformas-hardcore",
     tags: [
       "platformer",
@@ -311,7 +311,7 @@ export const games: Game[] = [
     title: "I Hate this Game 2",
     slug: "i-hate-this-game-2",
     description:
-      "Un juego de laberintos y puzzles donde cada pantalla intenta confundirte. Observa el nivel, evita las rutas engañosas y prepárate para repetir cuando el camino no sea tan evidente.",
+      "Recorre laberintos y pequeñas pruebas de lógica donde el camino más evidente rara vez es el correcto. Las flechas o los gestos de deslizamiento controlan el movimiento, pero avanzar depende también de interpretar el escenario, detectar desvíos y entender qué está bloqueando realmente la salida.\n\nLos niveles de dificultad permiten ajustar la experiencia, aunque las rutas engañosas siguen siendo el centro del juego. Explorar con método y recordar los intentos anteriores evita repetir decisiones que parecían razonables, pero terminaban en un callejón o una trampa.",
     category: "juegos-con-trampas",
     tags: [
       "maze",
@@ -349,7 +349,7 @@ export const games: Game[] = [
     title: "Trap Path - Survival Rush",
     slug: "trap-path-survival-rush",
     description:
-      "Un reto de supervivencia donde debes avanzar por caminos peligrosos, esquivar trampas mortales y reaccionar rápido. Cada nivel exige precisión, timing y sangre fría.",
+      "Corre hacia la salida mientras el escenario activa trampas en ciclos que debes reconocer. Los controles de dirección permiten moverte y saltar, pero la clave está en anticipar cuándo aparece cada peligro y atravesar la zona durante su ventana segura.\n\nLa dificultad aumenta al combinar varios ritmos y reducir el margen para improvisar. Mirar primero, calcular el salto y mantener una secuencia constante suele funcionar mejor que acelerar sin haber leído el recorrido.",
     category: "juegos-con-trampas",
     tags: [
       "trampas",
@@ -387,7 +387,7 @@ export const games: Game[] = [
     title: "Troll Level",
     slug: "troll-level",
     description:
-      "Un plataformas troll con más de 80 niveles donde nada es tan seguro como parece. Los suelos desaparecen, las trampas aparecen por sorpresa y cada fallo te enseña algo para el siguiente intento.",
+      "Supera más de 80 niveles donde el escenario cambia las reglas con suelos que desaparecen, pinchos que caen y órdenes deliberadamente contraintuitivas. WASD, las flechas o los controles en pantalla permiten moverte, saltar, agacharte y levantarte, aunque a veces la solución exige hacer justo lo contrario de lo que parece lógico.\n\nLos intentos cortos convierten cada caída en información: memoriza el momento de las trampas y ajusta la secuencia siguiente. El progreso se guarda localmente, por lo que puedes cerrar el juego y continuar más tarde desde los niveles ya alcanzados.",
     category: "juegos-con-trampas",
     tags: [
       "troll",
@@ -426,7 +426,7 @@ export const games: Game[] = [
     title: "Pixel Path",
     slug: "pixel-path",
     description:
-      "Un plataformas retro en pixel art donde cada nivel esconde una nueva trampa. Avanza hasta el portal, evita suelos que se derrumban, pinchos móviles y sorpresas que obligan a repetir hasta dominar el recorrido.",
+      "Alcanza el portal de salida a través de 49 niveles principales y recorridos bonus diseñados alrededor de trampas visuales y cambios repentinos. Muévete con las flechas o los controles táctiles, pero no confíes en una plataforma solo porque parezca estable: algunos suelos se derrumban, los pinchos se desplazan y hasta el tamaño del personaje puede cambiar.\n\nLos niveles son breves y favorecen la memorización de cada secuencia. Quien domine el camino puede activar el enfoque speedrun, buscar trayectorias más directas y reducir el tiempo sin perder precisión en los últimos movimientos.",
     category: "juegos-con-trampas",
     tags: [
       "platformer",
@@ -464,7 +464,7 @@ export const games: Game[] = [
     title: "Geometry Vector",
     slug: "geometry-vector",
     description:
-      "Un reto arcade de reflejos donde controlas una flecha a través de recorridos llenos de pinchos y trampas. Sigue el ritmo, evita cada obstáculo y repite hasta llegar al portal final.",
+      "Dirige una flecha hasta el portal manteniendo el control entre obstáculos geométricos y pasillos estrechos. Espacio, clic o toque modifican la trayectoria con una respuesta inmediata, por lo que cada presión debe durar lo justo para corregir la altura sin provocar un choque.\n\nLas monedas permiten desbloquear diez apariencias para la flecha y añaden un objetivo opcional durante el recorrido. La dificultad sube cada diez niveles sin cambiar la base del control. Leer el ritmo antes de encadenar movimientos resulta tan importante como reaccionar a tiempo.",
     category: "one-touch",
     tags: [
       "geometry",
@@ -482,7 +482,7 @@ export const games: Game[] = [
       kind: "provider-image",
     },
     embedUrl:
-      "https://www.onlinegames.io/games/2024/construct/312/geometry-vector/index.html",
+      "https://cloud.onlinegames.io/games/2026/construct/329/geometry-vector/game.html",
     provider: "onlinegames.io",
     isMobileFriendly: true,
     isDesktopRecommended: true,
@@ -503,7 +503,7 @@ export const games: Game[] = [
     title: "Flappy Bounce",
     slug: "flappy-bounce",
     description:
-      "Un reto one-touch donde debes mantener una bola en el aire, pasar por huecos estrechos y evitar pinchos. Simple de entender, pero perfecto para repetir una y otra vez buscando mejor puntuación.",
+      "Mantén una pelota en movimiento automático y hazla rebotar con cada clic o toque para atravesar columnas cubiertas de pinchos. La altura cambia de inmediato, así que una presión mal medida puede enviarla contra el borde superior o dejarla caer antes de la siguiente abertura.\n\nCada columna superada suma un punto. Las aperturas estrechas obligan a encontrar una cadencia estable y a corregirla sin brusquedad cuando cambia la posición del paso.",
     category: "one-touch",
     tags: [
       "one-touch",
@@ -541,7 +541,7 @@ export const games: Game[] = [
     title: "Geometry Rash",
     slug: "geometry-rash",
     description:
-      "Un runner one-touch de reflejos donde un pequeño cuadrado avanza entre obstáculos triangulares. Salta en el momento justo, adapta tu timing y vuelve al inicio si fallas.",
+      "Acompaña a un personaje que corre automáticamente por un circuito de obstáculos triangulares y cambios de velocidad. Salta con Espacio, W, la flecha arriba o un clic para mantener la trayectoria y evitar choques que terminan el intento al instante.\n\nLas estrellas colocadas en rutas comprometidas sirven para desbloquear hasta 20 apariencias, pero recogerlas puede exigir un salto menos seguro. A medida que el ritmo aumenta, conviene anticipar el siguiente obstáculo en lugar de esperar a tenerlo encima.",
     category: "one-touch",
     tags: [
       "one-touch",
@@ -580,7 +580,7 @@ export const games: Game[] = [
     title: "Sprunki Spikes",
     slug: "sprunki-spikes",
     description:
-      "Un reto rápido de reflejos donde un héroe colorido debe saltar, esquivar y sobrevivir en un recorrido lleno de pinchos, trampas y obstáculos cambiantes.",
+      "Avanza por un recorrido cuya velocidad aumenta de forma continua y alterna saltos con deslizamientos para esquivar los obstáculos visibles. Las flechas o los controles táctiles permiten responder al patrón que llega, mientras los power-ups ofrecen ayudas puntuales para mantener la carrera.\n\nLa dificultad está en cambiar de acción sin romper el ritmo: saltar demasiado pronto puede arruinar la recepción y deslizarse tarde deja al personaje expuesto. Reconocer las secuencias y reservar cada movimiento para su ventana exacta permite prolongar la partida.",
     category: "one-touch",
     tags: [
       "spikes",
@@ -618,7 +618,7 @@ export const games: Game[] = [
     title: "Geometry Arrow",
     slug: "geometry-arrow",
     description:
-      "Un reto one-touch de reflejos donde controlas una flecha que zigzaguea por una cueva llena de bloques, muros y trampas. Si tocas un obstáculo, vuelves al inicio y debes dominar mejor el timing.",
+      "Controla una flecha en vuelo manteniendo pulsado para subir y soltando para descender. El movimiento continuo deja poco margen para estabilizarse, así que cada corrección debe anticipar la forma del siguiente pasillo y la posición de sus obstáculos.\n\nLa velocidad aumenta durante el recorrido y una barra de progreso indica cuánto falta para completar la sección. Clic, Espacio o toque ofrecen el mismo control esencial: dosificar la presión y evitar movimientos amplios cuando el espacio comienza a cerrarse.",
     category: "one-touch",
     tags: [
       "geometry",
@@ -656,7 +656,7 @@ export const games: Game[] = [
     title: "Rolling Ball Runner",
     slug: "rolling-ball-runner",
     description:
-      "Un runner arcade de reflejos donde diriges una bola rápida entre pinchos, plataformas complicadas y cambios de ritmo. Ideal para partidas cortas, timing preciso y búsqueda de mejor puntuación.",
+      "Guía lateralmente una bola que avanza sin detenerse y evita los obstáculos que ocupan la pista. Usa las flechas izquierda y derecha o desliza en pantalla para ajustar la línea de movimiento, recoger ayudas y colocarte antes del siguiente cambio de trayectoria.\n\nEl recorrido se vuelve progresivamente más difícil al combinar obstáculos que exigen decidir antes de alcanzarlos. Los power-ups pueden facilitar un tramo, pero la supervivencia depende sobre todo de mirar por delante y mover la bola con correcciones breves.",
     category: "reflejos",
     tags: [
       "runner",
@@ -694,7 +694,7 @@ export const games: Game[] = [
     title: "Geometry Dash FreezeNova",
     slug: "geometry-dash-freezenova",
     description:
-      "Un reto arcade de reflejos donde controlas un cubo que avanza sin parar. Salta al ritmo correcto, evita pinchos, supera cambios de gravedad y vuelve a intentarlo para llegar más lejos.",
+      "Recorre diez modos que reinterpretan el control de un cubo con reglas y ritmos distintos. El salto de una sola pulsación sigue siendo la base, pero las fases introducen cambios de gravedad, rebotes, halos y variaciones visuales que modifican la manera de leer cada secuencia.\n\nAlgunos tramos piden mantener una cadencia regular; otros obligan a reaccionar a una inversión o a un impulso inesperado. W, Espacio o la flecha arriba controlan la acción. Cambiar rápidamente de referencia entre modos es el verdadero reto, porque una rutina útil en una fase puede fallar en la siguiente.",
     category: "reflejos",
     tags: [
       "geometry",
@@ -733,7 +733,7 @@ export const games: Game[] = [
     title: "Jump Cube",
     slug: "jump-cube",
     description:
-      "Un reto arcade de precisión donde controlas un cubo entre plataformas peligrosas y pinchos. Cada salto debe calcularse bien para avanzar y mejorar tu posición en la clasificación.",
+      "Haz avanzar un cubo por plataformas estrechas y zonas rodeadas de pinchos, aprovechando la física de cada salto para ganar altura sin perder la trayectoria. El clic y las flechas permiten controlar el movimiento, pero la inercia obliga a preparar el aterrizaje antes de abandonar la plataforma actual.\n\nLa progresión recompensa los saltos limpios y registra la puntuación conseguida durante la partida. No basta con subir deprisa: conservar el control cerca de los bordes evita que un pequeño exceso arruine el recorrido.",
     category: "reflejos",
     tags: [
       "cubo",
@@ -771,7 +771,7 @@ export const games: Game[] = [
     title: "Whipsaw Roll",
     slug: "whipsaw-run",
     description:
-      "Un desafío de plataformas y reflejos donde controlas un orbe luminoso a través de escenarios peligrosos. Domina el momentum, los cambios de ritmo y los obstáculos para seguir avanzando.",
+      "Domina el impulso de un personaje que rueda entre sierras, pinchos y mecanismos capaces de alterar su trayectoria. Las flechas controlan el desplazamiento y Espacio ajusta un salto cuya altura depende de cuánto mantengas la acción, lo que permite elegir entre correcciones cortas y vuelos más largos.\n\nLos imanes del techo cambian la orientación del recorrido, mientras los explosivos añaden empujes difíciles de calcular. Mantener velocidad ayuda a cruzar ciertos tramos, pero llegar con demasiado momentum complica el aterrizaje. La precisión consiste en conservar energía sin dejar que ella decida por ti.",
     category: "reflejos",
     tags: [
       "platformer",
@@ -809,7 +809,7 @@ export const games: Game[] = [
     title: "Geometry Vibes Monster",
     slug: "geometry-vibes-monster",
     description:
-      "Un arcade de reflejos donde pilotas una nave entre pinchos, obstáculos y ataques de monstruos. Mantén el control, aprende cada patrón enemigo y repite para llegar cada vez más lejos.",
+      "Pilota una nave frente a ocho monstruos, cada uno con ataques y patrones propios que obligan a modificar el ritmo. Mantén pulsado para elevarte y suelta para descender, leyendo la secuencia antes de que proyectiles y obstáculos cierren el espacio disponible.\n\nEl modo endless prolonga la partida mientras puedas conservar el control. También hay carreras locales para dos, tres o cuatro jugadores, donde compartir la pantalla añade presión y reduce el margen para seguir solo tu propia trayectoria. Los controles táctiles permiten trasladar la misma lógica de presión y liberación a móvil.",
     category: "reflejos",
     tags: [
       "geometry",
@@ -847,7 +847,7 @@ export const games: Game[] = [
     title: "Speedrun Platformer",
     slug: "speedrun-platformer",
     description:
-      "Un plataformas centrado en la velocidad. Salta sobre enemigos, recoge monedas y repite cada nivel para mejorar tu tiempo y subir en la clasificación.",
+      "Busca la salida de cada recorrido optimizando saltos, rutas y tiempo. El camino combina enemigos, monedas y cristales ocultos, de modo que la línea más rápida no siempre coincide con la que recoge todo o evita por completo los riesgos.\n\nEl control de movimiento y salto debe mantenerse preciso al enlazar plataformas, porque una corrección tardía cuesta segundos y puede romper un buen intento. Repetir el nivel permite optimizar la trayectoria y decidir qué coleccionables merecen desviarse antes de cruzar la meta.",
     category: "speedrun",
     tags: [
       "platformer",
@@ -885,7 +885,7 @@ export const games: Game[] = [
     title: "Level Devil",
     slug: "level-devil",
     description:
-      "Alcanza la salida entre suelos falsos, pinchos repentinos y controles que pueden traicionarte.",
+      "Llega hasta la puerta gris atravesando plataformas que pueden hundirse, pinchos que aparecen sin aviso y situaciones donde una entrada segura deja de serlo al avanzar. El movimiento y el salto son sencillos; lo difícil es descubrir qué parte del escenario está preparando la siguiente trampa.\n\nLos intentos se reinician rápido y permiten memorizar cada sorpresa. Avanzar por pasos cortos, probar una plataforma antes de comprometer el salto y desconfiar de la recta final ayuda a construir una ruta fiable.",
     category: "juegos-con-trampas",
     tags: [
       "platformer",
@@ -920,7 +920,7 @@ export const games: Game[] = [
     title: "Trees Hate You",
     slug: "trees-hate-you",
     description:
-      "Cruza un bosque hostil donde los árboles disparan, bloquean caminos y preparan emboscadas.",
+      "Cruza un bosque que actúa como enemigo directo: los árboles disparan, bloquean el paso y preparan emboscadas en zonas que parecían tranquilas. El control con teclado mantiene la acción centrada en el movimiento y el salto, pero superar el recorrido exige reconocer dónde comienza cada ataque.\n\nLas trampas ocultas castigan la primera lectura del terreno. Memorizar sus posiciones, esperar la apertura adecuada y ajustar la ruta en el siguiente intento permite avanzar sin depender de una carrera ciega entre los obstáculos.",
     category: "juegos-con-trampas",
     tags: [
       "platformer",
@@ -955,7 +955,7 @@ export const games: Game[] = [
     title: "Garden Bait",
     slug: "garden-bait",
     description:
-      "Supera cinco etapas de plataformas precisas con suelos fugitivos, falsos checkpoints y salidas engañosas.",
+      "Desciende por la versión demo integrada de Garden Bait, un recorrido de plataformas precisas suspendidas sobre un abismo. El entorno parece tranquilo, pero los apoyos dejan poco margen y el abismo castiga cualquier salto que no alcance la siguiente plataforma.\n\nLa dificultad depende de medir la distancia, controlar el impulso y observar la disposición de cada plataforma antes de comprometer el siguiente movimiento. Esta versión se concentra en el descenso inicial de la demo, donde la precisión y la lectura del espacio pesan más que la velocidad.",
     category: "plataformas-hardcore",
     tags: [
       "platformer",
@@ -990,7 +990,7 @@ export const games: Game[] = [
     title: "Poor Bunny",
     slug: "poor-bunny",
     description:
-      "Recoge zanahorias y sobrevive a sierras, flechas y cañones en partidas rápidas para uno o dos jugadores.",
+      "Recoge tantas zanahorias como puedas mientras sobrevives en una arena que se llena de sierras, flechas y disparos de cañón. Las zanahorias doradas mejoran la puntuación y suelen aparecer en posiciones que obligan a acercarse a los peligros en lugar de esperar en una zona cómoda.\n\nPuedes jugar en solitario, cooperar con otra persona o competir en versus desde el mismo teclado. El reto crece a medida que se acumulan amenazas: moverse con anticipación y dejar una ruta de escape importa más que perseguir cada zanahoria sin mirar alrededor.",
     category: "reflejos",
     tags: ["reflejos", "survival", "dodging", "sierras", "high-score"],
     thumbnail: {
@@ -1019,7 +1019,7 @@ export const games: Game[] = [
     title: "Farting Flight",
     slug: "farting-flight",
     description:
-      "Pedalea, despega y usa impulsos absurdos para recorrer más distancia entre choques y obstáculos.",
+      "Pedalea para ganar velocidad, lánzate desde una colina y recorre la mayor distancia posible mientras evitas choques y obstáculos. Un contador de estrellas acompaña el intento y registra cuántas recoges durante el recorrido.\n\nEl reto está en preparar bien el lanzamiento y mantener el avance el mayor tiempo posible. Cada intento permite ajustar el momento de salida y la trayectoria para llegar más lejos sin perder el control de la bicicleta.",
     category: "one-touch",
     tags: ["one-touch", "arcade", "momentum", "obstaculos", "casual"],
     thumbnail: {

@@ -157,9 +157,15 @@ export default async function GamePage({ params }: GamePageProps) {
               <h1 className="max-w-5xl text-5xl font-black leading-[0.95] text-white md:text-6xl">
                 {game.title}
               </h1>
-              <p className="max-w-3xl text-lg leading-8 text-slate-300">
-                {game.description}
-              </p>
+              <div className="max-w-3xl space-y-3 text-lg leading-8 text-slate-300">
+                {game.description
+                  .split(/\n{2,}/)
+                  .map((paragraph) => paragraph.trim())
+                  .filter(Boolean)
+                  .map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+              </div>
             </div>
 
             <div className="flex flex-wrap gap-2">

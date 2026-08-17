@@ -35,7 +35,7 @@ const newGames = [...games]
       new Date(firstGame.createdAt).getTime(),
   )
   .slice(0, 3);
-const featuredGame = games.find((game) => game.slug === "pixel-path") ?? games[0];
+const featuredGame = games.find((game) => game.slug === "garden-bait") ?? games[0];
 
 const homeVisibleGames = [featuredGame, ...newGames].filter(
   (game, index, visibleGames) =>

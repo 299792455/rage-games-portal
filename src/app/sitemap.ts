@@ -46,6 +46,11 @@ const staticRoutes: MetadataRoute.Sitemap = [
     priority: 0.4,
   },
   {
+    url: createUrl("/ayuda/de-donde-vienen-los-juegos"),
+    changeFrequency: "monthly",
+    priority: 0.4,
+  },
+  {
     url: createUrl("/ayuda/jugar-en-movil"),
     changeFrequency: "monthly",
     priority: 0.4,

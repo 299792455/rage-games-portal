@@ -27,6 +27,12 @@ const helpArticles = [
     description: "Revisa qué hacer si un juego integrado no abre.",
   },
   {
+    title: "¿De dónde vienen los juegos?",
+    slug: "de-donde-vienen-los-juegos",
+    description:
+      "Descubre qué proveedores utilizamos, por qué algunos juegos muestran contenido externo y qué hacer si uno deja de funcionar.",
+  },
+  {
     title: "Jugar en móvil",
     slug: "jugar-en-movil",
     description: "Entiende cuándo un juego es mobile OK o desktop recomendado.",

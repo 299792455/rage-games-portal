@@ -10,9 +10,16 @@ type HelpArticle = {
   title: string;
   slug: string;
   summary: string;
+  introduction?: string[];
   sections: {
     title: string;
     body: string;
+    additionalParagraphs?: string[];
+    links?: {
+      label: string;
+      href: string;
+      external?: boolean;
+    }[];
   }[];
 };
 
@@ -65,6 +72,68 @@ const helpArticles: HelpArticle[] = [
       {
         title: "Contenido externo",
         body: "Algunos proveedores pueden limitar temporalmente un juego o aplicar restricciones de compatibilidad fuera de su sitio.",
+      },
+    ],
+  },
+  {
+    title: "¿De dónde vienen los juegos?",
+    slug: "de-donde-vienen-los-juegos",
+    summary:
+      "Descubre de dónde vienen los juegos de JuegosDifíciles, qué proveedores utilizamos y por qué algunos títulos pueden mostrar contenido externo o dejar de funcionar.",
+    introduction: [
+      "Los juegos disponibles en JuegosDifíciles proceden de diferentes proveedores y plataformas externas. Seleccionamos títulos que encajan con el tipo de experiencia del sitio y los integramos para que puedas jugar directamente desde el navegador.",
+      "Dependiendo del juego, parte de su funcionamiento y de su contenido se carga desde los servidores del proveedor correspondiente.",
+    ],
+    sections: [
+      {
+        title: "Proveedores actuales",
+        body: "Actualmente, el catálogo incluye juegos de estos proveedores:",
+        links: [
+          {
+            label: "OnlineGames.io",
+            href: "https://www.onlinegames.io/",
+            external: true,
+          },
+          {
+            label: "GamePix",
+            href: "https://www.gamepix.com/",
+            external: true,
+          },
+          {
+            label: "TwoPlayerGames",
+            href: "https://www.twoplayergames.org/",
+            external: true,
+          },
+          {
+            label: "trees-hateyou.io",
+            href: "https://trees-hateyou.io/",
+            external: true,
+          },
+        ],
+      },
+      {
+        title: "¿Por qué algunos juegos muestran pantallas o anuncios antes de empezar?",
+        body: "Algunos juegos pueden mostrar sus propias pantallas de carga, mensajes promocionales o anuncios antes de comenzar. Estos elementos forman parte de la versión proporcionada por el proveedor del juego y pueden variar de un título a otro.",
+        additionalParagraphs: [
+          "JuegosDifíciles integra el juego disponible a través de ese proveedor, por lo que la experiencia previa al inicio puede no ser exactamente igual en todos los juegos.",
+        ],
+      },
+      {
+        title: "¿Por qué un juego puede dejar de funcionar?",
+        body: "Los proveedores pueden actualizar, mover o retirar sus juegos. Como parte del contenido se carga desde servicios externos, una modificación realizada por el proveedor puede provocar que un juego deje de cargar correctamente de forma temporal o permanente.",
+        additionalParagraphs: [
+          "Cuando detectamos uno de estos casos, revisamos la integración para comprobar si existe una nueva versión disponible.",
+        ],
+      },
+      {
+        title: "¿Qué hago si un juego no funciona correctamente?",
+        body: "Si encuentras un juego que no carga, muestra un error o deja de funcionar como debería, puedes avisarnos para que podamos revisarlo.",
+        links: [
+          {
+            label: "Ir a Contacto",
+            href: "/contacto",
+          },
+        ],
       },
     ],
   },
@@ -269,12 +338,26 @@ export default async function HelpArticlePage({
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
               Centro de ayuda
             </p>
-            <h1 className="text-5xl font-black leading-[0.95] text-white md:text-6xl">
+            <h1
+              className={
+                article.slug === "de-donde-vienen-los-juegos"
+                  ? "text-5xl font-black leading-[0.95] text-white"
+                  : "text-5xl font-black leading-[0.95] text-white md:text-6xl"
+              }
+            >
               {article.title}
             </h1>
-            <p className="max-w-2xl text-lg leading-8 text-slate-300">
-              {article.summary}
-            </p>
+            {article.introduction ? (
+              <div className="max-w-2xl space-y-3 text-lg leading-8 text-slate-300">
+                {article.introduction.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            ) : (
+              <p className="max-w-2xl text-lg leading-8 text-slate-300">
+                {article.summary}
+              </p>
+            )}
           </div>
 
           <div className="grid gap-4 lg:grid-cols-2">
@@ -286,6 +369,40 @@ export default async function HelpArticlePage({
                 <p className="mt-3 text-sm leading-6 text-slate-400">
                   {section.body}
                 </p>
+                {section.additionalParagraphs?.map((paragraph) => (
+                  <p
+                    className="mt-3 text-sm leading-6 text-slate-400"
+                    key={paragraph}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+                {section.links ? (
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    {section.links.map((link) =>
+                      link.external ? (
+                        <a
+                          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[var(--radius-md)] border border-cyan-300/35 bg-cyan-300/10 px-4 text-sm font-bold text-cyan-100 transition hover:border-cyan-200 hover:bg-cyan-300/15 focus-ring"
+                          href={link.href}
+                          key={link.href}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          {link.label}
+                          <span aria-hidden="true">↗</span>
+                        </a>
+                      ) : (
+                        <Link
+                          className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] border border-cyan-300/35 bg-cyan-300/10 px-4 text-sm font-bold text-cyan-100 transition hover:border-cyan-200 hover:bg-cyan-300/15 focus-ring"
+                          href={link.href}
+                          key={link.href}
+                        >
+                          {link.label}
+                        </Link>
+                      ),
+                    )}
+                  </div>
+                ) : null}
               </Card>
             ))}
           </div>

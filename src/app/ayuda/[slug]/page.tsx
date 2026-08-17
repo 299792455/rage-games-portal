@@ -45,11 +45,11 @@ const helpArticles: HelpArticle[] = [
     sections: [
       {
         title: "Almacenamiento local",
-        body: "Al marcar un juego como favorito, se guarda su slug en localStorage. No se crea cuenta ni perfil.",
+        body: "Cuando añades un juego a favoritos, se guarda directamente en este navegador. No necesitas crear una cuenta ni iniciar sesión.",
       },
       {
-        title: "Sin sincronización",
-        body: "Si cambias de navegador o dispositivo, esa lista local no se sincroniza en V1.",
+        title: "Disponible en este navegador",
+        body: "Tus favoritos se guardan únicamente en el navegador que estás utilizando. Si accedes desde otro navegador o dispositivo, tendrás que volver a añadirlos.",
       },
     ],
   },

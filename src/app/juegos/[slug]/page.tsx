@@ -157,26 +157,6 @@ export default async function GamePage({ params }: GamePageProps) {
               <h1 className="max-w-5xl text-5xl font-black leading-[0.95] text-white md:text-6xl">
                 {game.title}
               </h1>
-              <div className="max-w-3xl space-y-3 text-lg leading-8 text-slate-300">
-                {game.description
-                  .split(/\n{2,}/)
-                  .map((paragraph) => paragraph.trim())
-                  .filter(Boolean)
-                  .map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                  ))}
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              {game.tags.map((tag) => (
-                <span
-                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-slate-300"
-                  key={tag}
-                >
-                  {tag}
-                </span>
-              ))}
             </div>
           </div>
         </section>
@@ -276,6 +256,35 @@ export default async function GamePage({ params }: GamePageProps) {
               </div>
             </Card>
           </aside>
+        </section>
+
+        <section className="container-page">
+          <div className="max-w-5xl space-y-6">
+            <h2 className="text-3xl font-black text-white">
+              Todo sobre el juego {game.title}
+            </h2>
+
+            <div className="max-w-3xl space-y-3 text-lg leading-8 text-slate-300">
+              {game.description
+                .split(/\n{2,}/)
+                .map((paragraph) => paragraph.trim())
+                .filter(Boolean)
+                .map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {game.tags.map((tag) => (
+                <span
+                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-slate-300"
+                  key={tag}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
         </section>
 
         <section className="container-page space-y-6 py-10">
